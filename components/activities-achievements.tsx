@@ -29,18 +29,20 @@ export function ActivitiesAchievements() {
     let animationFrame: number
 
     const animate = () => {
-      if (!isHovered) {
-        setOffset((prev) => {
-          const speed = direction === 1 ? 5 : 1
-          let next = prev + speed * direction
-          if (next >= totalWidth) setDirection(-1)
-          if (next <= 0) setDirection(1)
-          return next
-        })
+        if (!isHovered) {
+          setOffset((prev) => {
+            // más rápido en la ida, más lento en la vuelta
+            const speed = direction === 1 ? 30 : 0.8  
+            let next = prev + speed * direction
+            if (next >= totalWidth) setDirection(-1)
+            if (next <= 0) setDirection(1)
+            return next
+          })
+        }
+
+        animationFrame = requestAnimationFrame(animate)
       }
 
-      animationFrame = requestAnimationFrame(animate)
-    }
 
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)

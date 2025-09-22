@@ -12,64 +12,100 @@ export function HeroSection() {
       <div className="max-w-2xl mx-auto text-center">
         {/* Hover sobre todo el bloque */}
         <motion.div
-            className="flex items-center justify-center gap-6 mb-2 cursor-pointer"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            whileTap={{ scale: 0.95 }} // feedback de tap
-          >
+          className="flex items-center justify-center gap-6 mb-2 cursor-pointer"
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.45 }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          whileTap={{ scale: 0.96 }}
+        >
+          {/* Contenedor de la imagen: pulse (idle) + override en hover */}
             <motion.div
               className="relative w-48 h-48 flex-shrink-0 rounded-3xl overflow-hidden bg-transparent p-1"
-              animate={{
-                scale: isHovered ? 1.05 : [1, 1.02, 1], // pulso en mobile
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
+                style={{
+                  WebkitMaskImage: `radial-gradient(circle at top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)`,
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskSize: "cover",
+                  maskImage: `radial-gradient(circle at top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)`,
+                  maskRepeat: "no-repeat",
+                  maskSize: "cover",
+                }}
+              animate={
+                isHovered
+                  ? { scale: 1.06 }
+                  : { scale: [1, 1.035, 1] }
+              }
+              transition={
+                isHovered
+                  ? { duration: 0.28, ease: "easeOut" }
+                  : { duration: 2.6, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }
+              }
+              whileHover={{ boxShadow: "0 24px 40px rgba(0,0,0,0.28)" }}
             >
-              <Image
-                src={isHovered ? "/images/profile/ian-hover.png" : "/images/profile/ian-default.png"}
-                alt="Ian Franco Pontorno"
-                fill
-                className="object-contain transition-all duration-300"
-                priority
-              />
+              {/* Cross-fade entre las dos imágenes */}
+              <motion.div
+                className="absolute inset-0"
+                animate={{ opacity: isHovered ? 0 : 1 }}
+                transition={{ duration: 0.28 }}
+              >
+                <Image
+                  src="/images/profile/defaultRect.png"
+                  alt="Ian Franco Pontorno"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+
+              <motion.div
+                className="absolute inset-0"
+                animate={{ opacity: isHovered ? 1 : 0 }}
+                transition={{ duration: 0.28 }}
+              >
+                <Image
+                  src="/images/profile/hoverRect.png"
+                  alt="Ian Franco Pontorno (hover)"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
             </motion.div>
 
-            <div className="text-left">
-              <h1 className="text-2xl font-bold text-white mb-0">Ian Franco Pontorno</h1>
-              <p className="text-gray-400 text-sm font-medium">Software Engineer and Designer</p>
-            </div>
-          </motion.div>
 
+          {/* Texto al lado de la imagen (misma posición que tenías) */}
+          <div className="text-left">
+            <h1 className="text-2xl font-bold text-white mb-0">
+              Ian Franco Pontorno
+            </h1>
+            <p className="text-gray-400 text-sm font-medium">
+              Software Engineer and Designer
+            </p>
+          </div>
+        </motion.div>
 
-
-
-
-       <motion.div
+        {/* Descripción */}
+        <motion.div
           className="space-y-4 mt-6 max-w-xl text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-gray-300 text-sm font-normal leading-relaxed">
-            Software Engineer with 3+ years of experience building modern web applications using Python, JavaScript, Node.js, HTML/CSS, and databases like MongoDB & SQL.
-            Skilled in Git, SAP/ABAP, and integrating cloud services.
+            Software Engineer with 3+ years of experience building modern web
+            applications using Python, JavaScript, Node.js, HTML/CSS, and databases
+            like MongoDB & SQL. Skilled in Git, SAP/ABAP, and integrating cloud
+            services.
           </p>
 
           <p className="text-gray-300 text-sm font-normal leading-relaxed">
-            In my free time, I try my best to create fun and useful web applications that I actually use along with a
-            small number of other users.
+            In my free time, I try my best to create fun and useful web applications
+            that I actually use along with a small number of other users.
           </p>
         </motion.div>
 
-
-
+        {/* Links */}
         <motion.p
           className="text-gray-400 text-sm font-normal mt-4"
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +120,10 @@ export function HeroSection() {
             LinkedIn
           </a>{" "}
           or{" "}
-          <a href="https://github.com/Ian9Franco" className="text-white underline hover:text-gray-300 transition-colors">
+          <a
+            href="https://github.com/Ian9Franco"
+            className="text-white underline hover:text-gray-300 transition-colors"
+          >
             GitHub
           </a>
         </motion.p>
