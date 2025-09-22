@@ -1,0 +1,170 @@
+export interface Project {
+  id: string
+  name: string
+  description: string
+  logo?: string
+  technologies?: string[]
+  url?: string
+  readme?: string // <- agregamos esto
+}
+
+export const projects: Project[] = [
+  {
+    id: "tormentica",
+    name: "Tormentica",
+    description: "Check the weather conditions based on your location before heading out, with a clean and interactive interface.",
+    url: "https://ian9franco.github.io/tormentica/#/weather?lat=51.5073219&lon=-0.1276474",
+    readme: "https://github.com/Ian9Franco/tormentica#readme",
+    technologies: ["React", "JavaScript"],
+  },
+  {
+    id: "conversorio",
+    name: "Conversorio",
+    description: "Convert between different currencies, calculate taxes in USD, and track subscription expenses effortlessly.",
+    url: "https://conversorio.vercel.app/",
+    readme: "https://github.com/Ian9Franco/conversorio#readme",
+    technologies: ["React", "JavaScript", "JS"],
+  },
+  {
+    id: "calculatorio",
+    name: "Calculatorio",
+    description: "A versatile calculator supporting basic operations and a scientific mode for advanced calculations.",
+    url: "https://ian9franco.github.io/Calculadora/",
+    readme: "https://github.com/Ian9Franco/Calculadora#readme",
+    technologies: ["React", "JavaScript"],
+  },
+  {
+    id: "calendarious",
+    name: "Calendarious",
+    description: "Manage and visualize recurring subscriptions with ease, helping users stay organized and up-to-date.",
+    url: "https://calendarious.vercel.app/",
+    readme: "https://github.com/Ian9Franco/Calendarious#readme",
+    technologies: ["React", "Tailwind CSS", "Node.js", "Next.js", "Git"],
+  },
+]
+export type Activity = {
+  title: string
+  subtitle: string
+  description: string
+  category: "certificate" | "career"
+  date: string
+  tags: string[]
+  link?: string
+}
+
+export const activities: Activity[] =[
+  {
+    title: "Bachelor’s Degree in Software Engineering",
+    subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
+    description:
+      "Ongoing degree focused on software engineering principles, programming, databases, and modern web technologies.",
+    category: "career",
+    date: "2023 – Present",
+    tags: ["Software Engineering", "University", "Programming"],
+  },
+  {
+    title: "Diploma in SAP ABAP Programming",
+    subtitle: "Universidad Tecnológica Nacional – Argentina",
+    description:
+      "Specialized diploma in SAP ABAP development for enterprise software and business systems.",
+    category: "career",
+    date: "2025 – Ongoing",
+    tags: ["SAP", "ABAP", "Enterprise Systems"],
+  },
+  {
+    title: "JavaScript Development",
+    subtitle: "Coderhouse",
+    description:
+      "Completed a certification in JavaScript development, covering fundamentals, ES6+, and modern web practices.",
+    category: "certificate",
+    date: "2022",
+    tags: ["JavaScript", "Web Development"],
+    link: "https://pub.coderhouse.com/legacy-certificates/6373a1a3c4d9d4000e070b52?lang=es",
+  },
+  {
+    title: "Advanced Backend Development",
+    subtitle: "Coderhouse",
+    description:
+      "Advanced backend programming skills, APIs, authentication, and scalable architectures.",
+    category: "certificate",
+    date: "2024",
+    tags: ["Backend", "Node.js", "APIs"],
+    link: "https://pub.coderhouse.com/legacy-certificates/66d87189766073d467a8da31?lang=es",
+  },
+  {
+    title: "Java Development",
+    subtitle: "Coderhouse",
+    description:
+      "Strong knowledge in object-oriented programming, Java fundamentals, and application building.",
+    category: "certificate",
+    date: "2024",
+    tags: ["Java", "OOP", "Backend"],
+    link: "https://pub.coderhouse.com/legacy-certificates/66b38a1b905b61e36ba4f45d?lang=es",
+  },
+  {
+    title: "Data Analytics",
+    subtitle: "Coderhouse",
+    description:
+      "Learned data manipulation, visualization, and insights extraction with modern analytics tools.",
+    category: "certificate",
+    date: "2024",
+    tags: ["Data Analysis", "Analytics", "Business Intelligence"],
+    link: "https://pub.coderhouse.com/legacy-certificates/65de2ef7565bd5b0a81ebd6b?lang=es",
+  },
+  {
+    title: "Web Development",
+    subtitle: "Coderhouse",
+    description:
+      "Covered the basics of frontend and backend web development, including HTML, CSS, and JavaScript.",
+    category: "certificate",
+    date: "2021",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://pub.coderhouse.com/legacy-certificates/6262b0f67cfd37001912af74?lang=es",
+  },
+  {
+    title: "Fundamentals of Artificial Intelligence",
+    subtitle: "Coderhouse",
+    description:
+      "Introduction to AI concepts, machine learning fundamentals, and real-world applications.",
+    category: "certificate",
+    date: "2023",
+    tags: ["Artificial Intelligence", "Machine Learning", "Technology"],
+    link: "https://pub.coderhouse.com/legacy-certificates/64cd8ee3c2e270215f453cf9?lang=es",
+  },
+]
+
+export type Experience = {
+  company: string
+  role: string
+  period: string
+  description: string
+  logo?: string
+}
+
+export const experiences: Experience[] = [
+  {
+    company: "Codere – Buenos Aires, Argentina",
+    role: "IT Assistant",
+    period: "2019 – Present",
+    description: `Provided technical support and maintained internal applications.
+      Developed automation scripts to improve efficiency and reduce repetitive tasks.
+      Collaborated with teams to troubleshoot and resolve system issues.
+      Assisted in database maintenance and queries to support application performance.`,
+    logo: "/images/experience/codere.png",
+  },
+  {
+    company: "Illumi Digital – Remote",
+    role: "Front-End Developer",
+    period: "2022 – 2025",
+    description: `Built and maintained web and mobile applications using React, Next.js, and Tailwind CSS.
+      Integrated APIs and monitored application performance for fast and reliable experiences.
+      Worked with designers and developers to implement responsive, user-centered interfaces.`,
+    logo: "/images/experience/illumi.png",
+  },
+]
+
+export const contactLinks = {
+  github: "https://github.com/Ian9Franco",
+  linkedin: "https://www.linkedin.com/in/ian-franco-collada-pontorno-42675b225/",
+  email: "ian9franco@gmail.com",
+}
