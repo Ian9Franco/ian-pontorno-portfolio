@@ -78,13 +78,13 @@ export function HeroSection() {
         >
           you can find me at{" "}
           <a
-            href="https://linkedin.com/in/ianfranco"
+            href="https://www.linkedin.com/in/ian-franco-collada-pontorno/"
             className="text-white underline hover:text-gray-300 transition-colors"
           >
             LinkedIn
           </a>{" "}
           or{" "}
-          <a href="https://github.com/ianfranco" className="text-white underline hover:text-gray-300 transition-colors">
+          <a href="https://github.com/Ian9Franco" className="text-white underline hover:text-gray-300 transition-colors">
             GitHub
           </a>
         </motion.p>
