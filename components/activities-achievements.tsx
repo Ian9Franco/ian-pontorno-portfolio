@@ -66,8 +66,9 @@ export function ActivitiesAchievements() {
       </motion.h2>
 
       {/* Gradientes laterales */}
-      <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+    <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
+
+    <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
 
       <div className="flex gap-6 px-6 z-20">
         <motion.div className="flex gap-6" style={{ x: -offset }}>
