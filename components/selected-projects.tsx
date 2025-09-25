@@ -23,10 +23,11 @@ const projectIcons: Record<string, string> = {
 
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
+        {/* Título alineado a la izquierda */}
         <motion.h2
-          className="text-sm font-medium mb-12 text-white text-center"
+          className="text-sm font-medium mb-12 text-white text-left" // <- Cambiado de text-center a text-left
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -69,39 +70,38 @@ const projectIcons: Record<string, string> = {
 
               <p className="text-sm text-gray-300 leading-relaxed">{project.description}</p>
 
-                {project.technologies && (
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="text-xs text-gray-400">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {project.readme && (
-                      <a
-                        href={project.readme}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-2 flex items-center justify-center"
-                      >
-                        <Image
-                          src="/icons/readme.png" // tu ícono del README
-                          alt="Readme icon"
-                          width={20}
-                          height={20}
-                        />
-                      </a>
-                    )}
+              {project.technologies && (
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="text-xs text-gray-400">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                )}
 
-
+                  {project.readme && (
+                    <a
+                      href={project.readme}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 flex items-center justify-center"
+                    >
+                      <Image
+                        src="/icons/readme.png"
+                        alt="Readme icon"
+                        width={20}
+                        height={20}
+                      />
+                    </a>
+                  )}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       </div>
     </section>
+
   )
 }

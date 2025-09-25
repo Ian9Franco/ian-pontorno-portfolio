@@ -28,20 +28,23 @@ export function ActivitiesAchievements() {
   useEffect(() => {
     let animationFrame: number
 
-    const animate = () => {
-        if (!isHovered) {
-          setOffset((prev) => {
-            // más rápido en la ida, más lento en la vuelta
-            const speed = direction === 1 ? 30 : 0.8  
-            let next = prev + speed * direction
-            if (next >= totalWidth) setDirection(-1)
-            if (next <= 0) setDirection(1)
-            return next
-          })
-        }
+const animate = () => {
+  if (!isHovered) {
+    setOffset((prev) => {
+      // más rápido en la ida (izquierda), más lento en la vuelta (derecha)
+      const speed = direction === -1 ? 30 : 0.4  // ahora la ida es a la IZQUIERDA
+      let next = prev + speed * direction
 
-        animationFrame = requestAnimationFrame(animate)
-      }
+      if (next >= totalWidth) setDirection(-1) // ahora pasa a la IZQUIERDA
+      if (next <= 0) setDirection(1)           // ahora pasa a la DERECHA
+
+      return next
+    })
+  }
+
+  animationFrame = requestAnimationFrame(animate)
+}
+
 
 
     animationFrame = requestAnimationFrame(animate)

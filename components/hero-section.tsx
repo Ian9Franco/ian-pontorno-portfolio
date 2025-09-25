@@ -8,7 +8,7 @@ export function HeroSection() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <section className="min-h-[60vh] flex flex-col items-center justify-center px-6 pt-4">
+    <section className="min-h-[50vh] flex flex-col items-center justify-center px-6 pt-2">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           className="cursor-pointer"
@@ -71,23 +71,23 @@ export function HeroSection() {
               </motion.div>
 
              {/* Bubble de saludo por encima de todo */}
-           <motion.div
-            className="absolute -top-4 right-[-0.25rem] sm:right-[-0.75rem] z-20 w-32 h-32 pointer-events-none"
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{
-              opacity: isHovered ? 1 : 0,
-              scale: isHovered ? 1.5 : 0.8,
-              y: isHovered ? 0 : 10,
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <Image
-              src="/images/profile/hi!.png"
-              alt="Hi greeting bubble"
-              fill
-              className="object-contain"
-            />
-          </motion.div>
+              <motion.div
+                className="absolute -top-4 right-[-0.25rem] sm:right-[-0.75rem] z-20 w-32 h-32 pointer-events-none"
+                initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                animate={{
+                  opacity: isHovered ? 1 : 0,
+                  scale: isHovered ? 1.5 : 0.8,
+                  y: isHovered ? 0 : 10,
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <Image
+                  src="/images/profile/hi!.png"
+                  alt="Hi greeting bubble"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
 
 
 
@@ -122,26 +122,51 @@ export function HeroSection() {
 
           {/* Links */}
           <motion.p
-            className="text-gray-400 text-sm font-normal mt-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-gray-400 text-sm font-normal mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          you can find me at{" "}
+          <a
+            href="https://www.linkedin.com/in/ian-franco-collada-pontorno/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#0A66C2] relative transition-colors duration-300 ease-in-out"
+            style={{
+              borderBottom: '2px dotted currentColor',
+              backgroundSize: '8px 2px',
+              backgroundRepeat: 'repeat-x',
+              backgroundPosition: '0 100%',
+              transition: 'background-position 0.5s ease, color 0.3s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundPosition = '100% 100%')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundPosition = '0 100%')}
           >
-            you can find me at{" "}
-            <a
-              href="https://www.linkedin.com/in/ian-franco-collada-pontorno/"
-              className="text-white underline hover:text-gray-300 transition-colors"
-            >
-              LinkedIn
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://github.com/Ian9Franco"
-              className="text-white underline hover:text-gray-300 transition-colors"
-            >
-              GitHub
-            </a>
-          </motion.p>
+            LinkedIn
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://github.com/Ian9Franco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-400 relative transition-colors duration-300 ease-in-out"
+            style={{
+              borderBottom: '2px dotted currentColor',
+              backgroundSize: '8px 2px',
+              backgroundRepeat: 'repeat-x',
+              backgroundPosition: '0 100%',
+              transition: 'background-position 0.5s ease, color 0.3s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundPosition = '100% 100%')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundPosition = '0 100%')}
+          >
+            GitHub
+          </a>
+        </motion.p>
+
+
+
         </motion.div>
       </div>
     </section>
