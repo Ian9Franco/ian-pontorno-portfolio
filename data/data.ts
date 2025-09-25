@@ -128,7 +128,7 @@ export const activities: Activity[] =[
       "Introduction to AI concepts, machine learning fundamentals, and real-world applications.",
     category: "certificate",
     date: "2023",
-    tags: ["Artificial Intelligence", "Machine Learning", "Technology"],
+    tags: ["AI", "Machine Learning", "Technology"],
     link: "https://pub.coderhouse.com/legacy-certificates/64cd8ee3c2e270215f453cf9?lang=es",
   },
 ]
@@ -145,7 +145,7 @@ export const experiences: Experience[] = [
   {
     company: "Codere – Buenos Aires, Argentina",
     role: "IT Assistant",
-    period: "2019 – Present",
+    period: "November 2019 – Present",
     description: `Provided technical support and maintained internal applications.
       Developed automation scripts to improve efficiency and reduce repetitive tasks.
       Collaborated with teams to troubleshoot and resolve system issues.
@@ -155,7 +155,7 @@ export const experiences: Experience[] = [
   {
     company: "Illumi Digital – Remote",
     role: "Front-End Developer",
-    period: "2022 – 2025",
+    period: "May 2022 – July  2025",
     description: `Built and maintained web and mobile applications using React, Next.js, and Tailwind CSS.
       Integrated APIs and monitored application performance for fast and reliable experiences.
       Worked with designers and developers to implement responsive, user-centered interfaces.`,

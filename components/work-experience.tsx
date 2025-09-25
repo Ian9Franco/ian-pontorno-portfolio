@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { experiences } from "../data/data" // <- import desde projects.ts
+import { experiences } from "../data/data"
+import { fira } from "../lib/utils" // <- import desde projects.ts
 
 export function WorkExperience() {
   return (
@@ -43,7 +44,9 @@ export function WorkExperience() {
           <div className="flex-1">
             <div className="flex items-start justify-between mb-1">
               <h3 className="font-medium text-white text-sm">{exp.role}</h3>
-              <span className="text-xs text-gray-400 ml-4">{exp.period}</span>
+              <span className={`${fira.className} text-xs text-gray-400 ml-4`}>
+  {exp.period}
+</span>
             </div>
             <p className="text-xs text-gray-400 mb-3">{exp.company}</p>
             <p className="text-sm text-gray-300 leading-relaxed">{exp.description}</p>

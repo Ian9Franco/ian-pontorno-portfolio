@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { activities } from "../data/data"
+import { fira } from "../lib/utils"
 
 export type Activity = {
   title: string
@@ -31,12 +32,43 @@ export function ActivitiesAchievements() {
 const animate = () => {
   if (!isHovered) {
     setOffset((prev) => {
-      // más rápido en la ida (izquierda), más lento en la vuelta (derecha)
-      const speed = direction === -1 ? 30 : 0.4  // ahora la ida es a la IZQUIERDA
-      let next = prev + speed * direction
+      let next = prev
+      let speed = 0
 
-      if (next >= totalWidth) setDirection(-1) // ahora pasa a la IZQUIERDA
-      if (next <= 0) setDirection(1)           // ahora pasa a la DERECHA
+      if (direction === -1) {
+        // Movimiento a la izquierda: rápido, desacelera solo al final
+        const leftLimit = 0
+        const fastSpeed = 60
+        const minSpeed = 1
+        const slowZone = 100 // últimos 100px antes de llegar al límite
+
+        const distanceToLeft = prev - leftLimit
+
+        if (distanceToLeft > slowZone) {
+          // velocidad máxima hasta acercarse al límite
+          speed = fastSpeed
+        } else {
+          // desaceleración suave al final
+          const t = distanceToLeft / slowZone // 1 → start slowing, 0 → at limit
+          speed = minSpeed + (fastSpeed - minSpeed) * t // lineal suave
+        }
+
+        next = prev - speed
+
+        if (next <= leftLimit) {
+          next = leftLimit
+          setDirection(1) // cambiar a derecha lenta
+        }
+      } else {
+        // Movimiento a la derecha: lento y constante
+        const slowSpeed = 0.8
+        next = prev + slowSpeed
+
+        if (next >= totalWidth) {
+          next = totalWidth
+          setDirection(-1) // cambiar a izquierda rápida
+        }
+      }
 
       return next
     })
@@ -44,6 +76,8 @@ const animate = () => {
 
   animationFrame = requestAnimationFrame(animate)
 }
+
+
 
 
 
@@ -68,86 +102,86 @@ const animate = () => {
         activities & achievements
       </motion.h2>
 
-      {/* Gradientes laterales */}
-    <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
-
-    <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
+      {/* Gradientes laterales más delgados */}
+      <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
+      <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
 
       <div className="flex gap-6 px-6 z-20">
         <motion.div className="flex gap-6" style={{ x: -offset }}>
           {[...activities, ...activities, ...activities].map((activity, index) => (
             <motion.div
-                  key={`${activity.title}-${index}`}
-                  className="flex-shrink-0 w-[85vw] sm:w-80 bg-card rounded-lg p-4 sm:p-6 border border-border cursor-pointer text-[10px] sm:text-base"
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
-                  transition={{ duration: 0.2 }}
-                >         {/* Categoría y fecha */}
-                          <div className="flex items-center justify-between mb-2">
-                      <span
-                        className={`text-xs font-medium px-2 py-1 rounded-full border ${categoryColors[activity.category]}`}
-                      >
-                        {activity.category}
-                      </span>
-                      <span className="text-xs font-light text-gray-400">{activity.date}</span>
-                    </div>
+              key={`${activity.title}-${index}`}
+              className="flex-shrink-0 w-[85vw] sm:w-80 bg-[#0D0D0D] rounded-lg p-4 sm:p-6 border border-[#1A1A1A] cursor-pointer text-[10px] sm:text-base transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:border-[#333]"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {/* Categoría y fecha */}
+              <div className="flex items-center justify-between mb-2">
+                <span
+                  className={`text-xs font-medium px-2 py-1 rounded-full border ${categoryColors[activity.category]}`}
+                >
+                  {activity.category}
+                </span>
+                <span className={`${fira.className} text-xs font-light text-gray-400`}>
+                  {activity.date}
+                </span>
+              </div>
 
-           
-                    {/* Título y subtítulo */}
-                    <h3 className="font-medium text-white mb-1 text-sm sm:text-base break-words">
-                      {activity.title}
-                    </h3>
-                    <p className="text-gray-300 mb-3 text-xs sm:text-sm break-words">{activity.subtitle}</p>
+              {/* Título y subtítulo */}
+              <h3 className="font-medium text-white mb-1 text-sm sm:text-base break-words">
+                {activity.title}
+              </h3>
+              <p className={`${fira.className} text-gray-300 mb-3 text-xs sm:text-sm break-words`}>
+                {activity.subtitle}
+              </p>
 
-                    {/* Descripción dividida en párrafos */}
-                    <div className="text-gray-400 leading-relaxed mb-4 text-xs sm:text-sm">
-                      {activity.description.split(/\. |\n/).map((line, i) => (
-                        <p key={i} className="mb-2 break-words">
-                          {line.trim()}.
-                        </p>
-                      ))}
-                    </div>
+              {/* Descripción */}
+              <div className={`${fira.className} text-gray-400 leading-relaxed mb-4 text-[12px] sm:text-[13px]`}>
+                {activity.description.split(/\. |\n/).map((line, i) => (
+                  <p key={i} className="mb-2 break-words">
+                    {line.trim()}.
+                  </p>
+                ))}
+              </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {activity.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs text-muted-foreground px-2 py-1 bg-background rounded break-words"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {activity.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`${fira.className} text-[11px] text-muted-foreground px-2 py-1 bg-background rounded break-words`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
 
-                {/* Accesos a certificados */}
-                {activity.category === "certificate" && (
-                  <div className="flex gap-4">
-                    {activity.link && (
-                      <a
-                        href={activity.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-blue-400 hover:underline break-words"
-                      >
-                        View Online
-                      </a>
-                    )}
-                    <button
-                      onClick={() =>
-                        setSelectedImage(
-                          `/certificates/${activity.title.toLowerCase().replace(/\s+/g, "-")}-certificate.png`
-                        )
-                      }
-                      className="text-xs text-green-400 hover:underline break-words"
+              {/* Accesos a certificados */}
+              {activity.category === "certificate" && (
+                <div className="flex gap-4">
+                  {activity.link && (
+                    <a
+                      href={activity.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-blue-400 hover:underline break-words"
                     >
-                      Open
-                    </button>
-                  </div>
-                )}
-              </motion.div>
-
+                      View Online
+                    </a>
+                  )}
+                  <button
+                    onClick={() =>
+                      setSelectedImage(
+                        `/certificates/${activity.title.toLowerCase().replace(/\s+/g, "-")}-certificate.png`
+                      )
+                    }
+                    className="text-xs text-green-400 hover:underline break-words"
+                  >
+                    Open
+                  </button>
+                </div>
+              )}
+            </motion.div>
           ))}
         </motion.div>
       </div>
