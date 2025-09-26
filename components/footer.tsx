@@ -29,7 +29,7 @@ const AnimatedHeart = () => {
 export function Footer() {
   return (
     <footer className="py-10 px-6">
-      <div className="max-w-2xl mx-auto pl-0">
+      <div className="max-w-2xl mx-auto">
         {/* Título */}
         <motion.h2
           className="text-sm font-medium mb-6 text-white text-left"
