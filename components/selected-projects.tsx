@@ -19,6 +19,7 @@ const projectIcons: Record<string, string> = {
   conversorio: "/icons/dinero.png",
   calculatorio: "/icons/calcular.png",
   calendarious: "/icons/calendario.png",
+  "produ-estudio": "/icons/produ-estudio.png",
 }
 
 

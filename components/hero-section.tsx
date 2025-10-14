@@ -122,9 +122,13 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
-              I'm a Software Engineer with 3+ years of experience building modern web applications using Python, JavaScript,
-              Node.js, HTML/CSS, and databases like MongoDB & SQL. Skilled in Git, SAP/ABAP, and integrating cloud
-              services.
+              Results-driven Software Engineer with 3+ years of experience in backend and full
+              stack development, and a strong understanding of cloud infrastructure and DevOps
+              practices. Skilled in building and optimizing scalable backend systems using Python
+              (FastAPI, Flask) and integrating them with AWS services, CI/CD pipelines, and
+              monitoring tools.
+              Passionate about automation, clean architecture, and delivering high-performance
+              solutions across development and deployment stages
             </p>
 
             <p className="text-gray-300 text-sm leading-relaxed">

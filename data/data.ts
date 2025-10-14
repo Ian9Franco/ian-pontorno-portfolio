@@ -9,6 +9,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+   {
+    id: "produ-estudio",
+    name: "Produ Estudio",
+    description: "Corporate website for Produ Estudio, a specialist in high-quality garments for streetwear and basic brands. Showcases design, production, and packaging services, highlighting the company's expertise and value proposition.",
+    url: "https://produ-estudio.vercel.app/",
+    readme: "https://github.com/Ian9Franco/Produ-Estudio#",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+  },
   {
     id: "tormentica",
     name: "Tormentica",
@@ -41,7 +49,9 @@ export const projects: Project[] = [
     readme: "https://github.com/Ian9Franco/Calendarious#readme",
     technologies: ["React", "Tailwind CSS", "Node.js", "Next.js", "Git"],
   },
-]
+ 
+];
+
 export type Activity = {
   title: string
   subtitle: string
@@ -144,24 +154,27 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     company: "Codere – Buenos Aires, Argentina",
-    role: "IT Assistant",
-    period: "November 2019 – Present",
-    description: `Provided technical support and maintained internal applications.
-      Developed automation scripts to improve efficiency and reduce repetitive tasks.
-      Collaborated with teams to troubleshoot and resolve system issues.
-      Assisted in database maintenance and queries to support application performance.`,
+    role: "Technical Support & Systems Analyst",
+    period: "2019 – Present",
+    description: `Delivered technical support and system maintenance for internal users, ensuring business continuity across multiple locations.
+    Assisted in automating routine administrative tasks through custom software tools and scripts.
+    Provided hardware, network, and application troubleshooting, collaborating with IT teams to improve performance and reliability.
+    Managed data entry, system updates, and user account configurations, applying software knowledge to enhance daily operations.
+    Supported deployment and monitoring of in-house applications, contributing to continuous improvement initiatives.`,
     logo: "/images/experience/codere.png",
   },
   {
     company: "Illumi Digital – Remote",
     role: "Front-End Developer",
-    period: "May 2022 – July  2025",
-    description: `Built and maintained web and mobile applications using React, Next.js, and Tailwind CSS.
-      Integrated APIs and monitored application performance for fast and reliable experiences.
-      Worked with designers and developers to implement responsive, user-centered interfaces.`,
+    period: "2021 – 2023",
+    description: `Designed, developed, and maintained custom websites for marketing clients, managing both frontend development and UI/UX design.
+    Led the full web lifecycle: from planning and prototyping to deployment and post-launch maintenance.
+    Administered hosting environments, DNS configurations, and domain setups to ensure secure and reliable performance.
+    Collaborated closely with designers and clients to translate business requirements into optimized, responsive, and SEO-friendly websites.`,
     logo: "/images/experience/illumi.png",
   },
-]
+];
+
 
 export const contactLinks = {
   github: "https://github.com/Ian9Franco",
