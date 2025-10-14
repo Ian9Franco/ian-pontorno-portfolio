@@ -166,7 +166,7 @@ export const experiences: Experience[] = [
   {
     company: "Illumi Digital – Remote",
     role: "Front-End Developer",
-    period: "2021 – 2023",
+    period: "2021 – 2025",
     description: `Designed, developed, and maintained custom websites for marketing clients, managing both frontend development and UI/UX design.
     Led the full web lifecycle: from planning and prototyping to deployment and post-launch maintenance.
     Administered hosting environments, DNS configurations, and domain setups to ensure secure and reliable performance.
