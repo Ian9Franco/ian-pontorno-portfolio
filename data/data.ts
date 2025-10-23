@@ -154,23 +154,16 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     company: "Codere – Buenos Aires, Argentina",
-    role: "Technical Support & Systems Analyst",
+    role: "IT Operations & Automation Specialist",
     period: "2019 – Present",
-    description: `Delivered technical support and system maintenance for internal users, ensuring business continuity across multiple locations.
-    Assisted in automating routine administrative tasks through custom software tools and scripts.
-    Provided hardware, network, and application troubleshooting, collaborating with IT teams to improve performance and reliability.
-    Managed data entry, system updates, and user account configurations, applying software knowledge to enhance daily operations.
-    Supported deployment and monitoring of in-house applications, contributing to continuous improvement initiatives.`,
+    description: `I designed and automated internal business applications using Python and modern web technologies, ensuring alignment with SAP-style workflows. My work involved integrating REST APIs and database systems to enable dynamic reporting, similar to SAP Fiori use cases. I supported AWS and Docker environments for enterprise application deployment, and built analytical dashboards with Power BI and Excel comparable to SAP Analytical apps. Additionally, I contributed to system documentation, process automation, and IT service management through tools like Jira and ServiceNow.`,
     logo: "/images/experience/codere.png",
   },
   {
-    company: "Illumi Digital – Remote",
+    company: "Ilummi – Remote",
     role: "Front-End Developer",
     period: "2021 – 2025",
-    description: `Designed, developed, and maintained custom websites for marketing clients, managing both frontend development and UI/UX design.
-    Led the full web lifecycle: from planning and prototyping to deployment and post-launch maintenance.
-    Administered hosting environments, DNS configurations, and domain setups to ensure secure and reliable performance.
-    Collaborated closely with designers and clients to translate business requirements into optimized, responsive, and SEO-friendly websites.`,
+    description: `I developed responsive and scalable enterprise web applications using React and TypeScript, applying UI principles that are transferable to SAP UI5 and Fiori. I created advanced data visualizations and dashboards using Recharts and D3.js, with a focus on interactive and insightful user interfaces. My work included integrating APIs and databases such as MySQL, Firebase, and Supabase, mirroring SAP OData integration practices. I also implemented and maintained CI/CD pipelines through GitHub Actions and AWS, aligning with SAP BTP DevOps standards. Throughout these projects, I collaborated in Agile teams, emphasizing UI performance, accessibility, and modular architecture.`,
     logo: "/images/experience/illumi.png",
   },
 ];
