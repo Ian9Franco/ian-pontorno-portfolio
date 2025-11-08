@@ -11,24 +11,36 @@ export function SelectedProjects() {
     conversorio: "#FFC300",
     calculatorio: "#28A745",
     calendarious: "#6C63FF",
+    "produ-estudio": "#FFFFFF", // Fondo blanco
+    netherious: "#FF0000",    // Fondo rojo
   }
 
   // Logos coherentes con cada proyecto (pueden ser SVG o PNG)
-const projectIcons: Record<string, string> = {
-  tormentica: "/icons/weather-forecast.png",
-  conversorio: "/icons/dinero.png",
-  calculatorio: "/icons/calcular.png",
-  calendarious: "/icons/calendario.png",
-  "produ-estudio": "/icons/produ-estudio.png",
-}
+  const projectIcons: Record<string, string> = {
+    tormentica: "/images/projects/weather-forecast.png",
+    conversorio: "/images/projects/dinero.png",
+    calculatorio: "/images/projects/calcular.png",
+    calendarious: "/images/projects/calendario.png",
+    "produ-estudio": "/images/projects/produ-estudio.png",
+    netherious: "/images/projects/netherious.png",
+  }
 
+  // Tamaño del logo (Netherious más grande)
+  const logoSizes: Record<string, number> = {
+    netherious:50,
+    "produ-estudio": 24,
+    tormentica: 24,
+    conversorio: 24,
+    calculatorio: 24,
+    calendarious: 24,
+  }
 
   return (
     <section className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
         {/* Título alineado a la izquierda */}
         <motion.h2
-          className="text-sm font-medium mb-12 text-white text-left" // <- Cambiado de text-center a text-left
+          className="text-sm font-medium mb-12 text-white text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -55,8 +67,8 @@ const projectIcons: Record<string, string> = {
                   <Image
                     src={projectIcons[project.id]}
                     alt={`${project.name} icon`}
-                    width={24}
-                    height={24}
+                    width={logoSizes[project.id]}
+                    height={logoSizes[project.id]}
                   />
                 </div>
                 <a
@@ -103,6 +115,5 @@ const projectIcons: Record<string, string> = {
         </div>
       </div>
     </section>
-
   )
 }

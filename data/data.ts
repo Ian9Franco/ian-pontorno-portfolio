@@ -18,6 +18,14 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
   },
   {
+    id: "netherious",
+    name: "Netherious",
+    description: "Private Minecraft server modpack for Netherious. Download Forge 1.20.1, modpacks, texture packs, and shader recommendations.",
+    url: "https://netherious-ten.vercel.app/",
+    readme: "https://github.com/Ian9Franco/netherious",
+    technologies: ["Next.js 14 ", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React", "Cloudflare r2", " Radix UI"],
+  },
+  {
     id: "tormentica",
     name: "Tormentica",
     description: "Check the weather conditions based on your location before heading out, with a clean and interactive interface.",
@@ -32,14 +40,6 @@ export const projects: Project[] = [
     url: "https://conversorio.vercel.app/",
     readme: "https://github.com/Ian9Franco/conversorio#readme",
     technologies: ["React", "JavaScript", "JS"],
-  },
-  {
-    id: "calculatorio",
-    name: "Calculatorio",
-    description: "A versatile calculator supporting basic operations and a scientific mode for advanced calculations.",
-    url: "https://ian9franco.github.io/Calculadora/",
-    readme: "https://github.com/Ian9Franco/Calculadora#readme",
-    technologies: ["React", "JavaScript"],
   },
   {
     id: "calendarious",
