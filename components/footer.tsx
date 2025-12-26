@@ -1,15 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { contactLinks } from "@/data/data"
+import { useLanguage } from "./language-context"
+import { dictionaries, contactLinks } from "@/data/dictionaries"
 
-// Componente del corazón animado
 const AnimatedHeart = () => {
   return (
     <motion.span
-      className="inline-block text-muted-foreground mx-1" // mismo tono que el texto
+      className="inline-block text-muted-foreground mx-1"
       animate={{
-        scale: [1, 1.2, 1], // efecto de "latido"
+        scale: [1, 1.2, 1],
       }}
       transition={{
         duration: 1,
@@ -27,10 +27,13 @@ const AnimatedHeart = () => {
 }
 
 export function Footer() {
+  const { language } = useLanguage()
+  const t = dictionaries[language]
+
   return (
     <footer className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
-        {/* Título */}
+        {/* Title */}
         <motion.h2
           className="text-sm font-medium mb-6 text-white text-left"
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +41,10 @@ export function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          elsewhere
+          {t.footer.title}
         </motion.h2>
 
-        {/* Links de contacto */}
+        {/* Links */}
         <motion.div
           className="flex flex-wrap gap-8 text-sm mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -73,18 +76,19 @@ export function Footer() {
           </a>
         </motion.div>
 
-        {/* Créditos con más separación respecto a los links */}
+        {/* Credits */}
         <motion.p
-          className="text-xs text-muted-foreground text-left mt-10" // mt-10 = más separación
+          className="text-xs text-muted-foreground text-left mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          © 2025 · Created with <AnimatedHeart /> by{" "}
+          © {new Date().getFullYear()} · Created with <AnimatedHeart /> by{" "}
           <span className="hover:text-foreground transition-colors duration-300 ease-in-out">
             Ian Franco Collada Pontorno
           </span>
+          . {t.footer.rights}
         </motion.p>
       </div>
     </footer>

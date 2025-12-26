@@ -1,21 +1,26 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { projects } from "@/data/data"
 import Image from "next/image"
+import { useLanguage } from "./language-context"
+import { dictionaries } from "@/data/dictionaries"
 
 export function SelectedProjects() {
-  // Colores de fondo para cada proyecto
+  const { language } = useLanguage()
+  const t = dictionaries[language]
+  const projects = t.projects
+
+  // Note: These colors/icons/sizes maps are visual data, not text content, so they can remain hardcoded or moved to a config.
+  // We keep them here for now as they match IDs.
   const projectColors: Record<string, string> = {
     tormentica: "#3AB0FF",
     conversorio: "#FFC300",
     calculatorio: "#28A745",
     calendarious: "#6C63FF",
-    "produ-estudio": "#FFFFFF", // Fondo blanco
-    netherious: "#FF0000",    // Fondo rojo
+    "produ-estudio": "#FFFFFF",
+    netherious: "#FF0000",
   }
 
-  // Logos coherentes con cada proyecto (pueden ser SVG o PNG)
   const projectIcons: Record<string, string> = {
     tormentica: "/images/projects/weather-forecast.png",
     conversorio: "/images/projects/dinero.png",
@@ -25,9 +30,8 @@ export function SelectedProjects() {
     netherious: "/images/projects/netherious.png",
   }
 
-  // Tamaño del logo (Netherious más grande)
   const logoSizes: Record<string, number> = {
-    netherious:50,
+    netherious: 50,
     "produ-estudio": 24,
     tormentica: 24,
     conversorio: 24,
@@ -38,7 +42,7 @@ export function SelectedProjects() {
   return (
     <section className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
-        {/* Título alineado a la izquierda */}
+        {/* Title aligned left */}
         <motion.h2
           className="text-sm font-medium mb-12 text-white text-left"
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +50,7 @@ export function SelectedProjects() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          selected projects
+          {t.selectedProjects.title}
         </motion.h2>
 
         <div className="space-y-8">
@@ -65,10 +69,10 @@ export function SelectedProjects() {
                   style={{ backgroundColor: projectColors[project.id] || "#888" }}
                 >
                   <Image
-                    src={projectIcons[project.id]}
+                    src={projectIcons[project.id] || "/placeholder-logo.png"}
                     alt={`${project.name} icon`}
-                    width={logoSizes[project.id]}
-                    height={logoSizes[project.id]}
+                    width={logoSizes[project.id] || 24}
+                    height={logoSizes[project.id] || 24}
                   />
                 </div>
                 <a

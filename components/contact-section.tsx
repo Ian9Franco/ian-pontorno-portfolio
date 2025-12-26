@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { contactLinks } from "@/data/data"
+import { contactLinks } from "@/data/dictionaries"
 import { Github, Linkedin, Mail } from "lucide-react"
 
 export function ContactSection() {

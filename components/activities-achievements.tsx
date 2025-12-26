@@ -2,20 +2,15 @@
 
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
-import { activities } from "../data/data"
+import { useLanguage } from "./language-context"
+import { dictionaries, Activity } from "@/data/dictionaries"
 import { fira } from "../lib/utils"
 
-export type Activity = {
-  title: string
-  subtitle: string
-  description: string
-  category: "certificate" | "career"
-  date: string
-  tags: string[]
-  link?: string
-}
-
 export function ActivitiesAchievements() {
+  const { language } = useLanguage()
+  const t = dictionaries[language]
+  const activities = t.activitiesList
+
   const [offset, setOffset] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const [direction, setDirection] = useState(1)
@@ -24,66 +19,61 @@ export function ActivitiesAchievements() {
 
   const cardWidth = 320
   const gap = 24
+  // We utilize the dictionary to get the length.
   const totalWidth = (cardWidth + gap) * activities.length
 
   useEffect(() => {
     let animationFrame: number
 
-const animate = () => {
-  if (!isHovered) {
-    setOffset((prev) => {
-      let next = prev
-      let speed = 0
+    const animate = () => {
+      if (!isHovered) {
+        setOffset((prev) => {
+          let next = prev
+          let speed = 0
 
-      if (direction === -1) {
-        // Movimiento a la izquierda: rápido, desacelera solo al final
-        const leftLimit = 0
-        const fastSpeed = 60
-        const minSpeed = 1
-        const slowZone = 100 // últimos 100px antes de llegar al límite
+          if (direction === -1) {
+            // Movement left
+            const leftLimit = 0
+            const fastSpeed = 60
+            const minSpeed = 1
+            const slowZone = 100
 
-        const distanceToLeft = prev - leftLimit
+            const distanceToLeft = prev - leftLimit
 
-        if (distanceToLeft > slowZone) {
-          // velocidad máxima hasta acercarse al límite
-          speed = fastSpeed
-        } else {
-          // desaceleración suave al final
-          const t = distanceToLeft / slowZone // 1 → start slowing, 0 → at limit
-          speed = minSpeed + (fastSpeed - minSpeed) * t // lineal suave
-        }
+            if (distanceToLeft > slowZone) {
+              speed = fastSpeed
+            } else {
+              const t = distanceToLeft / slowZone
+              speed = minSpeed + (fastSpeed - minSpeed) * t
+            }
 
-        next = prev - speed
+            next = prev - speed
 
-        if (next <= leftLimit) {
-          next = leftLimit
-          setDirection(1) // cambiar a derecha lenta
-        }
-      } else {
-        // Movimiento a la derecha: lento y constante
-        const slowSpeed = 0.8
-        next = prev + slowSpeed
+            if (next <= leftLimit) {
+              next = leftLimit
+              setDirection(1)
+            }
+          } else {
+            // Movement right
+            const slowSpeed = 0.8
+            next = prev + slowSpeed
 
-        if (next >= totalWidth) {
-          next = totalWidth
-          setDirection(-1) // cambiar a izquierda rápida
-        }
+            if (next >= totalWidth) {
+              next = totalWidth
+              setDirection(-1)
+            }
+          }
+
+          return next
+        })
       }
 
-      return next
-    })
-  }
-
-  animationFrame = requestAnimationFrame(animate)
-}
-
-
-
-
+      animationFrame = requestAnimationFrame(animate)
+    }
 
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)
-  }, [isHovered, totalWidth, direction])
+  }, [isHovered, totalWidth, direction]) // Depend on totalWidth which depends on activities
 
   const categoryColors: Record<Activity["category"], string> = {
     certificate: "bg-violet-500/20 text-violet-300 border-violet-500/30",
@@ -99,15 +89,16 @@ const animate = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        activities & achievements
+        {t.activities.title}
       </motion.h2>
 
-      {/* Gradientes laterales más delgados */}
+      {/* Side gradients */}
       <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
       <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
 
       <div className="flex gap-6 px-6 z-20">
         <motion.div className="flex gap-6" style={{ x: -offset }}>
+          {/* Triplicate for loop effect */}
           {[...activities, ...activities, ...activities].map((activity, index) => (
             <motion.div
               key={`${activity.title}-${index}`}
@@ -115,7 +106,7 @@ const animate = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Categoría y fecha */}
+              {/* Category and date */}
               <div className="flex items-center justify-between mb-2">
                 <span
                   className={`text-xs font-medium px-2 py-1 rounded-full border ${categoryColors[activity.category]}`}
@@ -127,7 +118,7 @@ const animate = () => {
                 </span>
               </div>
 
-              {/* Título y subtítulo */}
+              {/* Title and subtitle */}
               <h3 className="font-medium text-white mb-1 text-sm sm:text-base break-words">
                 {activity.title}
               </h3>
@@ -135,12 +126,14 @@ const animate = () => {
                 {activity.subtitle}
               </p>
 
-              {/* Descripción */}
+              {/* Description */}
               <div className={`${fira.className} text-gray-400 leading-relaxed mb-4 text-[12px] sm:text-[13px]`}>
                 {activity.description.split(/\. |\n/).map((line, i) => (
-                  <p key={i} className="mb-2 break-words">
-                    {line.trim()}.
-                  </p>
+                  line.length > 0 ? (
+                    <p key={i} className="mb-2 break-words">
+                      {line.trim()}.
+                    </p>
+                  ) : null
                 ))}
               </div>
 
@@ -156,7 +149,7 @@ const animate = () => {
                 ))}
               </div>
 
-              {/* Accesos a certificados */}
+              {/* Certificate links */}
               {activity.category === "certificate" && (
                 <div className="flex gap-4">
                   {activity.link && (
@@ -169,6 +162,7 @@ const animate = () => {
                       View Online
                     </a>
                   )}
+                  {/* Note: Logic for opening local certificate image is preserved but requires image files to exist */}
                   <button
                     onClick={() =>
                       setSelectedImage(
@@ -186,7 +180,7 @@ const animate = () => {
         </motion.div>
       </div>
 
-      {/* Modal para imagen */}
+      {/* Modal for image */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer"

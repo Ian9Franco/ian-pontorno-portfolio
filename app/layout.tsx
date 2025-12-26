@@ -1,9 +1,12 @@
-import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Fira_Code } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { LanguageProvider } from "@/components/language-context"
+import { LanguageToggle } from "@/components/language-toggle"
+import { CustomCursor } from "@/components/custom-cursor"
 
 // Inter → global (todo el sitio)
 const inter = Inter({
@@ -74,8 +77,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`font-sans ${inter.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <LanguageProvider>
+          <LanguageToggle />
+          <div className="hidden md:block">
+            <CustomCursor />
+          </div>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   )

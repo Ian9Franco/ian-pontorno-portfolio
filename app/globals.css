@@ -143,3 +143,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (min-width: 769px) {
+  body, a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
