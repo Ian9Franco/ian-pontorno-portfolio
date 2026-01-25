@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useLanguage } from "./language-context"
 import { dictionaries } from "@/data/dictionaries"
+import { Tag } from "./tag"
 import { fira } from "../lib/utils"
 
 export function WorkExperience() {
@@ -48,24 +49,19 @@ export function WorkExperience() {
 
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
-                  <h3 className="font-medium text-white text-sm">{exp.role}</h3>
+                  <h3 className="font-medium text-white text-sm text-shadow-sm">{exp.role}</h3>
                   <span className={`${fira.className} text-xs text-gray-400 sm:ml-4`}>
                     {exp.period}
                   </span>
                 </div>
                 <p className="text-xs text-gray-400 mb-3">{exp.company}</p>
-                <p className="text-sm text-gray-300 leading-relaxed mb-4">{exp.description}</p>
+                <p className="text-sm text-gray-300 leading-relaxed mb-4 text-shadow-sm">{exp.description}</p>
 
                 {/* Skills tags */}
                 {exp.skills && (
                   <div className="flex flex-wrap gap-2">
                     {exp.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className={`${fira.className} text-[10px] text-gray-400 px-2 py-0.5 bg-white/5 rounded border border-white/10`}
-                      >
-                        {skill}
-                      </span>
+                      <Tag key={skill}>{skill}</Tag>
                     ))}
                   </div>
                 )}

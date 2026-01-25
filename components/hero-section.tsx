@@ -110,11 +110,11 @@ export function HeroSection() {
 
             {/* Text info */}
             <div className="flex-1 pt-12 pl-4">
-              <h1 className="text-xl font-bold text-white mb-1">
+              <h1 className="text-xl font-bold text-white mb-1 text-shadow-md">
                 {t.greeting}
               </h1>
 
-              <p className="text-gray-400 text-sm font-medium">
+              <p className="text-gray-400 text-sm font-medium text-shadow-sm">
                 {t.role}
               </p>
 
@@ -147,7 +147,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {t.biography.map((paragraph, index) => (
-              <p key={index} className="text-gray-300 text-sm leading-relaxed">
+              <p key={index} className="text-gray-300 text-sm leading-relaxed text-shadow-sm">
                 {paragraph}
               </p>
             ))}

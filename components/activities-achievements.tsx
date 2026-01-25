@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { useLanguage } from "./language-context"
 import { dictionaries, Activity } from "@/data/dictionaries"
 import { fira } from "../lib/utils"
+import { Tag } from "./tag"
 
 export function ActivitiesAchievements() {
   const { language } = useLanguage()
@@ -127,11 +128,11 @@ export function ActivitiesAchievements() {
               </p>
 
               {/* Description */}
-              <div className={`${fira.className} text-gray-400 leading-relaxed mb-4 text-[12px] sm:text-[13px]`}>
-                {activity.description.split(/\. |\n/).map((line, i) => (
+              <div className={`${fira.className} text-gray-400 font-light leading-relaxed mb-4 text-[12px] sm:text-[13px] drop-shadow-sm`}>
+                {activity.description.split(/\n/).map((line, i) => (
                   line.length > 0 ? (
                     <p key={i} className="mb-2 break-words">
-                      {line.trim()}.
+                      {line.trim()}{line.trim().endsWith('.') ? '' : '.'}
                     </p>
                   ) : null
                 ))}
@@ -140,12 +141,9 @@ export function ActivitiesAchievements() {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {activity.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`${fira.className} text-[11px] text-muted-foreground px-2 py-1 bg-background rounded break-words`}
-                  >
+                  <Tag key={tag} className="text-[11px] px-2 py-1">
                     {tag}
-                  </span>
+                  </Tag>
                 ))}
               </div>
 

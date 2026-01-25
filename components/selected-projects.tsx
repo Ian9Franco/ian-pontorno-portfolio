@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useLanguage } from "./language-context"
 import { dictionaries } from "@/data/dictionaries"
+import { Tag } from "./tag"
+import { fira } from "../lib/utils"
 
 export function SelectedProjects() {
   const { language } = useLanguage()
@@ -79,21 +81,21 @@ export function SelectedProjects() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-white text-base hover:text-gray-300 transition-colors"
+                  className="font-medium text-white text-base hover:text-gray-300 transition-colors text-shadow-sm"
                 >
                   {project.name}
                 </a>
               </div>
 
-              <p className="text-sm text-gray-300 leading-relaxed">{project.description}</p>
+              <p className="text-sm text-gray-300 leading-relaxed text-shadow-sm">{project.description}</p>
 
               {project.technologies && (
                 <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs text-gray-400">
+                      <Tag key={tech}>
                         {tech}
-                      </span>
+                      </Tag>
                     ))}
                   </div>
 

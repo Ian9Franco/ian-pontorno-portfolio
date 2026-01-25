@@ -6,7 +6,6 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-context"
 import { LanguageToggle } from "@/components/language-toggle"
-import { CustomCursor } from "@/components/custom-cursor"
 
 // Inter → global (todo el sitio)
 const inter = Inter({
@@ -79,9 +78,6 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable} antialiased`}>
         <LanguageProvider>
           <LanguageToggle />
-          <div className="hidden md:block">
-            <CustomCursor />
-          </div>
           <Suspense fallback={null}>{children}</Suspense>
           <Analytics />
         </LanguageProvider>
