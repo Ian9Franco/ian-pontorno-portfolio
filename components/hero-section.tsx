@@ -119,7 +119,7 @@ export function HeroSection() {
               </p>
 
               <div className="mt-0.5 text-xs text-gray-500">
-                <span className="mr-1">en</span>
+                <span className="mr-1">{t.companyPrefix}</span>
                 <a
                   href="https://www.linkedin.com/company/fanger-design/about/"
                   target="_blank"

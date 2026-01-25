@@ -22,51 +22,87 @@ const fira = Fira_Code({
 })
 
 export const metadata: Metadata = {
-  title: "Ian Franco Collada Pontorno - Software Developer Portfolio",
+  title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
   description:
-    "Software Developer specialized in Frontend, Backend, Fullstack, SAP, and ABAP. Passionate about building scalable and modern web applications.",
-  keywords: [
-    "Software Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Fullstack Developer",
-    "SAP Consultant",
-    "ABAP",
-    "Portfolio",
-    "React",
-    "Next.js",
-    "Web Development",
-    "Ian Franco Collada Pontorno",
-  ],
+    "Growth Engineer and Software Developer building data-driven marketing systems. I combine paid media, automation, analytics, and custom web tools to scale acquisition, optimize performance, and turn marketing into engineering.",
+keywords: [
+  // Core positioning
+  "Growth Engineer",
+  "Marketing Engineer",
+  "Marketing Technologist",
+  "Performance Marketing",
+  "Marketing Automation",
+  "Growth Systems",
+
+  // Paid media
+  "Paid Media",
+  "Meta Ads",
+  "Google Ads",
+  "Conversion Funnels",
+  "Analytics",
+  "ROAS Optimization",
+
+  // Development
+  "Software Developer",
+  "Full Stack Developer",
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Python",
+  "APIs",
+  "Automation",
+  "Dashboards",
+
+  // Data
+  "Data Analysis",
+  "Data Engineering",
+  "ETL",
+  "Tracking",
+  "Process Optimization",
+
+  // Tools / platforms (low priority)
+  "WordPress",
+  "CMS Development",
+  "SAP",
+  "ERP Systems",
+
+  // Personal
+  "Ian Franco Collada Pontorno",
+  "Portfolio",
+],
+
   authors: [{ name: "Ian Franco Collada Pontorno" }],
   generator: "Next.js",
+
   openGraph: {
-    title: "Ian Franco Collada Pontorno - Software Developer Portfolio",
+    title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
     description:
-      "Software Developer specialized in Frontend, Backend, Fullstack, SAP, and ABAP. Passionate about building scalable and modern web applications.",
+      "I build systems that grow businesses. Paid media, automation, analytics, and custom software to scale marketing with engineering.",
     url: "https://ian-pontorno-portfolio.vercel.app/",
-    siteName: "Ian Franco Collada Pontorno Portfolio",
+    siteName: "Ian Pontorno Portfolio",
     images: [
       {
         url: "/images/profile/hoverRect.png",
         width: 1200,
         height: 630,
-        alt: "Ian Franco Collada Pontorno Portfolio Preview",
+        alt: "Growth Engineer & Marketing Technologist Portfolio",
       },
     ],
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Ian Franco Collada Pontorno - Software Developer Portfolio",
+    title: "Growth Engineer & Marketing Technologist",
     description:
-      "Software Developer specialized in Frontend, Backend, Fullstack, SAP, and ABAP. Passionate about building scalable and modern web applications.",
-    site: "https://www.linkedin.com/in/ian-franco-collada-pontorno-42675b225/",
+      "Software + Marketing + Automation. I turn growth into systems and code.",
     images: ["/images/profile/hoverRect.png"],
   },
+
   metadataBase: new URL("https://ian-pontorno-portfolio.vercel.app/"),
-}
+};
+
 
 export default function RootLayout({
   children,

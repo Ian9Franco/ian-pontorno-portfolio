@@ -38,6 +38,7 @@ export type Dictionary = {
         }
         findMe: string
         or: string
+        companyPrefix: string
     }
     workExperience: {
         title: string
@@ -59,8 +60,8 @@ export type Dictionary = {
 
 const en: Dictionary = {
     hero: {
-        greeting: "Ian Franco Pontorno",
-        role: "Performance & Digital Operations Specialist",
+        greeting: "Ian Pontorno",
+        role: "Growth Engineer",
         biography: [
             "Performance and digital operations specialist with a strong technical background and a data-driven approach. I work with Meta and Google Ads to analyze campaign performance, optimize results based on business objectives, and translate data into clear, actionable improvements.",
             "I’m also responsible for day-to-day digital operations, including website updates, content and design improvements, product management based on stock, and internal data organization to keep systems consistent and reliable.",
@@ -71,7 +72,8 @@ const en: Dictionary = {
             github: "GitHub"
         },
         findMe: "you can find me at",
-        or: "or"
+        or: "or",
+        companyPrefix: "in"
     },
     workExperience: {
         title: "Work Experience"
@@ -203,11 +205,11 @@ const en: Dictionary = {
     experiences: [
         {
             company: "Fanger Design - Buenos Aires, Argentina",
-            role: "Performance & Digital Operations Specialist",
+            role: "Marketing Engineer (Paid Media & Automation)",
             period: "Present",
             description: "Detailed analysis and optimization of Meta Ads and Google Ads campaigns according to each client's objectives. Creation, updating, and adjustment of campaigns to improve performance and results. Management of daily digital operations including website updates and design improvements. Organization and maintenance of internal database information. Development of scripts and small automations for process optimization.",
             logo: "/images/experience/Fanger.png",
-            skills: ["Digital Marketing", "WordPress", "Google Ads", "Graphic Design", "Programming", "Python", "Databases", "Next.js", "Responsive Web Design", "Process Automation"]
+            skills: ["Digital Marketing", "WordPress", "Google Ads","Meta Ads", "Graphic Design", "Programming", "Python", "Databases", "Next.js", "Responsive Web Design", "Process Automation"]
         },
         {
             company: "Codere – Buenos Aires, Argentina",
@@ -230,8 +232,8 @@ const en: Dictionary = {
 
 const es: Dictionary = {
     hero: {
-        greeting: "Ian Franco Pontorno",
-        role: "Especialista en Performance & Operaciones Digitales",
+        greeting: "Ian Pontorno",
+        role: "Ingeniero de Growth",
         biography: [
             "Especialista en performance y operaciones digitales con una sólida formación técnica y un enfoque basado en datos. Trabajo con Meta y Google Ads para analizar el rendimiento de las campañas, optimizar resultados según objetivos comerciales y traducir datos en mejoras claras y accionables.",
             "También soy responsable de las operaciones digitales diarias, incluyendo actualizaciones de sitios web, mejoras de diseño y contenido, gestión de productos según stock, y organización de datos internos para mantener la consistencia y confiabilidad de los sistemas.",
@@ -242,7 +244,8 @@ const es: Dictionary = {
             github: "GitHub"
         },
         findMe: "puedes encontrarme en",
-        or: "o"
+        or: "o",
+        companyPrefix: "en"
     },
     workExperience: {
         title: "Experiencia Laboral"
@@ -374,11 +377,11 @@ const es: Dictionary = {
     experiences: [
         {
             company: "Fanger Design - Autónomo",
-            role: "Performance & Digital Operations Specialist",
+            role: "Ingeniero de Marketing (Paid Media & Automatización)",
             period: "Presente",
             description: "Análisis y optimización de campañas en Meta Ads y Google Ads según objetivos de cada cliente, evaluando métricas de rendimiento y detectando oportunidades de mejora. Creación, actualización y ajuste de campañas para mejorar performance y resultados. Gestión de la operación digital diaria: actualizaciones de sitios web, mejoras de diseño y contenido, carga y baja de productos según stock y requerimientos del cliente. Organización y mantenimiento de la información en la base de datos interna para asegurar consistencia y orden operativo. Desarrollo de scripts y pequeñas automatizaciones que optimizan procesos, reducen trabajo manual y mejoran la eficiencia general.",
             logo: "/images/experience/Fanger.png",
-            skills: ["Marketing Digital", "WordPress", "Google Ads", "Diseño Gráfico", "Programación", "Python", "Bases de Datos", "Next.js", "Diseño Web Adaptable", "Automatización de Procesos"]
+            skills: ["Marketing Digital", "WordPress", "Google Ads","Meta Ads", "Diseño Gráfico", "Programación", "Python", "Bases de Datos", "Next.js", "Diseño Web Adaptable", "Automatización de Procesos"]
         },
         {
             company: "Codere – Buenos Aires, Argentina",
