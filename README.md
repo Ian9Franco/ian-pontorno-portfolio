@@ -45,5 +45,5 @@ I'm **Ian Franco Pontorno**, a software engineer with **3+ years of experience**
 
 ---
 <p align="center">
-  <i>"The repository is the medium, the person is the product."</i>
+  <i>"Ian Franco Collada Pontorno"</i>
 </p>
