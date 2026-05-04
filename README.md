@@ -22,7 +22,7 @@ I'm **Ian Franco Pontorno**, a software engineer with **3+ years of experience**
 
 ### ✨ Selected Projects
 
-- **[Interactive Portfolio Website](https://ianfranco.dev)**  
+- **[Interactive Portfolio Website](https://ian-pontorno-portfolio.vercel.app/)**  
   Modern, animated portfolio built with Next.js and Tailwind CSS.
 - **Trading Bot Dashboard**  
   Real-time trading interface powered by a Python backend and dynamic data visualization.
@@ -33,17 +33,12 @@ I'm **Ian Franco Pontorno**, a software engineer with **3+ years of experience**
 
 ### 🌐 Live Portfolio
 
-👉 **[ianfranco.dev](https://ianfranco.dev)**
+👉 **[ian-pontorno-portfolio.vercel.app](https://ian-pontorno-portfolio.vercel.app/)**
 
 ---
 
 ### 🤝 Contact
 
-- **Email:** [ianfranco@example.com](mailto:ianfranco@example.com)
-- **LinkedIn:** [linkedin.com/in/ianfranco](https://linkedin.com/in/ianfranco)
-- **GitHub:** [github.com/ianfranco](https://github.com/ianfranco)
-
----
-<p align="center">
-  <i>"Ian Franco Collada Pontorno"</i>
-</p>
+- **Email:** [ian9franco@gmail.com](mailto:ian9franco@gmail.com)
+- **LinkedIn:** [ian-franco-collada-pontorno](https://ar.linkedin.com/in/ian-franco-collada-pontorno)
+- **GitHub:** [github.com/Ian9Franco](https://github.com/Ian9Franco)
