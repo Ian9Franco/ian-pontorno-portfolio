@@ -15,6 +15,7 @@ export function SelectedProjects() {
   // Note: These colors/icons/sizes maps are visual data, not text content, so they can remain hardcoded or moved to a config.
   // We keep them here for now as they match IDs.
   const projectColors: Record<string, string> = {
+    mim: "#4F46E5",
     tormentica: "#3AB0FF",
     conversorio: "#FFC300",
     calculatorio: "#28A745",
@@ -24,6 +25,7 @@ export function SelectedProjects() {
   }
 
   const projectIcons: Record<string, string> = {
+    mim: "/images/projects/mim.png",
     tormentica: "/images/projects/weather-forecast.png",
     conversorio: "/images/projects/dinero.png",
     calculatorio: "/images/projects/calcular.png",
@@ -33,6 +35,7 @@ export function SelectedProjects() {
   }
 
   const logoSizes: Record<string, number> = {
+    mim: 24,
     netherious: 50,
     "produ-estudio": 24,
     tormentica: 24,

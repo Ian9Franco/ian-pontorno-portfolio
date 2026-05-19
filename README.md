@@ -22,6 +22,8 @@ I'm **Ian Franco Pontorno**, a software engineer with **3+ years of experience**
 
 ### ✨ Selected Projects
 
+- **[MIM (Minecraft Mod Manager)](https://github.com/Ian9Franco/MIM)**  
+  A modern Minecraft Mod Manager desktop and web application built with Next.js and Tauri. Instantly search Modrinth & CurseForge, auto-classify mods with hotkeys, scan for security threats, analyze crash logs with SAGE Engine, and optimize JVM arguments for a +30% FPS boost.
 - **[Interactive Portfolio Website](https://ian-pontorno-portfolio.vercel.app/)**  
   Modern, animated portfolio built with Next.js and Tailwind CSS.
 - **Trading Bot Dashboard**  

@@ -90,6 +90,24 @@ const en: Dictionary = {
     },
     projects: [
         {
+            id: "mim",
+            name: "MIM",
+            description: "A modern Minecraft Mod Manager focused on intelligence, stability, and performance. Browse Modrinth & CurseForge, explore YouTube-integrated mod discovery with Showcase, analyze crashes with the SAGE Engine, scan mods for security threats, and optimize Minecraft with advanced JVM tuning.",
+            url: "https://github.com/Ian9Franco/MIM",
+            readme: "https://github.com/Ian9Franco/MIM#readme",
+            technologies: [
+                "Next.js 16",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS v4",
+                "Node.js",
+                "IndexedDB",
+                "Electron Builder",
+                "yt-dlp",
+                "Chokidar"
+            ]
+        },
+        {
             id: "produ-estudio",
             name: "Produ Estudio",
             description: "Corporate website for Produ Estudio, a specialist in high-quality garments for streetwear and basic brands. Showcases design, production, and packaging services, highlighting the company's expertise and value proposition.",
@@ -206,7 +224,7 @@ const en: Dictionary = {
         {
             company: "Fanger Design - Buenos Aires, Argentina",
             role: "Marketing Engineer (Paid Media & Automation)",
-            period: "Present",
+            period: "2025 - Present",
             description: "Detailed analysis and optimization of Meta Ads and Google Ads campaigns according to each client's objectives. Creation, updating, and adjustment of campaigns to improve performance and results. Management of daily digital operations including website updates and design improvements. Organization and maintenance of internal database information. Development of scripts and small automations for process optimization.",
             logo: "/images/experience/Fanger.png",
             skills: ["Digital Marketing", "WordPress", "Google Ads","Meta Ads", "Graphic Design", "Programming", "Python", "Databases", "Next.js", "Responsive Web Design", "Process Automation"]
@@ -261,6 +279,24 @@ const es: Dictionary = {
         rights: "Todos los derechos reservados."
     },
     projects: [
+        {
+            id: "mim",
+            name: "MIM",
+            description: "Un moderno administrador de mods para Minecraft centrado en inteligencia, estabilidad y rendimiento. Navega entre mods de Modrinth y CurseForge, descubre contenido integrado con YouTube gracias a Showcase, analiza crashes con SAGE Engine, detecta amenazas de seguridad y optimiza Minecraft con configuración avanzada de JVM.",
+            url: "https://github.com/Ian9Franco/MIM",
+            readme: "https://github.com/Ian9Franco/MIM#readme",
+            technologies: [
+                "Next.js 16",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS v4",
+                "Node.js",
+                "IndexedDB",
+                "Electron Builder",
+                "yt-dlp",
+                "Chokidar"
+            ]
+        },
         {
             id: "produ-estudio",
             name: "Produ Estudio",
@@ -376,12 +412,12 @@ const es: Dictionary = {
     ],
     experiences: [
         {
-            company: "Fanger Design - Autónomo",
+            company: "Fanger Design - Buenos Aires, Argentina",
             role: "Ingeniero de Marketing (Paid Media & Automatización)",
-            period: "Presente",
+            period: "2025 - Presente",
             description: "Análisis y optimización de campañas en Meta Ads y Google Ads según objetivos de cada cliente, evaluando métricas de rendimiento y detectando oportunidades de mejora. Creación, actualización y ajuste de campañas para mejorar performance y resultados. Gestión de la operación digital diaria: actualizaciones de sitios web, mejoras de diseño y contenido, carga y baja de productos según stock y requerimientos del cliente. Organización y mantenimiento de la información en la base de datos interna para asegurar consistencia y orden operativo. Desarrollo de scripts y pequeñas automatizaciones que optimizan procesos, reducen trabajo manual y mejoran la eficiencia general.",
             logo: "/images/experience/Fanger.png",
-            skills: ["Marketing Digital", "WordPress", "Google Ads","Meta Ads", "Diseño Gráfico", "Programación", "Python", "Bases de Datos", "Next.js", "Diseño Web Adaptable", "Automatización de Procesos"]
+            skills: ["Marketing Digital", "WordPress", "Google Ads", "Meta Ads", "Diseño Gráfico", "Programación", "Python", "Bases de Datos", "Next.js", "Diseño Web Adaptable", "Automatización de Procesos"]
         },
         {
             company: "Codere – Buenos Aires, Argentina",
