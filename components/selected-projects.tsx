@@ -19,7 +19,7 @@ export function SelectedProjects() {
     tormentica: "#3AB0FF",
     conversorio: "#FFC300",
     calculatorio: "#28A745",
-    calendarious: "#6C63FF",
+    plotter: "#FFFFFF",
     "produ-estudio": "#FFFFFF",
     netherious: "#FF0000",
   }
@@ -29,7 +29,7 @@ export function SelectedProjects() {
     tormentica: "/images/projects/weather-forecast.png",
     conversorio: "/images/projects/dinero.png",
     calculatorio: "/images/projects/calcular.png",
-    calendarious: "/images/projects/calendario.png",
+    plotter: "/images/projects/plotter.png",
     "produ-estudio": "/images/projects/produ-estudio.png",
     netherious: "/images/projects/netherious.png",
   }
@@ -41,7 +41,7 @@ export function SelectedProjects() {
     tormentica: 24,
     conversorio: 24,
     calculatorio: 24,
-    calendarious: 24,
+    plotter: 32,
   }
 
   return (
@@ -78,6 +78,7 @@ export function SelectedProjects() {
                     alt={`${project.name} icon`}
                     width={logoSizes[project.id] || 24}
                     height={logoSizes[project.id] || 24}
+                    className={project.id === "plotter" ? "rounded" : ""}
                   />
                 </div>
                 <a

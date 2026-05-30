@@ -116,6 +116,14 @@ const en: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
         },
         {
+            id: "plotter",
+            name: "Plotter",
+            description: "Plotter is a premium web platform for film discovery and review designed especially for film lovers.",
+            url: "https://plotter-reviews.vercel.app/",
+            readme: "https://github.com/Ian9Franco/plotter",
+            technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        },
+        {
             id: "netherious",
             name: "Netherious",
             description: "Private Minecraft server modpack for Netherious. Download Forge 1.20.1, modpacks, texture packs, and shader recommendations.",
@@ -138,14 +146,6 @@ const en: Dictionary = {
             url: "https://conversorio.vercel.app/",
             readme: "https://github.com/Ian9Franco/conversorio#readme",
             technologies: ["React", "JavaScript", "JS"],
-        },
-        {
-            id: "calendarious",
-            name: "Calendarious",
-            description: "Manage and visualize recurring subscriptions with ease, helping users stay organized and up-to-date.",
-            url: "https://calendarious.vercel.app/",
-            readme: "https://github.com/Ian9Franco/Calendarious#readme",
-            technologies: ["React", "Tailwind CSS", "Node.js", "Next.js", "Git"],
         },
     ],
     activitiesList: [
@@ -306,6 +306,14 @@ const es: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
         },
         {
+            id: "plotter",
+            name: "Plotter",
+            description: "Plotter es una plataforma web premium de descubrimiento y crítica cinematográfica diseñada especialmente para cinéfilos",
+            url: "https://plotter-reviews.vercel.app/",
+            readme: "https://github.com/Ian9Franco/plotter",
+            technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        },
+        {
             id: "netherious",
             name: "Netherious",
             description: "Modpack de servidor privado de Minecraft para Netherious. Descarga Forge 1.20.1, modpacks, paquetes de texturas y recomendaciones de shaders.",
@@ -328,14 +336,6 @@ const es: Dictionary = {
             url: "https://conversorio.vercel.app/",
             readme: "https://github.com/Ian9Franco/conversorio#readme",
             technologies: ["React", "JavaScript", "JS"],
-        },
-        {
-            id: "calendarious",
-            name: "Calendarious",
-            description: "Gestiona y visualiza suscripciones recurrentes con facilidad, ayudando a los usuarios a mantenerse organizados y actualizados.",
-            url: "https://calendarious.vercel.app/",
-            readme: "https://github.com/Ian9Franco/Calendarious#readme",
-            technologies: ["React", "Tailwind CSS", "Node.js", "Next.js", "Git"],
         },
     ],
     activitiesList: [
