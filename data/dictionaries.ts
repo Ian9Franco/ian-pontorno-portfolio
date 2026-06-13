@@ -108,14 +108,6 @@ const en: Dictionary = {
             ]
         },
         {
-            id: "produ-estudio",
-            name: "Produ Estudio",
-            description: "Corporate website for Produ Estudio, a specialist in high-quality garments for streetwear and basic brands. Showcases design, production, and packaging services, highlighting the company's expertise and value proposition.",
-            url: "https://produ-estudio.vercel.app/",
-            readme: "https://github.com/Ian9Franco/Produ-Estudio#",
-            technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-        },
-        {
             id: "plotter",
             name: "Plotter",
             description: "Plotter is a premium web platform for film discovery and review designed especially for film lovers.",
@@ -124,12 +116,20 @@ const en: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
         },
         {
-            id: "netherious",
-            name: "Netherious",
-            description: "Private Minecraft server modpack for Netherious. Download Forge 1.20.1, modpacks, texture packs, and shader recommendations.",
-            url: "https://netherious-ten.vercel.app/",
-            readme: "https://github.com/Ian9Franco/netherious",
-            technologies: ["Next.js 14 ", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React", "Cloudflare r2", " Radix UI"],
+            id: "theboyz",
+            name: "The Boyz",
+            description: "An immersive, cinematic web comic reader and editor built for 'The Boyz' graphic universe. Features step-by-step panel-by-panel navigation, dynamic dialogue bubble editors with elastic vector tails, automatic zoom layouts, and character database modules.",
+            url: "https://theboyz-comic.vercel.app/",
+            readme: "https://github.com/Ian9Franco/theboyz",
+            technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
+        },
+        {
+            id: "produ-estudio",
+            name: "Produ Estudio",
+            description: "Corporate website for Produ Estudio, a specialist in high-quality garments for streetwear and basic brands. Showcases design, production, and packaging services, highlighting the company's expertise and value proposition.",
+            url: "https://produ-estudio.vercel.app/",
+            readme: "https://github.com/Ian9Franco/Produ-Estudio#",
+            technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
         },
         {
             id: "tormentica",
@@ -138,6 +138,14 @@ const en: Dictionary = {
             url: "https://ian9franco.github.io/tormentica/#/weather?lat=51.5073219&lon=-0.1276474",
             readme: "https://github.com/Ian9Franco/tormentica#readme",
             technologies: ["React", "JavaScript"],
+        },
+        {
+            id: "netherious",
+            name: "Netherious",
+            description: "Private Minecraft server modpack for Netherious. Download Forge 1.20.1, modpacks, texture packs, and shader recommendations.",
+            url: "https://netherious-ten.vercel.app/",
+            readme: "https://github.com/Ian9Franco/netherious",
+            technologies: ["Next.js 14 ", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React", "Cloudflare r2", " Radix UI"],
         },
         {
             id: "conversorio",
@@ -149,6 +157,15 @@ const en: Dictionary = {
         },
     ],
     activitiesList: [
+        {
+            title: "Google Ads Display Certification",
+            subtitle: "Google Skillshop",
+            description: "Demonstrates proficiency in developing and optimizing effective Google Display campaigns, reaching users with relevant ads across the web.",
+            category: "certificate",
+            date: "2026",
+            tags: ["Google Ads", "Digital Marketing", "Display Ads"],
+            link: "https://skillshop.credential.net/e77ff40c-98e0-43ea-ae3b-4667bd3a94eb#acc.43ZFhbsn",
+        },
         {
             title: "Bachelor’s Degree in Software Engineering",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
@@ -298,14 +315,6 @@ const es: Dictionary = {
             ]
         },
         {
-            id: "produ-estudio",
-            name: "Produ Estudio",
-            description: "Sitio web corporativo para Produ Estudio, especialista en prendas de alta calidad para marcas de streetwear y básicos. Muestra servicios de diseño, producción y packaging, destacando la experiencia y propuesta de valor de la empresa.",
-            url: "https://produ-estudio.vercel.app/",
-            readme: "https://github.com/Ian9Franco/Produ-Estudio#",
-            technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-        },
-        {
             id: "plotter",
             name: "Plotter",
             description: "Plotter es una plataforma web premium de descubrimiento y crítica cinematográfica diseñada especialmente para cinéfilos",
@@ -314,12 +323,20 @@ const es: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
         },
         {
-            id: "netherious",
-            name: "Netherious",
-            description: "Modpack de servidor privado de Minecraft para Netherious. Descarga Forge 1.20.1, modpacks, paquetes de texturas y recomendaciones de shaders.",
-            url: "https://netherious-ten.vercel.app/",
-            readme: "https://github.com/Ian9Franco/netherious",
-            technologies: ["Next.js 14 ", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React", "Cloudflare r2", " Radix UI"],
+            id: "theboyz",
+            name: "The Boyz",
+            description: "Un lector y editor interactivo y cinemático de cómics web para el universo de 'The Boyz'. Cuenta con navegación de paneles paso a paso, sistemas de globos de diálogo dinámicos con vectores elásticos, zoom de paneles y módulo de perfiles de personajes.",
+            url: "https://theboyz-comic.vercel.app/",
+            readme: "https://github.com/Ian9Franco/theboyz",
+            technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
+        },
+        {
+            id: "produ-estudio",
+            name: "Produ Estudio",
+            description: "Sitio web corporativo para Produ Estudio, especialista en prendas de alta calidad para marcas de streetwear y básicos. Muestra servicios de diseño, producción y packaging, destacando la experiencia y propuesta de valor de la empresa.",
+            url: "https://produ-estudio.vercel.app/",
+            readme: "https://github.com/Ian9Franco/Produ-Estudio#",
+            technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
         },
         {
             id: "tormentica",
@@ -328,6 +345,14 @@ const es: Dictionary = {
             url: "https://ian9franco.github.io/tormentica/#/weather?lat=51.5073219&lon=-0.1276474",
             readme: "https://github.com/Ian9Franco/tormentica#readme",
             technologies: ["React", "JavaScript"],
+        },
+        {
+            id: "netherious",
+            name: "Netherious",
+            description: "Modpack de servidor privado de Minecraft para Netherious. Descarga Forge 1.20.1, modpacks, paquetes de texturas y recomendaciones de shaders.",
+            url: "https://netherious-ten.vercel.app/",
+            readme: "https://github.com/Ian9Franco/netherious",
+            technologies: ["Next.js 14 ", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React", "Cloudflare r2", " Radix UI"],
         },
         {
             id: "conversorio",
@@ -339,6 +364,15 @@ const es: Dictionary = {
         },
     ],
     activitiesList: [
+        {
+            title: "Certificación en Publicidad en Display de Google Ads",
+            subtitle: "Google Skillshop",
+            description: "Demuestra competencia en el desarrollo y la optimización de campañas de Display de Google efectivas, llegando a los usuarios con anuncios relevantes en la web.",
+            category: "certificate",
+            date: "2026",
+            tags: ["Google Ads", "Marketing Digital", "Display Ads"],
+            link: "https://skillshop.credential.net/e77ff40c-98e0-43ea-ae3b-4667bd3a94eb#acc.43ZFhbsn",
+        },
         {
             title: "Licenciatura en Ingeniería de Software",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",

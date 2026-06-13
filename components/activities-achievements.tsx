@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useLanguage } from "./language-context"
 import { dictionaries, Activity } from "@/data/dictionaries"
 import { fira } from "../lib/utils"
@@ -14,6 +14,7 @@ export function ActivitiesAchievements() {
 
   const [offset, setOffset] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
+  const [isDragging, setIsDragging] = useState(false)
   const [direction, setDirection] = useState(1)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 })
@@ -27,7 +28,7 @@ export function ActivitiesAchievements() {
     let animationFrame: number
 
     const animate = () => {
-      if (!isHovered) {
+      if (!isHovered && !isDragging) {
         setOffset((prev) => {
           let next = prev
           let speed = 0
@@ -74,12 +75,35 @@ export function ActivitiesAchievements() {
 
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)
-  }, [isHovered, totalWidth, direction]) // Depend on totalWidth which depends on activities
+  }, [isHovered, isDragging, totalWidth, direction]) // Depend on totalWidth which depends on activities
 
   const categoryColors: Record<Activity["category"], string> = {
     certificate: "bg-violet-500/20 text-violet-300 border-violet-500/30",
     career: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
   }
+
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const handleNativeWheel = (e: WheelEvent) => {
+      // Prevent the page from scrolling vertically
+      e.preventDefault()
+      
+      setOffset((prev) => {
+        let next = prev + e.deltaY * 0.8 + e.deltaX * 0.8
+        if (next < 0) next = 0
+        if (next > totalWidth) next = totalWidth
+        return next
+      })
+    }
+
+    // Add non-passive event listener so preventDefault works
+    el.addEventListener("wheel", handleNativeWheel, { passive: false })
+    return () => el.removeEventListener("wheel", handleNativeWheel)
+  }, [totalWidth])
 
   return (
     <section className="py-20 overflow-hidden relative">
@@ -97,15 +121,28 @@ export function ActivitiesAchievements() {
       <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
       <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none hidden md:block" />
 
-      <div className="flex gap-6 px-6 z-20">
-        <motion.div className="flex gap-6" style={{ x: -offset }}>
+      <div className="flex gap-6 px-6 z-20" ref={containerRef}>
+        <motion.div 
+          className="flex gap-6 cursor-grab active:cursor-grabbing" 
+          style={{ x: -offset, touchAction: "pan-y" }}
+          onHoverStart={() => setIsHovered(true)}
+          onHoverEnd={() => setIsHovered(false)}
+          onPanStart={() => setIsDragging(true)}
+          onPanEnd={() => setIsDragging(false)}
+          onPan={(e, info) => {
+            setOffset((prev) => {
+              let next = prev - info.delta.x;
+              if (next < 0) next = 0;
+              if (next > totalWidth) next = totalWidth;
+              return next;
+            });
+          }}
+        >
           {/* Triplicate for loop effect */}
           {[...activities, ...activities, ...activities].map((activity, index) => (
             <motion.div
               key={`${activity.title}-${index}`}
               className="flex-shrink-0 w-[85vw] sm:w-80 bg-[#0D0D0D] rounded-lg p-4 sm:p-6 border border-[#1A1A1A] cursor-pointer text-[10px] sm:text-base transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:border-[#333]"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
             >
               {/* Category and date */}
               <div className="flex items-center justify-between mb-2">

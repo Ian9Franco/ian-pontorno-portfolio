@@ -21,6 +21,7 @@ export function SelectedProjects() {
     calculatorio: "#28A745",
     plotter: "#FFFFFF",
     "produ-estudio": "#FFFFFF",
+    theboyz: "#1b4332",
     netherious: "#FF0000",
   }
 
@@ -31,6 +32,7 @@ export function SelectedProjects() {
     calculatorio: "/images/projects/calcular.png",
     plotter: "/images/projects/plotter.png",
     "produ-estudio": "/images/projects/produ-estudio.png",
+    theboyz: "/images/projects/theboyz.png",
     netherious: "/images/projects/netherious.png",
   }
 
@@ -38,6 +40,7 @@ export function SelectedProjects() {
     mim: 24,
     netherious: 50,
     "produ-estudio": 24,
+    theboyz: 32,
     tormentica: 24,
     conversorio: 24,
     calculatorio: 24,
@@ -78,7 +81,7 @@ export function SelectedProjects() {
                     alt={`${project.name} icon`}
                     width={logoSizes[project.id] || 24}
                     height={logoSizes[project.id] || 24}
-                    className={project.id === "plotter" ? "rounded" : ""}
+                    className={project.id === "plotter" || project.id === "theboyz" ? "rounded" : ""}
                   />
                 </div>
                 <a
