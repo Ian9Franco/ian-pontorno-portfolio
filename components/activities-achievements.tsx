@@ -74,7 +74,7 @@ export function ActivitiesAchievements() {
     }
 
     animationFrame = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationFrame)
+    return () => { cancelAnimationFrame(animationFrame) }
   }, [isHovered, isDragging, totalWidth, direction]) // Depend on totalWidth which depends on activities
 
   const categoryColors: Record<Activity["category"], string> = {
@@ -102,12 +102,13 @@ export function ActivitiesAchievements() {
 
     // Add non-passive event listener so preventDefault works
     el.addEventListener("wheel", handleNativeWheel, { passive: false })
-    return () => el.removeEventListener("wheel", handleNativeWheel)
+    return () => { el.removeEventListener("wheel", handleNativeWheel) }
   }, [totalWidth])
 
   return (
     <section id="activities" className="py-20 overflow-hidden relative">
       <motion.h2
+        id="activities-heading"
         className="text-sm font-medium mb-12 text-white text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -125,10 +126,10 @@ export function ActivitiesAchievements() {
         <motion.div 
           className="flex gap-6 cursor-grab active:cursor-grabbing" 
           style={{ x: -offset, touchAction: "pan-y" }}
-          onHoverStart={() => setIsHovered(true)}
-          onHoverEnd={() => setIsHovered(false)}
-          onPanStart={() => setIsDragging(true)}
-          onPanEnd={() => setIsDragging(false)}
+          onHoverStart={() => { setIsHovered(true) }}
+          onHoverEnd={() => { setIsHovered(false) }}
+          onPanStart={() => { setIsDragging(true) }}
+          onPanEnd={() => { setIsDragging(false) }}
           onPan={(e, info) => {
             setOffset((prev) => {
               let next = prev - info.delta.x;
@@ -219,7 +220,7 @@ export function ActivitiesAchievements() {
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => { setSelectedImage(null) }}
         >
           <motion.img
             src={selectedImage}
@@ -239,7 +240,7 @@ export function ActivitiesAchievements() {
               const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 10
               setRotation({ rotateX: -rotateX, rotateY })
             }}
-            onMouseLeave={() => setRotation({ rotateX: 0, rotateY: 0 })}
+            onMouseLeave={() => { setRotation({ rotateX: 0, rotateY: 0 }) }}
           />
           <button
             className="absolute top-4 right-4 text-white text-lg font-bold"

@@ -15,8 +15,8 @@ export function HeroSection() {
     <section
       id="hero"
       className="py-10 px-6"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => { setIsHovered(true) }}
+      onMouseLeave={() => { setIsHovered(false) }}
     >
       <div className="max-w-2xl mx-auto">
         <motion.div

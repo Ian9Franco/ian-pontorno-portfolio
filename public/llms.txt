@@ -1,31 +1,87 @@
 # Ian Pontorno — Growth Engineer & Marketing Technologist
 
-Ian Franco Collada Pontorno is a Growth Engineer and Software Developer based in Buenos Aires, Argentina.
-He specializes in combining paid media, marketing automation, analytics, and custom software to scale business growth.
+> Ian Franco Collada Pontorno is a Growth Engineer and Software Developer based in Buenos Aires, Argentina.
+> He combines paid media strategy, marketing automation, analytics, and full-stack software development to scale business growth.
 
-## About
+## Who is Ian Pontorno?
 
-Ian bridges the gap between marketing and engineering: he analyzes and optimizes Meta Ads and Google Ads campaigns,
-builds automation scripts and internal tools with Python, and develops full-stack web applications with Next.js and TypeScript.
+Ian Pontorno (full name Ian Franco Collada Pontorno) is a professional who bridges the gap between marketing and engineering.
+He designs and implements data-driven growth systems: from optimizing paid advertising campaigns to building custom internal tools and automations that improve business performance.
 
-Currently working at Fanger Design (Buenos Aires) as Marketing Engineer, focused on paid media and automation.
-Previously at Codere (2019–2025) as IT Operations & Automation Specialist, and Ilummi as Front-End Developer.
+He currently works at Fanger Design (Buenos Aires, Argentina) as Marketing Engineer, managing paid media across Meta Ads and Google Ads, handling daily digital operations, and developing web solutions. Previously, he worked 6 years at Codere (2019–2025) as IT Operations & Automation Specialist, and as Front-End Developer at Ilummi.
 
-## Skills
+## Core Expertise
 
-- **Paid Media**: Meta Ads, Google Ads, ROAS optimization, conversion funnels
-- **Development**: Next.js, React, TypeScript, Python, Node.js
-- **Data & Analytics**: Power BI, Excel dashboards, ETL pipelines, data engineering
-- **Automation**: Python scripts, REST APIs, workflow automation, ServiceNow, Jira
-- **Infrastructure**: AWS, Docker, WordPress, CMS development
+- **Growth Engineering**: building systems that connect marketing, data, and software to drive measurable business growth
+- **Paid Media Management**: Meta Ads and Google Ads campaign analysis, optimization, and reporting based on client business objectives
+- **Marketing Automation**: Python scripts, REST API integrations, and workflow automations to reduce manual effort and improve scalability
+- **Full-Stack Web Development**: Next.js, React, TypeScript applications; WordPress and CMS management
+- **Data & Analytics**: Power BI dashboards, Excel reporting, ETL pipelines, data engineering, Google Analytics
+- **IT Operations**: AWS, Docker, SAP-style workflows, ServiceNow, Jira, enterprise application support
 
-## Education
+## Work Experience
 
-- Bachelor's Degree in Software Engineering — Universidad Nacional de La Matanza (2023–Present)
-- Diploma in SAP ABAP Programming — Universidad Tecnológica Nacional (2025–Ongoing)
+### Marketing Engineer (Paid Media & Automation) — Fanger Design
+Buenos Aires, Argentina | 2025 – Present
+- Analysis and optimization of Meta Ads and Google Ads campaigns per client objectives
+- Campaign creation, update, and performance adjustment
+- Daily digital operations: website updates, design improvements
+- Internal database organization and maintenance
+- Development of scripts and automations for process optimization
 
-## Contact
+### IT Operations & Automation Specialist — Codere
+Buenos Aires, Argentina | 2019 – 2025
+- Designed and automated internal business applications using Python and modern web technologies
+- Integrated REST APIs and database systems for dynamic reporting
+- Supported AWS and Docker environments for enterprise application deployment
+- Built analytical dashboards with Power BI and Excel
+- Contributed to system documentation and process automation via Jira and ServiceNow
 
+### Front-End Developer — Ilummi
+Remote | 2021 – 2025
+- Developed and maintained front-end interfaces using React and modern JavaScript
+- Collaborated on UI/UX improvements and component architecture
+
+## Selected Projects
+
+- **MIM** — Minecraft Mod Manager with AI crash analysis (SAGE Engine), mod security scanning, and JVM optimization. Built with Next.js 16, React 19, TypeScript, Electron. https://github.com/Ian9Franco/MIM
+- **Plotter** — Premium film discovery and review platform. Built with Next.js, React, Tailwind CSS, Framer Motion. https://plotter-reviews.vercel.app/
+- **The Boyz** — Immersive cinematic web comic reader with panel-by-panel navigation and dynamic dialogue editors. https://theboyz-comic.vercel.app/
+- **Produ Estudio** — Corporate website for a streetwear garment manufacturer. https://produ-estudio.vercel.app/
+- **Netherious** — Minecraft server modpack portal with cloud storage. https://netherious-ten.vercel.app/
+- **Tormentica** — Location-based weather app with interactive UI. https://ian9franco.github.io/tormentica/
+- **Conversorio** — Currency converter with tax calculations and subscription expense tracking. https://conversorio.vercel.app/
+
+## Education & Certifications
+
+- Bachelor's Degree in Software Engineering — Universidad Nacional de La Matanza, Buenos Aires (2023–Present)
+- Diploma in SAP ABAP Programming — Universidad Tecnológica Nacional, Argentina (2025–Ongoing)
+- Google Ads Display Certification — Google Skillshop (2026)
+- Advanced Backend Development — Coderhouse (2024)
+- Java Development — Coderhouse (2024)
+- Data Analytics — Coderhouse (2024)
+- Fundamentals of Artificial Intelligence — Coderhouse (2023)
+- JavaScript Development — Coderhouse (2022)
+- Web Development — Coderhouse (2021)
+
+## Technical Skills
+
+Languages: Python, TypeScript, JavaScript, Java, SQL
+Frameworks: Next.js, React, Node.js
+Platforms: AWS, Docker, WordPress
+Tools: Power BI, Google Analytics, Meta Business Suite, Google Ads, ServiceNow, Jira, SAP
+Databases: PostgreSQL, MySQL, IndexedDB
+
+## Contact & Links
+
+- Portfolio: https://ian-pontorno-portfolio.vercel.app
 - LinkedIn: https://www.linkedin.com/in/ian-franco-collada-pontorno/
 - GitHub: https://github.com/Ian9Franco
-- Portfolio: https://ian-pontorno-portfolio.vercel.app
+- Location: Buenos Aires, Argentina
+
+## Sections on this site
+
+- Hero / About: Introduction, current role, biography, and links
+- Work Experience: Detailed professional history with skills used
+- Selected Projects: Portfolio of personal and professional web development projects
+- Activities & Achievements: Certifications, degrees, and career milestones

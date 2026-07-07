@@ -65,6 +65,9 @@ const jsonLd = {
     addressLocality: "Buenos Aires",
     addressCountry: "AR",
   },
+  image: "https://ian-pontorno-portfolio.vercel.app/images/profile/hoverRect.png",
+  datePublished: "2025-01-01",
+  dateModified: new Date().toISOString().split("T")[0],
 }
 
 export const metadata: Metadata = {
@@ -168,6 +171,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans ${inter.variable} antialiased`}>
+        <a
+          href="#hero"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded focus:font-medium"
+        >
+          Skip to content
+        </a>
         <LanguageProvider>
           <LanguageToggle />
           <Suspense fallback={null}>{children}</Suspense>

@@ -52,6 +52,7 @@ export function SelectedProjects() {
       <div className="max-w-2xl mx-auto">
         {/* Title aligned left */}
         <motion.h2
+          id="selected-projects-heading"
           className="text-sm font-medium mb-12 text-white text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
