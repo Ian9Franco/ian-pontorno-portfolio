@@ -48,7 +48,7 @@ export function SelectedProjects() {
   }
 
   return (
-    <section className="py-10 px-6">
+    <section id="selected-projects" className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
         {/* Title aligned left */}
         <motion.h2

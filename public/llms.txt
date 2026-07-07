@@ -1,0 +1,31 @@
+# Ian Pontorno — Growth Engineer & Marketing Technologist
+
+Ian Franco Collada Pontorno is a Growth Engineer and Software Developer based in Buenos Aires, Argentina.
+He specializes in combining paid media, marketing automation, analytics, and custom software to scale business growth.
+
+## About
+
+Ian bridges the gap between marketing and engineering: he analyzes and optimizes Meta Ads and Google Ads campaigns,
+builds automation scripts and internal tools with Python, and develops full-stack web applications with Next.js and TypeScript.
+
+Currently working at Fanger Design (Buenos Aires) as Marketing Engineer, focused on paid media and automation.
+Previously at Codere (2019–2025) as IT Operations & Automation Specialist, and Ilummi as Front-End Developer.
+
+## Skills
+
+- **Paid Media**: Meta Ads, Google Ads, ROAS optimization, conversion funnels
+- **Development**: Next.js, React, TypeScript, Python, Node.js
+- **Data & Analytics**: Power BI, Excel dashboards, ETL pipelines, data engineering
+- **Automation**: Python scripts, REST APIs, workflow automation, ServiceNow, Jira
+- **Infrastructure**: AWS, Docker, WordPress, CMS development
+
+## Education
+
+- Bachelor's Degree in Software Engineering — Universidad Nacional de La Matanza (2023–Present)
+- Diploma in SAP ABAP Programming — Universidad Tecnológica Nacional (2025–Ongoing)
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/ian-franco-collada-pontorno/
+- GitHub: https://github.com/Ian9Franco
+- Portfolio: https://ian-pontorno-portfolio.vercel.app

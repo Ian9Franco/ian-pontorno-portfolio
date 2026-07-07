@@ -13,6 +13,7 @@ export function HeroSection() {
 
   return (
     <section
+      id="hero"
       className="py-10 px-6"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

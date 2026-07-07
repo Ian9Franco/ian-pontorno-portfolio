@@ -8,6 +8,7 @@ export function LanguageToggle() {
     const { language, toggleLanguage } = useLanguage()
 
     return (
+        <nav aria-label="Site navigation">
         <motion.button
             onClick={toggleLanguage}
             className="fixed top-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 text-white/80 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 group shadow-lg"
@@ -36,5 +37,6 @@ export function LanguageToggle() {
 
             <div className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-white transition-colors duration-300" />
         </motion.button>
+        </nav>
     )
 }

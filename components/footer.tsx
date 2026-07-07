@@ -84,7 +84,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          © {new Date().getFullYear()} · Created with <AnimatedHeart /> by{" "}
+          © <time dateTime={new Date().getFullYear().toString()}>{new Date().getFullYear()}</time> · Created with <AnimatedHeart /> by{" "}
           <span className="hover:text-foreground transition-colors duration-300 ease-in-out">
             Ian Franco Collada Pontorno
           </span>

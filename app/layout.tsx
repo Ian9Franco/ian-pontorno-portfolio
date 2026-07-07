@@ -21,58 +21,108 @@ const fira = Fira_Code({
   variable: "--font-fira",
 })
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ian Franco Collada Pontorno",
+  alternateName: "Ian Pontorno",
+  url: "https://ian-pontorno-portfolio.vercel.app",
+  jobTitle: "Growth Engineer & Marketing Technologist",
+  description:
+    "Growth Engineer and Software Developer building data-driven marketing systems. Combines paid media, automation, analytics, and custom web tools to scale acquisition and optimize performance.",
+  knowsAbout: [
+    "Growth Engineering",
+    "Marketing Automation",
+    "Meta Ads",
+    "Google Ads",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "Data Analytics",
+    "Software Development",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/ian-franco-collada-pontorno/",
+    "https://github.com/Ian9Franco",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Fanger Design",
+    url: "https://www.linkedin.com/company/fanger-design/about/",
+  },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Universidad Nacional de La Matanza",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Universidad Tecnológica Nacional",
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Buenos Aires",
+    addressCountry: "AR",
+  },
+}
+
 export const metadata: Metadata = {
   title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
   description:
-    "Growth Engineer and Software Developer building data-driven marketing systems. I combine paid media, automation, analytics, and custom web tools to scale acquisition, optimize performance, and turn marketing into engineering.",
-keywords: [
-  // Core positioning
-  "Growth Engineer",
-  "Marketing Engineer",
-  "Marketing Technologist",
-  "Performance Marketing",
-  "Marketing Automation",
-  "Growth Systems",
+    "Growth Engineer combining paid media, automation, analytics, and custom software to scale business growth. Based in Buenos Aires, Argentina.",
+  keywords: [
+    // Core positioning
+    "Growth Engineer",
+    "Marketing Engineer",
+    "Marketing Technologist",
+    "Performance Marketing",
+    "Marketing Automation",
+    "Growth Systems",
 
-  // Paid media
-  "Paid Media",
-  "Meta Ads",
-  "Google Ads",
-  "Conversion Funnels",
-  "Analytics",
-  "ROAS Optimization",
+    // Paid media
+    "Paid Media",
+    "Meta Ads",
+    "Google Ads",
+    "Conversion Funnels",
+    "Analytics",
+    "ROAS Optimization",
 
-  // Development
-  "Software Developer",
-  "Full Stack Developer",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Python",
-  "APIs",
-  "Automation",
-  "Dashboards",
+    // Development
+    "Software Developer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "APIs",
+    "Automation",
+    "Dashboards",
 
-  // Data
-  "Data Analysis",
-  "Data Engineering",
-  "ETL",
-  "Tracking",
-  "Process Optimization",
+    // Data
+    "Data Analysis",
+    "Data Engineering",
+    "ETL",
+    "Tracking",
+    "Process Optimization",
 
-  // Tools / platforms (low priority)
-  "WordPress",
-  "CMS Development",
-  "SAP",
-  "ERP Systems",
+    // Tools / platforms (low priority)
+    "WordPress",
+    "CMS Development",
+    "SAP",
+    "ERP Systems",
 
-  // Personal
-  "Ian Franco Collada Pontorno",
-  "Portfolio",
-],
+    // Personal
+    "Ian Franco Collada Pontorno",
+    "Portfolio",
+  ],
 
   authors: [{ name: "Ian Franco Collada Pontorno" }],
   generator: "Next.js",
+
+  alternates: {
+    canonical: "https://ian-pontorno-portfolio.vercel.app",
+  },
 
   openGraph: {
     title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
@@ -111,6 +161,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`font-sans ${inter.variable} antialiased`}>
         <LanguageProvider>
           <LanguageToggle />

@@ -13,7 +13,7 @@ export function WorkExperience() {
   const experiences = t.experiences
 
   return (
-    <section className="py-10 px-6">
+    <section id="work-experience" className="py-10 px-6">
       <div className="max-w-2xl mx-auto">
         {/* Title aligned left */}
         <motion.h2
@@ -50,9 +50,12 @@ export function WorkExperience() {
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
                   <h3 className="font-medium text-white text-sm text-shadow-sm">{exp.role}</h3>
-                  <span className={`${fira.className} text-xs text-gray-400 sm:ml-4`}>
+                  <time
+                    className={`${fira.className} text-xs text-gray-400 sm:ml-4`}
+                    dateTime={exp.period.replace(" – Present", "/..").replace(" – ", "/")}
+                  >
                     {exp.period}
-                  </span>
+                  </time>
                 </div>
                 <p className="text-xs text-gray-400 mb-3">{exp.company}</p>
                 <p className="text-sm text-gray-300 leading-relaxed mb-4 text-shadow-sm">{exp.description}</p>

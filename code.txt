@@ -1,0 +1,1156 @@
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2025-57822: Next.js Improper Middleware Redirect Handling Leads to SSRF) (update to 15.4.7)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+CRITICAL
+Security
+
+Cryptography
+
+
+This rule identifies use of cryptographically weak random number generators.
+
+components/
+tag.tsx
+
+28
+        const randomColor = hoverColors[Math.floor(Math.random() * hoverColors.length)]
+MINOR
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44572: next.js: Next.js: Denial of Service due to improper handling of x-nextjs-data header with redirects) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Unused code
+
+
+'fira' is defined but never used.
+
+components/
+selected-projects.tsx
+
+8
+import { fira } from "../lib/utils"
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2025-55173: nextjs: Next.js Content Injection Vulnerability for Image Optimization) (update to 15.4.5)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2026-2950: lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass) (update to 4.18.0)
+
+pnpm-lock.yaml
+
+1497
+  lodash@4.17.21:
+HIGH
+Error prone
+
+
+Unnecessary conditional, value is always truthy.
+
+components/
+language-context.tsx
+
+22
+    if (savedLang && (savedLang === "en" || savedLang === "es")) {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-29057: next.js: Next.js: HTTP request smuggling in rewrites) (update to 15.5.13)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-27980: next.js: Next.js: Unbounded next/image disk cache growth can exhaust storage) (update to 15.5.14)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2025-59471: next: NextJS Denial of Service in Image Optimizer) (update to 15.5.10)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Variable Assigned to Object Injection Sink
+
+components/
+selected-projects.tsx
+
+12
+  const t = dictionaries[language]
+MINOR
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44582: Next.js: Next.js: Cache poisoning allows incorrect response delivery) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44580: next.js: Next.js: Cross-site scripting allows arbitrary code execution via untrusted script content) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Variable Assigned to Object Injection Sink
+
+components/
+footer.tsx
+
+31
+  const t = dictionaries[language]
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+77
+    return () => cancelAnimationFrame(animationFrame)
+77
+    return () => { cancelAnimationFrame(animationFrame); }
+MEDIUM
+Unused code
+
+
+'fira' is defined but never used.
+
+components/
+selected-projects.tsx
+
+8
+import { fira } from "../lib/utils"
+MEDIUM
+Code complexity
+
+
+File pnpm-lock.yaml has 2768 non-comment lines of code
+
+pnpm-lock.yaml
+
+1
+lockfileVersion: '9.0'
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-29057: next.js: Next.js: HTTP request smuggling in rewrites) (update to 15.5.13)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44577: Next.js: Next.js: Denial of Service via Image Optimization API) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44576: Next.js: Next.js: Cache poisoning vulnerability in React Server Components) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44576: Next.js: Next.js: Cache poisoning vulnerability in React Server Components) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Code complexity
+
+
+Method (anonymous) has 59 lines of code (limit is 50)
+
+components/
+activities-achievements.tsx
+
+142
+          {[...activities, ...activities, ...activities].map((activity, index) => (
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44579: next.js: Next.js: Denial of Service via crafted POST requests to server actions) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+131
+          onPanEnd={() => setIsDragging(false)}
+131
+          onPanEnd={() => { setIsDragging(false); }}
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44580: next.js: Next.js: Cross-site scripting allows arbitrary code execution via untrusted script content) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Code complexity
+
+
+Method Footer has 63 lines of code (limit is 50)
+
+components/
+footer.tsx
+
+29
+export function Footer() {
+MEDIUM
+Error prone
+
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+hooks/
+use-toast.ts
+
+146
+    dispatch({
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (GHSA-q4gf-8mx6-v5v3: Next.js has a Denial of Service with Server Components) (update to 15.5.15)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+130
+          onPanStart={() => setIsDragging(true)}
+130
+          onPanStart={() => { setIsDragging(true); }}
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44578: Next.js: Next.js: Server-Side Request Forgery via crafted WebSocket upgrade requests) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Unused code
+
+
+'state' is defined but never used.
+
+hooks/
+use-toast.ts
+
+129
+const listeners: Array<(state: State) => void> = []
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2025-57822: Next.js Improper Middleware Redirect Handling Leads to SSRF) (update to 15.4.7)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2025-57752: nextjs: Next.js Affected by Cache Key Confusion for Image Optimization API Routes) (update to 15.4.5)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+222
+          onClick={() => setSelectedImage(null)}
+222
+          onClick={() => { setSelectedImage(null); }}
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44579: next.js: Next.js: Denial of Service via crafted POST requests to server actions) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2025-13465: lodash: prototype pollution in _.unset and _.omit functions) (update to 4.17.23)
+
+package-lock.json
+
+3285
+    "node_modules/lodash": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2026-4800: lodash: lodash: Arbitrary code execution via untrusted input in template imports) (update to 4.18.0)
+
+pnpm-lock.yaml
+
+1497
+  lodash@4.17.21:
+MEDIUM
+Unused code
+
+
+'lang' is defined but never used.
+
+components/
+language-context.tsx
+
+9
+  setLanguage: (lang: Language) => void
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2025-13465: lodash: prototype pollution in _.unset and _.omit functions) (update to 4.17.23)
+
+pnpm-lock.yaml
+
+1497
+  lodash@4.17.21:
+MINOR
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44582: Next.js: Next.js: Cache poisoning allows incorrect response delivery) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44573: next.js: Next.js: Information disclosure due to middleware bypass in Pages Router with i18n) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+128
+          onHoverStart={() => setIsHovered(true)}
+128
+          onHoverStart={() => { setIsHovered(true); }}
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Variable Assigned to Object Injection Sink
+
+components/
+activities-achievements.tsx
+
+12
+  const t = dictionaries[language]
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-45109: next.js: Next.js: Information disclosure via security fix bypass in middleware with Turbopack) (update to 15.5.18)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+hooks/
+use-mobile.ts
+
+15
+    return () => mql.removeEventListener('change', onChange)
+15
+    return () => { mql.removeEventListener('change', onChange); }
+MINOR
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44572: next.js: Next.js: Denial of Service due to improper handling of x-nextjs-data header with redirects) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Error prone
+
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+203
+                      setSelectedImage(
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (GHSA-w37m-7fhw-fmv9: Next Server Actions Source Code Exposure ) (update to 15.2.7)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+105
+    return () => el.removeEventListener("wheel", handleNativeWheel)
+105
+    return () => { el.removeEventListener("wheel", handleNativeWheel); }
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+hero-section.tsx
+
+18
+      onMouseLeave={() => setIsHovered(false)}
+18
+      onMouseLeave={() => { setIsHovered(false); }}
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/postcss@8.5.6 (CVE-2026-41305: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags) (update to 8.5.10)
+
+package-lock.json
+
+3516
+    "node_modules/postcss": {
+MEDIUM
+Unused code
+
+
+'open' is defined but never used.
+
+global.d.ts
+
+9
+    onOpenChange?: (open: boolean) => void;
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44575: next.js: Next.js: Unauthorized access to protected content via middleware bypass) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Unused code
+
+
+'ThemeProvider' is defined but never used.
+
+app/
+layout.tsx
+
+6
+import { ThemeProvider } from "@/components/theme-provider"
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (GHSA-8h8q-6873-q5fj: Next.js Vulnerable to Denial of Service with Server Components) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+hooks/
+use-toast.ts
+
+150
+  const dismiss = () => dispatch({ type: 'DISMISS_TOAST', toastId: id })
+150
+  const dismiss = () => { dispatch({ type: 'DISMISS_TOAST', toastId: id }); }
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+hooks/
+use-toast.ts
+
+187
+    dismiss: (toastId?: string) => dispatch({ type: 'DISMISS_TOAST', toastId }),
+187
+    dismiss: (toastId?: string) => { dispatch({ type: 'DISMISS_TOAST', toastId }); },
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+242
+            onMouseLeave={() => setRotation({ rotateX: 0, rotateY: 0 })}
+242
+            onMouseLeave={() => { setRotation({ rotateX: 0, rotateY: 0 }); }}
+MEDIUM
+Unused code
+
+
+'ThemeProvider' is defined but never used.
+
+app/
+layout.tsx
+
+6
+import { ThemeProvider } from "@/components/theme-provider"
+MEDIUM
+Unused code
+
+
+'index' is defined but never used.
+
+components/
+contact-section.tsx
+
+59
+          {socialLinks.map((link, index) => (
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2025-57752: nextjs: Next.js Affected by Cache Key Confusion for Image Optimization API Routes) (update to 15.4.5)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44577: Next.js: Next.js: Denial of Service via Image Optimization API) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (GHSA-h25m-26qc-wcjf: Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components) (update to 15.2.9)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (GHSA-h25m-26qc-wcjf: Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components) (update to 15.2.9)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Generic Object Injection Sink
+
+components/
+hero-section.tsx
+
+12
+  const t = dictionaries[language].hero
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2026-4800: lodash: lodash: Arbitrary code execution via untrusted input in template imports) (update to 4.18.0)
+
+package-lock.json
+
+3285
+    "node_modules/lodash": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+hero-section.tsx
+
+17
+      onMouseEnter={() => setIsHovered(true)}
+17
+      onMouseEnter={() => { setIsHovered(true); }}
+MEDIUM
+Code complexity
+
+
+Method ActivitiesAchievements has 72 lines of code (limit is 50)
+
+components/
+activities-achievements.tsx
+
+10
+export function ActivitiesAchievements() {
+MEDIUM
+Unused code
+
+
+'index' is defined but never used.
+
+components/
+contact-section.tsx
+
+59
+          {socialLinks.map((link, index) => (
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44581: next.js: Next.js: Stored Cross-Site Scripting via malformed nonce values in cached responses) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Code complexity
+
+
+Method (anonymous) has 56 lines of code (limit is 50)
+
+components/
+selected-projects.tsx
+
+64
+        <div className="space-y-8">
+MEDIUM
+Code complexity
+
+
+Method ContactSection has 55 lines of code (limit is 50)
+
+components/
+contact-section.tsx
+
+7
+export function ContactSection() {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2025-55173: nextjs: Next.js Content Injection Vulnerability for Image Optimization) (update to 15.4.5)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/lodash@4.17.21 (CVE-2026-2950: lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass) (update to 4.18.0)
+
+package-lock.json
+
+3285
+    "node_modules/lodash": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/postcss@8.4.31 (CVE-2026-41305: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags) (update to 8.5.10)
+
+package-lock.json
+
+3458
+    "node_modules/next/node_modules/postcss": {
+MEDIUM
+Best practice
+
+
+Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?
+
+app/
+globals.css
+
+1
+@import "tailwindcss";
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Variable Assigned to Object Injection Sink
+
+components/
+work-experience.tsx
+
+12
+  const t = dictionaries[language]
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-45109: next.js: Next.js: Information disclosure via security fix bypass in middleware with Turbopack) (update to 15.5.18)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Unused code
+
+
+'fira' is assigned a value but never used.
+
+app/
+layout.tsx
+
+18
+const fira = Fira_Code({
+CRITICAL
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2025-55182: next: React Server Components: Pre-authentication remote code execution via unsafe deserialization) (update to 15.2.6)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/postcss@8.4.31 (CVE-2026-41305: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags) (update to 8.5.10)
+
+pnpm-lock.yaml
+
+103
+        version: 10.4.23(postcss@8.5.6)
+MEDIUM
+Unused code
+
+
+'fira' is assigned a value but never used.
+
+app/
+layout.tsx
+
+18
+const fira = Fira_Code({
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44575: next.js: Next.js: Unauthorized access to protected content via middleware bypass) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (GHSA-mwv6-3258-q52c: Next Vulnerable to Denial of Service with Server Components) (update to 15.2.7)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2026-44573: next.js: Next.js: Information disclosure due to middleware bypass in Pages Router with i18n) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Code complexity
+
+
+File package-lock.json has 4136 non-comment lines of code
+
+package-lock.json
+
+1
+{
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (CVE-2025-59471: next: NextJS Denial of Service in Image Optimizer) (update to 15.5.10)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.8 (GHSA-8h8q-6873-q5fj: Next.js Vulnerable to Denial of Service with Server Components) (update to 15.5.16)
+
+pnpm-lock.yaml
+
+100
+        version: 1.6.1(next@15.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-27980: next.js: Next.js: Unbounded next/image disk cache growth can exhaust storage) (update to 15.5.14)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44581: next.js: Next.js: Stored Cross-Site Scripting via malformed nonce values in cached responses) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Code complexity
+
+
+Method SelectedProjects has 53 lines of code (limit is 50)
+
+components/
+selected-projects.tsx
+
+10
+export function SelectedProjects() {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (GHSA-q4gf-8mx6-v5v3: Next.js has a Denial of Service with Server Components) (update to 15.5.15)
+
+package-lock.json
+
+3394
+    "node_modules/next": {
+MEDIUM
+Error prone
+
+Quick fix
+
+Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function.
+
+components/
+activities-achievements.tsx
+
+129
+          onHoverEnd={() => setIsHovered(false)}
+129
+          onHoverEnd={() => { setIsHovered(false); }}
+MEDIUM
+Best practice
+
+
+Unknown rule scss_function-disallowed-list. Did you mean function-disallowed-list?
+
+styles/
+globals.css
+
+1
+@import 'tailwindcss';
+MEDIUM
+Code complexity
+
+
+Method HeroSection has 160 lines of code (limit is 50)
+
+components/
+hero-section.tsx
+
+9
+export function HeroSection() {
+HIGH
+Security
+
+Insecure Modules Libraries
+
+
+Insecure dependency npm/next@15.2.4 (CVE-2026-44578: Next.js: Next.js: Server-Side Request Forgery via crafted WebSocket upgrade requests) (update to 15.5.16)
+
+package-lock.json
+
+3394
+    "node_modules/next": {

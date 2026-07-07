@@ -106,7 +106,7 @@ export function ActivitiesAchievements() {
   }, [totalWidth])
 
   return (
-    <section className="py-20 overflow-hidden relative">
+    <section id="activities" className="py-20 overflow-hidden relative">
       <motion.h2
         className="text-sm font-medium mb-12 text-white text-center"
         initial={{ opacity: 0, y: 20 }}
