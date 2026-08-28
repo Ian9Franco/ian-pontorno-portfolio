@@ -16,31 +16,43 @@ export function SelectedProjects() {
   // We keep them here for now as they match IDs.
   const projectColors: Record<string, string> = {
     mim: "#4F46E5",
+    "smart-scan": "#064E3B",
+    "web-sling-optimizer": "#083344",
+    "q-sale": "#831843",
     tormentica: "#3AB0FF",
     conversorio: "#FFC300",
     calculatorio: "#28A745",
     plotter: "#FFFFFF",
     "produ-estudio": "#FFFFFF",
     theboyz: "#1b4332",
+    elseframe: "#1b4332",
     netherious: "#FF0000",
   }
 
   const projectIcons: Record<string, string> = {
     mim: "/images/projects/mim.png",
+    "smart-scan": "/images/projects/smartscan.png",
+    "web-sling-optimizer": "/images/projects/websling.png",
+    "q-sale": "/images/projects/qsale.png",
     tormentica: "/images/projects/weather-forecast.png",
     conversorio: "/images/projects/dinero.png",
     calculatorio: "/images/projects/calcular.png",
     plotter: "/images/projects/plotter.png",
     "produ-estudio": "/images/projects/produ-estudio.png",
-    theboyz: "/images/projects/theboyz.png",
+    theboyz: "/images/projects/elseframe.webp",
+    elseframe: "/images/projects/elseframe.webp",
     netherious: "/images/projects/netherious.png",
   }
 
   const logoSizes: Record<string, number> = {
-    mim: 24,
+    mim: 32,
+    "smart-scan": 32,
+    "web-sling-optimizer": 32,
+    "q-sale": 32,
     netherious: 50,
-    "produ-estudio": 24,
+    "produ-estudio": 32,
     theboyz: 32,
+    elseframe: 32,
     tormentica: 24,
     conversorio: 24,
     calculatorio: 24,
@@ -74,15 +86,15 @@ export function SelectedProjects() {
             >
               <div className="flex items-center gap-3">
                 <div
-                  className="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center"
+                  className="w-8 h-8 rounded flex-shrink-0 flex items-center justify-center overflow-hidden"
                   style={{ backgroundColor: projectColors[project.id] || "#888" }}
                 >
                   <Image
                     src={projectIcons[project.id] || "/placeholder-logo.png"}
                     alt={`${project.name} icon`}
-                    width={logoSizes[project.id] || 24}
-                    height={logoSizes[project.id] || 24}
-                    className={project.id === "plotter" || project.id === "theboyz" ? "rounded" : ""}
+                    width={logoSizes[project.id] || 32}
+                    height={logoSizes[project.id] || 32}
+                    className="w-full h-full object-cover rounded"
                   />
                 </div>
                 <a

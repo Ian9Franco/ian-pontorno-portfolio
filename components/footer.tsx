@@ -74,6 +74,14 @@ export function Footer() {
           >
             LinkedIn
           </a>
+          <a
+            href={contactLinks.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-[#E4405F] transition-colors duration-300 ease-in-out"
+          >
+            Instagram
+          </a>
         </motion.div>
 
         {/* Credits */}

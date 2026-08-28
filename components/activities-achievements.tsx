@@ -82,6 +82,11 @@ export function ActivitiesAchievements() {
     career: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
   }
 
+  const categoryLabels: Record<Activity["category"], Record<"en" | "es", string>> = {
+    certificate: { en: "certificate", es: "certificado" },
+    career: { en: "career", es: "carrera" },
+  }
+
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -150,7 +155,7 @@ export function ActivitiesAchievements() {
                 <span
                   className={`text-xs font-medium px-2 py-1 rounded-full border ${categoryColors[activity.category]}`}
                 >
-                  {activity.category}
+                  {categoryLabels[activity.category]?.[language] || activity.category}
                 </span>
                 <span className={`${fira.className} text-xs font-light text-gray-400`}>
                   {activity.date}
@@ -185,8 +190,8 @@ export function ActivitiesAchievements() {
                 ))}
               </div>
 
-              {/* Certificate links */}
-              {activity.category === "certificate" && (
+              {/* Certificate & Validation links */}
+              {(activity.category === "certificate" || activity.link) && (
                 <div className="flex gap-4">
                   {activity.link && (
                     <a
@@ -195,20 +200,9 @@ export function ActivitiesAchievements() {
                       rel="noopener noreferrer"
                       className="text-xs text-blue-400 hover:underline break-words"
                     >
-                      View Online
+                      {language === "es" ? "Ver Certificado / Validación" : "View Certificate / Accreditation"}
                     </a>
                   )}
-                  {/* Note: Logic for opening local certificate image is preserved but requires image files to exist */}
-                  <button
-                    onClick={() =>
-                      setSelectedImage(
-                        `/certificates/${activity.title.toLowerCase().replace(/\s+/g, "-")}-certificate.png`
-                      )
-                    }
-                    className="text-xs text-green-400 hover:underline break-words"
-                  >
-                    Open
-                  </button>
                 </div>
               )}
             </motion.div>

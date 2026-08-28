@@ -63,9 +63,9 @@ const en: Dictionary = {
         greeting: "Ian Pontorno",
         role: "Growth Engineer",
         biography: [
-            "Performance and digital operations specialist with a strong technical background and a data-driven approach. I work with Meta and Google Ads to analyze campaign performance, optimize results based on business objectives, and translate data into clear, actionable improvements.",
-            "I’m also responsible for day-to-day digital operations, including website updates, content and design improvements, product management based on stock, and internal data organization to keep systems consistent and reliable.",
-            "With a background in software development, I naturally build scripts, small systems, and automations to streamline workflows, reduce manual effort, and improve scalability whenever possible."
+            "I’m a hybrid professional working across software development, Artificial Intelligence, data, and performance marketing, backed by a strong technical foundation and a results-driven mindset. I combine software and digital product development with data analysis and operational optimization to turn business needs into practical, scalable solutions.",
+            "I work with AI applied to software development and automation, integrating LLMs, intelligent agents, automated workflows, and AI-powered systems to improve processes, reduce manual work, and increase operational efficiency. My experience in performance marketing, particularly with Meta and Google Ads, also allows me to approach technology from a business perspective rather than purely a technical one.",
+            "I build web applications, internal tools, automations, and data- and AI-driven systems, connecting technology, operations, and business objectives to create solutions that are both useful and scalable."
         ],
         links: {
             linkedin: "LinkedIn",
@@ -92,8 +92,8 @@ const en: Dictionary = {
         {
             id: "mim",
             name: "MIM",
-            description: "A modern Minecraft Mod Manager focused on intelligence, stability, and performance. Browse Modrinth & CurseForge, explore YouTube-integrated mod discovery with Showcase, analyze crashes with the SAGE Engine, scan mods for security threats, and optimize Minecraft with advanced JVM tuning.",
-            url: "https://github.com/Ian9Franco/MIM",
+            description: "A modern Minecraft Mod Manager focused on intelligence, stability, and performance. Features an interactive web platform and desktop client, Modrinth & CurseForge browsing, crash analysis with SAGE Engine, security scanner, and JVM tuning.",
+            url: "https://mim-hub.vercel.app/",
             readme: "https://github.com/Ian9Franco/MIM#readme",
             technologies: [
                 "Next.js 16",
@@ -108,6 +108,14 @@ const en: Dictionary = {
             ]
         },
         {
+            id: "smart-scan",
+            name: "Smart Scan",
+            description: "Intelligent local file explorer for designers and creatives. Features 100% local semantic AI search by content (Brain Mode), multimedia preview, and format conversion with Zero-Touch file integrity.",
+            url: "https://github.com/Ian9Franco/.smart.scan",
+            readme: "https://github.com/Ian9Franco/.smart.scan#readme",
+            technologies: ["Local AI", "Semantic Search", "TypeScript", "Node.js", "Media Processing"]
+        },
+        {
             id: "plotter",
             name: "Plotter",
             description: "Plotter is a premium web platform for film discovery and review designed especially for film lovers.",
@@ -116,9 +124,9 @@ const en: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
         },
         {
-            id: "theboyz",
-            name: "The Boyz",
-            description: "An immersive, cinematic web comic reader and editor built for 'The Boyz' graphic universe. Features step-by-step panel-by-panel navigation, dynamic dialogue bubble editors with elastic vector tails, automatic zoom layouts, and character database modules.",
+            id: "elseframe",
+            name: "Elseframe Comics",
+            description: "An immersive, cinematic web comic reader and editor built for the 'Elseframe Comics' universe. Features step-by-step panel-by-panel navigation, dynamic dialogue bubble editors with elastic vector tails, automatic zoom layouts, and character database modules.",
             url: "https://theboyz-comic.vercel.app/",
             readme: "https://github.com/Ian9Franco/theboyz",
             technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
@@ -130,6 +138,22 @@ const en: Dictionary = {
             url: "https://produ-estudio.vercel.app/",
             readme: "https://github.com/Ian9Franco/Produ-Estudio#",
             technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+        },
+        {
+            id: "web-sling-optimizer",
+            name: "Web-Sling Optimizer",
+            description: "E-commerce image optimization web app. Compresses assets, converts formats (WebP/AVIF), strips sensitive EXIF/GPS metadata, and adds custom watermarks to protect product catalogs.",
+            url: "https://web-sling-optimizer.vercel.app/",
+            readme: "https://github.com/Ian9Franco/Web-Sling-Optimizer",
+            technologies: ["Next.js", "TypeScript", "Image Optimization", "EXIF Cleaner", "Tailwind CSS"]
+        },
+        {
+            id: "q-sale",
+            name: "Q-Sale",
+            description: "Tactical Progressive Web App (PWA) to coordinate gaming sessions, track real-time availability and Discord voice status, and organize 5/5 squads for Rainbow Six Siege.",
+            url: "https://q-sale.vercel.app/",
+            readme: "https://github.com/Ian9Franco/q_sale",
+            technologies: ["Next.js 16", "React", "TypeScript", "PWA", "Web Audio API"]
         },
         {
             id: "tormentica",
@@ -167,20 +191,21 @@ const en: Dictionary = {
             link: "https://skillshop.credential.net/e77ff40c-98e0-43ea-ae3b-4667bd3a94eb#acc.43ZFhbsn",
         },
         {
+            title: "Diploma in SAP ABAP Programming",
+            subtitle: "Universidad Tecnológica Nacional (UTN) – Argentina",
+            description: "Specialized diploma completed in SAP ABAP development for enterprise software, custom reports, and business systems.",
+            category: "certificate",
+            date: "2025",
+            tags: ["SAP", "ABAP", "Enterprise Systems"],
+            link: "https://validator.centrodeelearning.com/validator/5ec3a92d-720f-49c5-af8f-1496682b0ba3",
+        },
+        {
             title: "Bachelor’s Degree in Software Engineering",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
             description: "Ongoing degree focused on software engineering principles, programming, databases, and modern web technologies.",
             category: "career",
             date: "2023 – Present",
             tags: ["Software Engineering", "University", "Programming"],
-        },
-        {
-            title: "Diploma in SAP ABAP Programming",
-            subtitle: "Universidad Tecnológica Nacional – Argentina",
-            description: "Specialized diploma in SAP ABAP development for enterprise software and business systems.",
-            category: "career",
-            date: "2025 – Ongoing",
-            tags: ["SAP", "ABAP", "Enterprise Systems"],
         },
         {
             title: "JavaScript Development",
@@ -270,9 +295,9 @@ const es: Dictionary = {
         greeting: "Ian Pontorno",
         role: "Ingeniero de Growth",
         biography: [
-            "Especialista en performance y operaciones digitales con una sólida formación técnica y un enfoque basado en datos. Trabajo con Meta y Google Ads para analizar el rendimiento de las campañas, optimizar resultados según objetivos comerciales y traducir datos en mejoras claras y accionables.",
-            "También soy responsable de las operaciones digitales diarias, incluyendo actualizaciones de sitios web, mejoras de diseño y contenido, gestión de productos según stock, y organización de datos internos para mantener la consistencia y confiabilidad de los sistemas.",
-            "Con formación en desarrollo de software, naturalmente construyo scripts, pequeños sistemas y automatizaciones para agilizar flujos de trabajo, reducir el esfuerzo manual y mejorar la escalabilidad siempre que sea posible."
+            "Soy un profesional híbrido entre desarrollo de software, Inteligencia Artificial, datos y performance marketing, con una sólida base técnica y un enfoque orientado a resultados. Combino el desarrollo de aplicaciones y sistemas digitales con el análisis de datos y la optimización de operaciones para transformar necesidades de negocio en soluciones concretas.",
+            "Trabajo con IA aplicada al desarrollo y la automatización, integrando LLMs, agentes, workflows inteligentes y sistemas automatizados para mejorar procesos, reducir tareas manuales y aumentar la eficiencia. Mi experiencia en marketing de performance, especialmente con Meta y Google Ads, también me permite entender las soluciones desde una perspectiva de negocio y no únicamente técnica.",
+            "Construyo aplicaciones web, herramientas internas, automatizaciones y sistemas impulsados por datos e IA, buscando siempre conectar tecnología, operaciones y objetivos comerciales en soluciones escalables y útiles."
         ],
         links: {
             linkedin: "LinkedIn",
@@ -299,8 +324,8 @@ const es: Dictionary = {
         {
             id: "mim",
             name: "MIM",
-            description: "Un moderno administrador de mods para Minecraft centrado en inteligencia, estabilidad y rendimiento. Navega entre mods de Modrinth y CurseForge, descubre contenido integrado con YouTube gracias a Showcase, analiza crashes con SAGE Engine, detecta amenazas de seguridad y optimiza Minecraft con configuración avanzada de JVM.",
-            url: "https://github.com/Ian9Franco/MIM",
+            description: "Un moderno administrador de mods para Minecraft centrado en inteligencia, estabilidad y rendimiento. Dispone de plataforma web interactiva y cliente de escritorio, explorando Modrinth & CurseForge, análisis de crashes con SAGE Engine, escáner de amenazas y optimización de JVM.",
+            url: "https://mim-hub.vercel.app/",
             readme: "https://github.com/Ian9Franco/MIM#readme",
             technologies: [
                 "Next.js 16",
@@ -315,6 +340,14 @@ const es: Dictionary = {
             ]
         },
         {
+            id: "smart-scan",
+            name: "Smart Scan",
+            description: "Explorador de archivos inteligente para diseñadores y creativos. Búsqueda semántica por contenido con IA 100% local (Modo Cerebro), previsualización multimedia y conversor de formatos con política Zero-Touch.",
+            url: "https://github.com/Ian9Franco/.smart.scan",
+            readme: "https://github.com/Ian9Franco/.smart.scan#readme",
+            technologies: ["IA Local", "Búsqueda Semántica", "TypeScript", "Node.js", "Procesamiento Media"]
+        },
+        {
             id: "plotter",
             name: "Plotter",
             description: "Plotter es una plataforma web premium de descubrimiento y crítica cinematográfica diseñada especialmente para cinéfilos",
@@ -323,9 +356,9 @@ const es: Dictionary = {
             technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
         },
         {
-            id: "theboyz",
-            name: "The Boyz",
-            description: "Un lector y editor interactivo y cinemático de cómics web para el universo de 'The Boyz'. Cuenta con navegación de paneles paso a paso, sistemas de globos de diálogo dinámicos con vectores elásticos, zoom de paneles y módulo de perfiles de personajes.",
+            id: "elseframe",
+            name: "Elseframe Comics",
+            description: "Un lector y editor interactivo y cinemático de cómics web para el universo gráfico de 'Elseframe Comics'. Cuenta con navegación de paneles paso a paso, sistemas de globos de diálogo dinámicos con vectores elásticos, zoom de paneles y módulo de perfiles de personajes.",
             url: "https://theboyz-comic.vercel.app/",
             readme: "https://github.com/Ian9Franco/theboyz",
             technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
@@ -337,6 +370,22 @@ const es: Dictionary = {
             url: "https://produ-estudio.vercel.app/",
             readme: "https://github.com/Ian9Franco/Produ-Estudio#",
             technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+        },
+        {
+            id: "web-sling-optimizer",
+            name: "Web-Sling Optimizer",
+            description: "Optimizador web de imágenes pensado para e-commerce. Comprime archivos, convierte formatos (WebP/AVIF), limpia metadatos sensibles EXIF/GPS y permite añadir marcas de agua personalizadas.",
+            url: "https://web-sling-optimizer.vercel.app/",
+            readme: "https://github.com/Ian9Franco/Web-Sling-Optimizer",
+            technologies: ["Next.js", "TypeScript", "Optimización de Imágenes", "Limpiador EXIF", "Tailwind CSS"]
+        },
+        {
+            id: "q-sale",
+            name: "Q-Sale",
+            description: "Progressive Web App (PWA) táctica para coordinar partidas en tiempo real con amigos, consultar disponibilidad y estado de voz en Discord, y organizar escuadras de 5/5 para Rainbow Six Siege.",
+            url: "https://q-sale.vercel.app/",
+            readme: "https://github.com/Ian9Franco/q_sale",
+            technologies: ["Next.js 16", "React", "TypeScript", "PWA", "Web Audio API"]
         },
         {
             id: "tormentica",
@@ -374,20 +423,21 @@ const es: Dictionary = {
             link: "https://skillshop.credential.net/e77ff40c-98e0-43ea-ae3b-4667bd3a94eb#acc.43ZFhbsn",
         },
         {
+            title: "Diplomatura en Programación SAP ABAP",
+            subtitle: "Universidad Tecnológica Nacional (UTN) – Argentina",
+            description: "Diplomatura completada en desarrollo SAP ABAP para software empresarial, reportes custom y sistemas de negocios. Certificación oficial validada.",
+            category: "certificate",
+            date: "2025",
+            tags: ["SAP", "ABAP", "Sistemas Empresariales"],
+            link: "https://validator.centrodeelearning.com/validator/5ec3a92d-720f-49c5-af8f-1496682b0ba3",
+        },
+        {
             title: "Licenciatura en Ingeniería de Software",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
             description: "Carrera en curso enfocada en principios de ingeniería de software, programación, bases de datos y tecnologías web modernas.",
             category: "career",
             date: "2023 – Presente",
             tags: ["Ingeniería de Software", "Universidad", "Programación"],
-        },
-        {
-            title: "Diplomatura en Programación SAP ABAP",
-            subtitle: "Universidad Tecnológica Nacional – Argentina",
-            description: "Diplomatura especializada en desarrollo SAP ABAP para software empresarial y sistemas de negocios.",
-            category: "career",
-            date: "2025 – En curso",
-            tags: ["SAP", "ABAP", "Sistemas Empresariales"],
         },
         {
             title: "Desarrollo JavaScript",
@@ -473,9 +523,10 @@ const es: Dictionary = {
 }
 
 export const contactLinks = {
-    email: "ianpontorno@gmail.com", // Assuming email provided in contact-section previously or I can infer. Actually, I better check what it was. Wait, I don't see the value.
+    email: "ianpontorno@gmail.com",
     linkedin: "https://www.linkedin.com/in/ian-pontorno/",
-    github: "https://github.com/Ian9Franco"
+    github: "https://github.com/Ian9Franco",
+    instagram: "https://www.instagram.com/ian.franco._/"
 }
 
 export const dictionaries = { en, es }
