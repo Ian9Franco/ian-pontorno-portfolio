@@ -1,11 +1,15 @@
 export type Project = {
     id: string
     name: string
+    subtitle?: string
+    badge?: string
     description: string
     logo?: string
+    disciplineTags?: string[]
     technologies?: string[]
     url?: string
     readme?: string
+    caseStudyUrl?: string
 }
 
 export type Activity = {
@@ -91,26 +95,41 @@ const en: Dictionary = {
     projects: [
         {
             id: "mim",
-            name: "MIM",
-            description: "A modern Minecraft Mod Manager focused on intelligence, stability, and performance. Features an interactive web platform and desktop client, Modrinth & CurseForge browsing, crash analysis with SAGE Engine, security scanner, and JVM tuning.",
+            name: "MIM — Minecraft Intelligent Manager",
+            subtitle: "Modular Systems Engineering Platform",
+            badge: "Flagship Systems Platform",
+            description: "A modular desktop and cloud platform engineered for complex Minecraft environments, combining deterministic crash diagnostics, content-addressed storage, offline-first synchronization, static JVM bytecode analysis, and transaction-safe NBT binary recovery.",
+            disciplineTags: [
+                "Systems Engineering",
+                "Applied AI",
+                "Distributed Systems",
+                "Security"
+            ],
             url: "https://mim-hub.vercel.app/",
             readme: "https://github.com/Ian9Franco/MIM#readme",
+            caseStudyUrl: "/projects/mim",
             technologies: [
                 "Next.js 16",
                 "React 19",
                 "TypeScript",
-                "Tailwind CSS v4",
-                "Node.js",
+                "Electron 42",
+                "PostgreSQL",
+                "Supabase Realtime",
                 "IndexedDB",
-                "Electron Builder",
-                "yt-dlp",
-                "Chokidar"
+                "Node.js"
             ]
         },
         {
             id: "smart-scan",
             name: "Smart Scan",
+            subtitle: "Local AI & Semantic File Intelligence",
             description: "Intelligent local file explorer for designers and creatives. Features 100% local semantic AI search by content (Brain Mode), multimedia preview, and format conversion with Zero-Touch file integrity.",
+            disciplineTags: [
+                "Applied AI",
+                "Local ML",
+                "Semantic Search",
+                "Computer Vision"
+            ],
             url: "https://github.com/Ian9Franco/.smart.scan",
             readme: "https://github.com/Ian9Franco/.smart.scan#readme",
             technologies: ["Local AI", "Semantic Search", "TypeScript", "Node.js", "Media Processing"]
@@ -323,26 +342,41 @@ const es: Dictionary = {
     projects: [
         {
             id: "mim",
-            name: "MIM",
-            description: "Un moderno administrador de mods para Minecraft centrado en inteligencia, estabilidad y rendimiento. Dispone de plataforma web interactiva y cliente de escritorio, explorando Modrinth & CurseForge, análisis de crashes con SAGE Engine, escáner de amenazas y optimización de JVM.",
+            name: "MIM — Minecraft Intelligent Manager",
+            subtitle: "Plataforma Modular de Ingeniería de Sistemas",
+            badge: "Plataforma Flagship de Sistemas",
+            description: "Plataforma modular de escritorio y nube diseñada para entornos complejos de Minecraft, combinando diagnóstico determinista de crashes, almacenamiento direccionado por contenido, sincronización offline-first, análisis estático de bytecode JVM y recuperación binaria NBT transaccional.",
+            disciplineTags: [
+                "Ingeniería de Sistemas",
+                "IA Aplicada",
+                "Sistemas Distribuidos",
+                "Seguridad"
+            ],
             url: "https://mim-hub.vercel.app/",
             readme: "https://github.com/Ian9Franco/MIM#readme",
+            caseStudyUrl: "/projects/mim",
             technologies: [
                 "Next.js 16",
                 "React 19",
                 "TypeScript",
-                "Tailwind CSS v4",
-                "Node.js",
+                "Electron 42",
+                "PostgreSQL",
+                "Supabase Realtime",
                 "IndexedDB",
-                "Electron Builder",
-                "yt-dlp",
-                "Chokidar"
+                "Node.js"
             ]
         },
         {
             id: "smart-scan",
             name: "Smart Scan",
+            subtitle: "IA Local e Inteligencia Semántica de Archivos",
             description: "Explorador de archivos inteligente para diseñadores y creativos. Búsqueda semántica por contenido con IA 100% local (Modo Cerebro), previsualización multimedia y conversor de formatos con política Zero-Touch.",
+            disciplineTags: [
+                "IA Aplicada",
+                "ML Local",
+                "Búsqueda Semántica",
+                "Computer Vision"
+            ],
             url: "https://github.com/Ian9Franco/.smart.scan",
             readme: "https://github.com/Ian9Franco/.smart.scan#readme",
             technologies: ["IA Local", "Búsqueda Semántica", "TypeScript", "Node.js", "Procesamiento Media"]
