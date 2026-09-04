@@ -20,6 +20,7 @@ export type Activity = {
     date: string
     tags: string[]
     link?: string
+    certificateImage?: string
 }
 
 export type Experience = {
@@ -233,7 +234,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2022",
             tags: ["JavaScript", "Web Development"],
-            link: "https://pub.coderhouse.com/legacy-certificates/6373a1a3c4d9d4000e070b52?lang=es",
+            certificateImage: "/certificates/javascript-development-certificate.png",
         },
         {
             title: "Advanced Backend Development",
@@ -242,7 +243,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Backend", "Node.js", "APIs"],
-            link: "https://pub.coderhouse.com/legacy-certificates/66d87189766073d467a8da31?lang=es",
+            certificateImage: "/certificates/advanced-backend-development-certificate.png",
         },
         {
             title: "Java Development",
@@ -251,7 +252,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Java", "OOP", "Backend"],
-            link: "https://pub.coderhouse.com/legacy-certificates/66b38a1b905b61e36ba4f45d?lang=es",
+            certificateImage: "/certificates/java-development-certificate.png",
         },
         {
             title: "Data Analytics",
@@ -260,7 +261,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Data Analysis", "Analytics", "Business Intelligence"],
-            link: "https://pub.coderhouse.com/legacy-certificates/65de2ef7565bd5b0a81ebd6b?lang=es",
+            certificateImage: "/certificates/data-analytics-certificate.png",
         },
         {
             title: "Web Development",
@@ -269,7 +270,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2021",
             tags: ["HTML", "CSS", "JavaScript"],
-            link: "https://pub.coderhouse.com/legacy-certificates/6262b0f67cfd37001912af74?lang=es",
+            certificateImage: "/certificates/web-development-certificate.png",
         },
         {
             title: "Fundamentals of Artificial Intelligence",
@@ -278,7 +279,7 @@ const en: Dictionary = {
             category: "certificate",
             date: "2023",
             tags: ["AI", "Machine Learning", "Technology"],
-            link: "https://pub.coderhouse.com/legacy-certificates/64cd8ee3c2e270215f453cf9?lang=es",
+            certificateImage: "/certificates/fundamentals-of-artificial-intelligence-certificate.png",
         },
     ],
     experiences: [
@@ -480,7 +481,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2022",
             tags: ["JavaScript", "Desarrollo Web"],
-            link: "https://pub.coderhouse.com/legacy-certificates/6373a1a3c4d9d4000e070b52?lang=es",
+            certificateImage: "/certificates/javascript-development-certificate.png",
         },
         {
             title: "Desarrollo Backend Avanzado",
@@ -489,7 +490,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Backend", "Node.js", "APIs"],
-            link: "https://pub.coderhouse.com/legacy-certificates/66d87189766073d467a8da31?lang=es",
+            certificateImage: "/certificates/advanced-backend-development-certificate.png",
         },
         {
             title: "Desarrollo Java",
@@ -498,7 +499,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Java", "OOP", "Backend"],
-            link: "https://pub.coderhouse.com/legacy-certificates/66b38a1b905b61e36ba4f45d?lang=es",
+            certificateImage: "/certificates/java-development-certificate.png",
         },
         {
             title: "Data Analytics",
@@ -507,7 +508,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2024",
             tags: ["Análisis de Datos", "Analytics", "Business Intelligence"],
-            link: "https://pub.coderhouse.com/legacy-certificates/65de2ef7565bd5b0a81ebd6b?lang=es",
+            certificateImage: "/certificates/data-analytics-certificate.png",
         },
         {
             title: "Desarrollo Web",
@@ -516,7 +517,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2021",
             tags: ["HTML", "CSS", "JavaScript"],
-            link: "https://pub.coderhouse.com/legacy-certificates/6262b0f67cfd37001912af74?lang=es",
+            certificateImage: "/certificates/web-development-certificate.png",
         },
         {
             title: "Fundamentos de Inteligencia Artificial",
@@ -525,7 +526,7 @@ const es: Dictionary = {
             category: "certificate",
             date: "2023",
             tags: ["IA", "Machine Learning", "Tecnología"],
-            link: "https://pub.coderhouse.com/legacy-certificates/64cd8ee3c2e270215f453cf9?lang=es",
+            certificateImage: "/certificates/fundamentals-of-artificial-intelligence-certificate.png",
         },
     ],
     experiences: [

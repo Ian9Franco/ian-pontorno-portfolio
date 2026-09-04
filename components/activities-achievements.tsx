@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState, useRef } from "react"
+import { Eye, ExternalLink, X } from "lucide-react"
 import { useLanguage } from "./language-context"
 import { dictionaries, Activity } from "@/data/dictionaries"
 import { fira } from "../lib/utils"
@@ -18,6 +19,26 @@ export function ActivitiesAchievements() {
   const [direction, setDirection] = useState(1)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 })
+
+  // Handle ESC key and prevent body scroll when modal is open
+  useEffect(() => {
+    if (!selectedImage) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = originalOverflow
+    }
+  }, [selectedImage])
 
   const cardWidth = 320
   const gap = 24
@@ -148,7 +169,14 @@ export function ActivitiesAchievements() {
           {[...activities, ...activities, ...activities].map((activity, index) => (
             <motion.div
               key={`${activity.title}-${index}`}
-              className="flex-shrink-0 w-[85vw] sm:w-80 bg-[#0D0D0D] rounded-lg p-4 sm:p-6 border border-[#1A1A1A] cursor-pointer text-[10px] sm:text-base transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:border-[#333]"
+              className={`flex-shrink-0 w-[85vw] sm:w-80 bg-[#0D0D0D] rounded-lg p-4 sm:p-6 border border-[#1A1A1A] text-[10px] sm:text-base transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:border-[#333] ${
+                activity.certificateImage ? "cursor-pointer" : ""
+              }`}
+              onClick={() => {
+                if (!isDragging && activity.certificateImage) {
+                  setSelectedImage(activity.certificateImage)
+                }
+              }}
             >
               {/* Category and date */}
               <div className="flex items-center justify-between mb-2">
@@ -191,16 +219,31 @@ export function ActivitiesAchievements() {
               </div>
 
               {/* Certificate & Validation links */}
-              {(activity.category === "certificate" || activity.link) && (
-                <div className="flex gap-4">
+              {(activity.certificateImage || activity.link) && (
+                <div className="flex flex-wrap items-center gap-3 mt-1">
+                  {activity.certificateImage && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setSelectedImage(activity.certificateImage!)
+                      }}
+                      className="text-xs text-violet-400 hover:text-violet-300 hover:underline flex items-center gap-1.5 cursor-pointer font-medium group"
+                    >
+                      <Eye className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
+                      {language === "es" ? "Ver Certificado" : "View Certificate"}
+                    </button>
+                  )}
                   {activity.link && (
                     <a
                       href={activity.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-blue-400 hover:underline break-words"
+                      className="text-xs text-blue-400 hover:text-blue-300 hover:underline flex items-center gap-1.5 group"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      {language === "es" ? "Ver Certificado / Validación" : "View Certificate / Accreditation"}
+                      <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
+                      {language === "es" ? "Ver Validación" : "View Accreditation"}
                     </a>
                   )}
                 </div>
@@ -210,40 +253,56 @@ export function ActivitiesAchievements() {
         </motion.div>
       </div>
 
-      {/* Modal for image */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer"
-          onClick={() => { setSelectedImage(null) }}
-        >
-          <motion.img
-            src={selectedImage}
-            alt="Certificate"
-            className="max-h-[90vh] max-w-[90vw] object-contain"
-            onClick={(e) => e.stopPropagation()}
-            animate={{
-              scale: 1,
-              rotateX: rotation.rotateX,
-              rotateY: rotation.rotateY,
-            }}
-            whileHover={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            onMouseMove={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect()
-              const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * 10
-              const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 10
-              setRotation({ rotateX: -rotateX, rotateY })
-            }}
-            onMouseLeave={() => { setRotation({ rotateX: 0, rotateY: 0 }) }}
-          />
-          <button
-            className="absolute top-4 right-4 text-white text-lg font-bold"
+      {/* Modal for certificate image */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center z-50 cursor-pointer p-4"
             onClick={() => setSelectedImage(null)}
           >
-            ✕
-          </button>
-        </div>
-      )}
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 280, damping: 25 }}
+              className="relative max-h-[90vh] max-w-[90vw] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.img
+                src={selectedImage}
+                alt="Certificate"
+                className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl object-contain border border-white/10"
+                animate={{
+                  scale: 1,
+                  rotateX: rotation.rotateX,
+                  rotateY: rotation.rotateY,
+                }}
+                whileHover={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect()
+                  const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * 10
+                  const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * 10
+                  setRotation({ rotateX: -rotateX, rotateY })
+                }}
+                onMouseLeave={() => { setRotation({ rotateX: 0, rotateY: 0 }) }}
+              />
+              <button
+                type="button"
+                className="absolute -top-3 -right-3 sm:top-3 sm:right-3 text-white/80 hover:text-white bg-black/70 hover:bg-black/90 p-2 rounded-full border border-white/20 transition-all cursor-pointer backdrop-blur-sm shadow-md"
+                onClick={() => setSelectedImage(null)}
+                aria-label="Close certificate preview"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
