@@ -26,7 +26,7 @@ export default function MimCaseStudyPage() {
           </Link>
           <div className="flex items-center gap-3">
             <span className={`${fira.className} text-[11px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/25`}>
-              {isEs ? "Caso de Estudio Flagship" : "Flagship Systems Case Study"}
+              {isEs ? "Caso de estudio · Proyecto principal actual" : "Case study · Current flagship"}
             </span>
           </div>
         </div>
@@ -53,15 +53,15 @@ export default function MimCaseStudyPage() {
                 MIM — Minecraft Intelligent Manager
               </h1>
               <p className={`${fira.className} text-sm sm:text-base text-indigo-400 font-medium tracking-tight mt-1`}>
-                {isEs ? "Plataforma Modular de Ingeniería de Sistemas" : "Modular Systems Engineering Platform"}
+                {isEs ? "Plataforma de modding para escritorio y web" : "Desktop & Web Modding Platform"}
               </p>
             </div>
           </div>
 
           <p className="text-lg text-neutral-300 leading-relaxed font-normal">
             {isEs
-              ? "Una plataforma modular de escritorio y nube construida alrededor de la infraestructura de entornos complejos de Minecraft."
-              : "A modular systems platform built around Minecraft infrastructure."}
+              ? "Una plataforma de escritorio y web para organizar modpacks, diagnosticar errores, proteger archivos y colaborar entre dispositivos."
+              : "A desktop and web platform for organizing modpacks, diagnosing failures, protecting files, and collaborating across devices."}
           </p>
 
           {/* Discipline Badges */}
@@ -116,9 +116,38 @@ export default function MimCaseStudyPage() {
         <section className="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/30 via-neutral-900/40 to-neutral-950 border border-indigo-500/20 shadow-inner">
           <p className="text-base sm:text-lg text-neutral-200 leading-relaxed italic">
             {isEs
-              ? "“MIM comenzó como una herramienta de gestión para Minecraft y evolucionó hacia una plataforma de ingeniería de sistemas enfocada en confiabilidad, diagnóstico determinista, almacenamiento eficiente, sincronización distribuida y seguridad.”"
-              : "“MIM started as a Minecraft management tool and evolved into a systems engineering platform focused on reliability, diagnostics, storage, synchronization and security.”"}
+              ? "“MIM comenzó como una herramienta para organizar mods y creció a medida que aparecieron problemas reales de diagnóstico, almacenamiento, recuperación y sincronización.”"
+              : "“MIM began as a tool for organizing mods and grew as real problems emerged around diagnostics, storage, recovery, and synchronization.”"}
           </p>
+        </section>
+
+        <section className="grid sm:grid-cols-3 gap-4">
+          <div className="sm:col-span-2 p-5 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+            <p className={`${fira.className} text-[11px] uppercase tracking-wider text-indigo-400`}>
+              {isEs ? "Mi trabajo" : "My work"}
+            </p>
+            <p className="text-sm text-neutral-300 leading-relaxed mt-2">
+              {isEs
+                ? "Diseño y desarrollo el producto de punta a punta: experiencia de escritorio y web, integraciones, manejo de archivos, contratos entre módulos, documentación técnica y controles automatizados."
+                : "I design and develop the product end to end: desktop and web experiences, integrations, file handling, module contracts, technical documentation, and automated checks."}
+            </p>
+          </div>
+          <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+            <p className={`${fira.className} text-[11px] uppercase tracking-wider text-indigo-400`}>
+              {isEs ? "Estado" : "Status"}
+            </p>
+            <p className="text-sm text-neutral-300 leading-relaxed mt-2">
+              {isEs ? "En desarrollo activo" : "Actively developed"}
+            </p>
+            <a
+              href="https://github.com/Ian9Franco/MIM/commits/main/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xs text-indigo-300 hover:text-indigo-200 mt-2"
+            >
+              {isEs ? "Ver evolución ↗" : "View progress ↗"}
+            </a>
+          </div>
         </section>
 
         {/* Section 1: The Engineering Challenge */}
@@ -164,13 +193,13 @@ export default function MimCaseStudyPage() {
                   <span>SAGE — Crash Intelligence</span>
                 </h3>
                 <span className={`${fira.className} text-[11px] text-indigo-300/80 bg-indigo-500/10 px-2.5 py-0.5 rounded-full border border-indigo-500/20`}>
-                  Applied AI / RAG
+                  Deterministic Diagnostics + AI Explanation
                 </span>
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Clasificación determinista de stacktraces y diagnóstico estricto del mod culpable mediante scoring de confianza multifactorial, recuperación semántica de causa raíz (RAG) y guardrails matemáticos que impiden alucinaciones de LLMs."
-                  : "Deterministic crash classification and culprit mod diagnosis powered by multi-factor evidence scoring, semantic RAG over compatibility knowledge bases, and strict guardrails preventing LLM hallucinations."}
+                  ? "Clasificación determinista de stacktraces y atribución del mod probable mediante evidencia y scoring de confianza. La capa de IA recibe el reporte estructurado para explicarlo, sin autoridad para reemplazar el diagnóstico del motor."
+                  : "Deterministic stacktrace classification and likely-culprit attribution based on evidence and confidence scoring. The AI layer receives the structured report to explain it without authority to replace the engine's diagnosis."}
               </p>
             </div>
 
@@ -205,8 +234,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Sincronización colaborativa de estado offline-first con mutaciones optimistas en UI (<8ms), resolución determinista Last-Write-Wins (LWW) con timestamps y desempate por UUID de cliente, colas FIFO transaccionales en IndexedDB y PostgreSQL Row-Level Security (RLS) a nivel kernel."
-                  : "Offline-first distributed synchronization with sub-8ms optimistic local UI mutations, deterministic Last-Write-Wins (LWW) resolution with client timestamps & UUID tie-breaking, IndexedDB FIFO mutation replay queues, and kernel-level PostgreSQL Row-Level Security."}
+                  ? "Sincronización colaborativa offline-first con actualizaciones optimistas, resolución Last-Write-Wins, colas de reintento en IndexedDB y políticas Row-Level Security en PostgreSQL."
+                  : "Offline-first collaborative synchronization with optimistic updates, Last-Write-Wins conflict resolution, IndexedDB retry queues, and PostgreSQL Row-Level Security policies."}
               </p>
             </div>
 
@@ -241,8 +270,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Parsing estricto de la especificación binaria Mojang NBT v19133 con descompresión RFC 1952. Aplica el Invariante de Cero Pérdida de Datos: backups obligatorios volcados a disco y reemplazos atómicos con archivos temporales verificados."
-                  : "Strict Mojang NBT v19133 binary parsing with RFC 1952 decompression. Enforces a Zero-Data-Loss Invariant through mandatory disk-flushed snapshot backups and verified atomic file replacement buffers."}
+                  ? "Procesamiento binario NBT con backups previos, escritura en archivos temporales, validación y reemplazo atómico. La suite de integración verifica que el archivo original permanezca recuperable ante fallos contemplados."
+                  : "NBT binary processing with pre-write backups, temporary files, validation, and atomic replacement. The integration suite verifies that the original remains recoverable across the covered failure cases."}
               </p>
             </div>
           </div>
@@ -344,6 +373,24 @@ export default function MimCaseStudyPage() {
               ? "* Nota: Los benchmarks representan mediciones específicas del proyecto bajo condiciones de prueba documentadas en suites headless."
               : "* Note: Benchmarks are project-specific measurements under the documented test conditions in headless suites."}
           </p>
+          <div className="flex flex-wrap gap-4 text-xs">
+            <a
+              href="https://github.com/Ian9Franco/MIM/blob/main/docs/engines/SAGE_EVALUATION.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-300 hover:text-indigo-200"
+            >
+              {isEs ? "Metodología de SAGE ↗" : "SAGE methodology ↗"}
+            </a>
+            <a
+              href="https://github.com/Ian9Franco/MIM/blob/main/scripts/benchmarks/aduana-benchmark.ts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-300 hover:text-indigo-200"
+            >
+              {isEs ? "Benchmark de Aduana ↗" : "Aduana benchmark ↗"}
+            </a>
+          </div>
         </section>
 
         {/* Section 5: Product Features (Secondary) */}
@@ -355,19 +402,35 @@ export default function MimCaseStudyPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm text-neutral-300">
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <p className="font-semibold text-white">Dual-Source Catalog Discovery</p>
-              <p className="text-xs text-neutral-400 mt-1">Paridad de búsqueda en Modrinth y CurseForge con traductor transparente de slugs numéricos.</p>
+              <p className="text-xs text-neutral-400 mt-1">
+                {isEs
+                  ? "Búsqueda integrada en Modrinth y CurseForge con normalización de identificadores."
+                  : "Integrated Modrinth and CurseForge search with identifier normalization."}
+              </p>
             </div>
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <p className="font-semibold text-white">JVM Tuning & Argument Presets</p>
-              <p className="text-xs text-neutral-400 mt-1">Ajuste automático de asignación de memoria heap y flags optimizados para recolectores ZGC/G1.</p>
+              <p className="text-xs text-neutral-400 mt-1">
+                {isEs
+                  ? "Presets de memoria y argumentos para distintos perfiles de hardware y recolectores de basura."
+                  : "Memory and argument presets for different hardware profiles and garbage collectors."}
+              </p>
             </div>
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <p className="font-semibold text-white">3D WebGL Skinview Avatar</p>
-              <p className="text-xs text-neutral-400 mt-1">Renderizado tridimensional de perfiles con desbordamiento controlado y resolución Minotar.</p>
+              <p className="text-xs text-neutral-400 mt-1">
+                {isEs
+                  ? "Vista tridimensional del avatar de Minecraft dentro del perfil."
+                  : "Interactive 3D Minecraft avatar rendering inside the user profile."}
+              </p>
             </div>
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <p className="font-semibold text-white">Graceful Showcase Video Fallbacks</p>
-              <p className="text-xs text-neutral-400 mt-1">Aislamiento de fallas multimedia con enlace directo a YouTube si la extracción externa falla.</p>
+              <p className="text-xs text-neutral-400 mt-1">
+                {isEs
+                  ? "Fallback hacia YouTube cuando la extracción o reproducción integrada no está disponible."
+                  : "Fallback to YouTube when embedded extraction or playback is unavailable."}
+              </p>
             </div>
           </div>
         </section>
