@@ -163,13 +163,13 @@ export default function MimCaseStudyPage() {
           <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed">
             <p>
               {isEs
-                ? "Los modpacks modernos de Minecraft generan un entorno de ejecución frágil y heterogéneo: cientos de artefactos JAR compilados por diferentes desarrolladores, dependencias cruzadas conflictivas, inyecciones de bytecode (Mixins) que mutan el runtime en caliente, crashes opacos de la JVM, archivos de guardado binarios vulnerables a corrupción y múltiples fuentes de estado concurrentes entre escritorio y dispositivos móviles."
-                : "Modern Minecraft modpacks create an unstable, heterogeneous environment: hundreds of compiled JAR artifacts from disparate authors, conflicting transitive dependencies, runtime bytecode injections (Mixins), opaque JVM stacktraces, unverified binary world saves prone to silent corruption, and fragmented multi-client state across desktop workstations and mobile devices."}
+                ? "Los modpacks acumulan cientos de archivos JAR de distintos autores, y no pasa mucho tiempo antes de que algo se rompa: dos mods pelean por la misma dependencia, un Mixin inyecta bytecode en el momento equivocado, o un archivo de guardado se corrompe en silencio. El stacktrace que da Minecraft es casi ilegible, y para cuando algo falla de forma visible, la causa real ya pasó varios pasos atrás."
+                : "Modpacks pile up hundreds of JAR files from different authors, and it doesn't take long before something breaks: two mods fight over the same dependency, a Mixin injects bytecode at the wrong moment, or a world save gets silently corrupted. The stacktrace Minecraft gives you is barely readable, and by the time something visibly fails, the actual cause happened several steps earlier."}
             </p>
             <p>
               {isEs
-                ? "MIM no aborda esto como un simple gestor de descargas superficial. Descompone el problema en subsistemas de ingeniería independientes y desacoplados, cada uno con contratos estrictos, aislamiento de fallas e invariantes verificables."
-                : "MIM does not approach this as a superficial download manager. Instead, it decomposes the problem into decoupled, independent engineering subsystems, each governed by strict interface contracts, fault isolation, and verifiable invariants."}
+                ? "MIM no es un gestor de descargas con pasos extra. Cada uno de estos modos de falla —conflictos de dependencias, guardados corruptos, mods inseguros, estado fragmentado entre dispositivos— es un tipo de problema distinto, así que los separé en subsistemas independientes, cada uno con su propio contrato y su propia forma de fallar de manera segura sin arrastrar al resto de la app."
+                : "MIM isn't a download manager with extra steps. Every one of these failure modes — dependency conflicts, corrupted saves, unsafe mods, fragmented state across devices — is a different kind of problem, so I split them into separate subsystems, each with its own contract and its own way of failing safely without taking the rest of the app down with it."}
             </p>
           </div>
         </section>
@@ -183,8 +183,8 @@ export default function MimCaseStudyPage() {
             </h2>
             <p className="text-sm text-neutral-400">
               {isEs
-                ? "Subsistemas autónomos diseñados bajo el principio de responsabilidad única:"
-                : "Autonomous subsystems built under single-responsibility isolation:"}
+                ? "Cinco subsistemas, cada uno haciendo bien una sola cosa:"
+                : "Five subsystems, each doing one job well:"}
             </p>
           </div>
 
@@ -202,8 +202,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Clasificación determinista de stacktraces y atribución del mod probable mediante evidencia y scoring de confianza. La capa de IA recibe el reporte estructurado para explicarlo, sin autoridad para reemplazar el diagnóstico del motor."
-                  : "Deterministic stacktrace classification and likely-culprit attribution based on evidence and confidence scoring. The AI layer receives the structured report to explain it without authority to replace the engine's diagnosis."}
+                  ? "Un motor basado en reglas lee el stacktrace y puntúa a los mods más probables según evidencia, no intuición. Recién después de esa diagnosis, un LLM la traduce a lenguaje natural: explica el veredicto, no lo decide."
+                  : "A rules-based engine reads the stacktrace and scores likely culprits using evidence, not guesswork. Only after that diagnosis exists does an LLM turn it into a plain-language explanation — it explains the verdict, it doesn't make one."}
               </p>
             </div>
 
@@ -220,8 +220,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Identidad criptográfica de archivos (SHA-512 ≻ SHA-1), deduplicación entre plataformas (Modrinth & CurseForge) y caché de invalidación instantánea con verificación mtime + size para eliminar transferencias y lecturas redundantes."
-                  : "Cryptographic file identity (SHA-512 ≻ SHA-1), cross-platform deduplication between Modrinth and CurseForge, and instant mtime + size cache invalidation eliminating redundant transfers."}
+                  ? "Cada archivo recibe una identidad SHA-512, así que el mismo mod descargado desde Modrinth o CurseForge se reconoce como el mismo archivo y nunca se vuelve a bajar. Un caché indexado por mtime + tamaño evita por completo la I/O redundante."
+                  : "Every file gets a SHA-512 identity, so the same mod downloaded from Modrinth or CurseForge is recognized as the same file and never re-fetched. A cache keyed on mtime + size skips redundant I/O entirely."}
               </p>
             </div>
 
@@ -238,8 +238,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Sincronización colaborativa offline-first con actualizaciones optimistas, resolución Last-Write-Wins, colas de reintento en IndexedDB y políticas Row-Level Security en PostgreSQL."
-                  : "Offline-first collaborative synchronization with optimistic updates, Last-Write-Wins conflict resolution, IndexedDB retry queues, and PostgreSQL Row-Level Security policies."}
+                  ? "Funciona offline-first: los cambios se aplican de forma optimista, se encolan en IndexedDB si estás desconectado, y se resuelven con last-write-wins al reconectarte. Row-Level Security en Postgres aísla los datos de cada usuario a nivel de base de datos, no solo en la lógica de la app."
+                  : "Works offline first: changes apply optimistically, queue in IndexedDB if you're disconnected, and resolve with last-write-wins once you're back online. Postgres Row-Level Security keeps each user's data isolated at the database level, not just in app logic."}
               </p>
             </div>
 
@@ -256,8 +256,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Análisis estático de bytecode Java y AST sin ejecución de código para identificar patrones de riesgo de cadena de suministro: droppers de procesos (ProcessBuilder), evasión por reflexión dinámica, sockets no autorizados y enlaces JNI nativos no administrados."
-                  : "Static Java bytecode and AST inspection without executing untrusted code, detecting supply-chain threat patterns: process droppers, dynamic reflection evasion, unauthorized raw sockets, and unmanaged native JNI libraries."}
+                  ? "Inspecciona el bytecode y el AST de un mod sin ejecutarlo, buscando patrones típicos de malware: creación de procesos, reflexión usada para evadir chequeos, sockets sin autorizar, librerías nativas cargadas sin declarar."
+                  : "Inspects a mod's bytecode and AST without running it, looking for patterns you'd expect from malware: process spawning, reflection used to dodge checks, raw sockets, native libraries loaded without declaring it."}
               </p>
             </div>
 
@@ -274,8 +274,8 @@ export default function MimCaseStudyPage() {
               </div>
               <p className="text-sm text-neutral-300 leading-relaxed">
                 {isEs
-                  ? "Procesamiento binario NBT con backups previos, escritura en archivos temporales, validación y reemplazo atómico. La suite de integración verifica que el archivo original permanezca recuperable ante fallos contemplados."
-                  : "NBT binary processing with pre-write backups, temporary files, validation, and atomic replacement. The integration suite verifies that the original remains recoverable across the covered failure cases."}
+                  ? "Antes de tocar un guardado, lo respalda, escribe en un archivo temporal, valida el resultado y recién ahí lo reemplaza de forma atómica. Si algo falla a mitad de camino, el original sigue estando ahí."
+                  : "Before touching a world save, it backs it up, writes to a temp file, validates the result, and only then swaps it in atomically. If anything goes wrong mid-write, the original is still there."}
               </p>
             </div>
           </div>
@@ -290,8 +290,8 @@ export default function MimCaseStudyPage() {
             </h2>
             <p className="text-sm text-neutral-400">
               {isEs
-                ? "Desacoplamiento estricto y topología de 7 motores de dominio:"
-                : "Strict decoupling and 7 domain engines topology:"}
+                ? "Cómo se comunican los cinco motores entre sí sin volverse un sistema enredado:"
+                : "How the five engines talk to each other without turning into one tangled system:"}
             </p>
           </div>
 
@@ -314,8 +314,8 @@ export default function MimCaseStudyPage() {
 
             <p className="text-sm text-neutral-300 leading-relaxed">
               {isEs
-                ? "MIM está organizado en torno a siete motores de dominio aislados conectados a través de una arquitectura orientada a eventos estrictamente tipada (MimEventMap). Cada subsistema es dueño de una responsabilidad específica mientras se comunica mediante contratos explícitos, garantizando que los fallos y detalles de implementación permanezcan completamente aislados sin bloqueos en cascada."
-                : "MIM is organized around isolated domain engines connected through a typed event-driven architecture (MimEventMap). Each subsystem owns a specific responsibility while communicating through explicit contracts, allowing failures and implementation details to remain isolated without cascading faults."}
+                ? "MIM está organizado en torno a cinco motores de dominio aislados, conectados mediante un bus de eventos tipado (MimEventMap). Cada uno es dueño de una única responsabilidad y se comunica solo a través de contratos explícitos, así que una falla en un motor —por ejemplo, NBT Rescue encontrando un guardado corrupto— nunca se propaga a los demás."
+                : "MIM is organized around five isolated domain engines connected through a typed event bus (MimEventMap). Each one owns a single responsibility and talks to the others only through explicit contracts — so a failure in one engine, say NBT Rescue hitting a corrupted save, never cascades into the rest."}
             </p>
           </div>
         </section>
