@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import animation from "./mim-animation.module.css"
 import { useLanguage } from "./language-context"
 import { dictionaries, Project } from "@/data/dictionaries"
 import { Tag } from "./tag"
@@ -101,7 +102,7 @@ export function SelectedProjects() {
             >
               <div className="flex items-start gap-3.5">
                 <div
-                  className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden mt-0.5 shadow-md"
+                  className={`w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center mt-0.5 shadow-md ${project.id === "mim" ? animation.slime : "overflow-hidden"}`}
                   style={{ backgroundColor: projectColors[project.id] || "#888" }}
                 >
                   <Image

@@ -1,5 +1,4 @@
 .page {
-  background-image: radial-gradient(ellipse at 90% 0%, rgb(79 70 229 / 12%), transparent 35rem);
   overflow-wrap: anywhere;
 }
 
@@ -25,9 +24,9 @@
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 19rem;
+  min-height: 16rem;
   border: 1px solid rgb(129 140 248 / 20%);
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   background: linear-gradient(145deg, rgb(79 70 229 / 12%), rgb(255 255 255 / 2%));
 }
 
@@ -40,33 +39,6 @@
   box-shadow: 0 0 0 1.5rem rgb(129 140 248 / 4%);
   background: radial-gradient(circle, rgb(99 102 241 / 18%), transparent 70%);
 }
-
-/* Reused from Ian9Franco/MIM app/globals.css (.animate-slime). */
-@keyframes slime-squish {
-  0%, 100% { transform: scale(1, 1) translateY(0); }
-  15% { transform: scale(1.2, 0.8) translateY(2px); }
-  35% { transform: scale(0.9, 1.15) translateY(-8px); }
-  55% { transform: scale(1.1, 0.9) translateY(0); }
-  75% { transform: scale(1, 1.05) translateY(-2px); }
-}
-
-.mascot {
-  position: relative;
-  animation: slime-squish 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  transform-origin: bottom;
-}
-.mascot[data-paused="true"] { animation-play-state: paused; }
-
-.animationControl {
-  position: absolute;
-  bottom: 1rem;
-  font-size: 0.75rem;
-  color: #c7d2fe;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-.animationControl:hover { background: rgb(129 140 248 / 12%); }
 
 .sectionNav {
   display: flex;
@@ -99,9 +71,4 @@
   .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .mascotStage { min-height: 16rem; }
   .heroActions a { justify-content: center; width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mascot { animation: none; }
-  .animationControl { display: none; }
 }

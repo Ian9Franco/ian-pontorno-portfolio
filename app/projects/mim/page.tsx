@@ -6,15 +6,16 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-context"
 import { fira } from "@/lib/utils"
 import styles from "./mim-case-study.module.css"
+import { Tag } from "@/components/tag"
+import animation from "@/components/mim-animation.module.css"
 
 export default function MimCaseStudyPage() {
   const { language } = useLanguage()
   const isEs = language === "es"
-  const [animationPaused, setAnimationPaused] = React.useState(false)
 
   return (
-    <main className={`${styles.page} min-h-screen bg-black text-neutral-200 py-12 px-6 sm:px-8 selection:bg-indigo-500/30 selection:text-indigo-200`}>
-      <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
+    <main className={`${styles.page} min-h-screen bg-black text-neutral-200 pt-24 pb-12 px-6 sm:px-8 selection:bg-indigo-500/30 selection:text-indigo-200`}>
+      <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16">
         
         {/* Navigation / Back link */}
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
@@ -38,7 +39,7 @@ export default function MimCaseStudyPage() {
           <div>
             <p className={`${fira.className} text-xs uppercase tracking-[0.2em] text-indigo-300 mb-4`}>Minecraft Intelligent Manager</p>
             <div>
-              <h1 className="text-6xl sm:text-8xl font-bold text-white tracking-tight">MIM<span className="text-indigo-400">.</span></h1>
+              <h1 className="text-5xl sm:text-6xl font-bold text-white tracking-tight">MIM<span className="text-indigo-400">.</span></h1>
               <p className={`${fira.className} text-sm sm:text-base text-indigo-300 font-medium tracking-tight mt-4`}>
                 {isEs ? "Plataforma de modding para escritorio y web" : "Desktop & Web Modding Platform"}
               </p>
@@ -56,13 +57,13 @@ export default function MimCaseStudyPage() {
             {[
               "Systems Engineering", "Applied AI", "Distributed Systems", "Security", "Binary Safe Recovery"
             ].map((tag) => (
-              <span key={tag} className={`${fira.className} text-xs font-medium px-3 py-1 rounded-md bg-white/[0.04] text-neutral-300 border border-white/[0.08]`}>{tag}</span>
+              <Tag key={tag}>{tag}</Tag>
             ))}
           </div>
           </div>
           <div className={styles.mascotStage}>
             <div className={styles.mascotHalo} aria-hidden="true" />
-            <div className={styles.mascot} data-paused={animationPaused}>
+            <div className={animation.slime}>
               <Image
                 src="/images/projects/mim.png"
                 alt="MIM Logo"
@@ -72,9 +73,6 @@ export default function MimCaseStudyPage() {
                 className="object-contain rounded-3xl"
               />
             </div>
-            <button type="button" className={styles.animationControl} aria-pressed={animationPaused} onClick={() => setAnimationPaused(!animationPaused)}>
-              {animationPaused ? (isEs ? "Reanudar animación" : "Resume animation") : (isEs ? "Pausar animación" : "Pause animation")}
-            </button>
           </div>
 
           {/* Action CTAs */}
@@ -464,12 +462,7 @@ export default function MimCaseStudyPage() {
               "Tailwind CSS v4",
               "Turbopack"
             ].map((tech) => (
-              <span
-                key={tech}
-                className={`${fira.className} text-xs px-3 py-1 rounded-md bg-white/[0.04] text-neutral-300 border border-white/[0.08]`}
-              >
-                {tech}
-              </span>
+              <Tag key={tech}>{tech}</Tag>
             ))}
           </div>
         </section>

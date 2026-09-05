@@ -1,0 +1,18 @@
+/* Reused from Ian9Franco/MIM app/globals.css (.animate-slime). */
+@keyframes slime-squish {
+  0%, 100% { transform: scale(1, 1) translateY(0); }
+  15% { transform: scale(1.2, 0.8) translateY(2px); }
+  35% { transform: scale(0.9, 1.15) translateY(-8px); }
+  55% { transform: scale(1.1, 0.9) translateY(0); }
+  75% { transform: scale(1, 1.05) translateY(-2px); }
+}
+
+.slime {
+  position: relative;
+  animation: slime-squish 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: bottom;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slime { animation: none; }
+}
