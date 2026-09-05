@@ -1,12 +1,17 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const routes = [
+    { path: "", priority: 1 },
+    { path: "/projects/mim", priority: 0.8 },
+  ]
+
+  return routes.map(({ path, priority }) => (
     {
-      url: "https://ian-pontorno-portfolio.vercel.app",
+      url: `https://ian-pontorno-portfolio.vercel.app${path}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 1,
-    },
-  ]
+      priority,
+    }
+  ))
 }
