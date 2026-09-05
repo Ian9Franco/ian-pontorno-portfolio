@@ -14,7 +14,7 @@ export function WorkExperience() {
 
   return (
     <section id="work-experience" className="py-10 px-6">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Title aligned left */}
         <motion.h2
           id="work-experience-heading"
@@ -53,7 +53,7 @@ export function WorkExperience() {
                   <h3 className="font-medium text-white text-sm text-shadow-sm">{exp.role}</h3>
                   <time
                     className={`${fira.className} text-xs text-gray-400 sm:ml-4`}
-                    dateTime={exp.period.replace(" – Present", "/..").replace(" – ", "/")}
+                    dateTime={exp.period.match(/\d{4}/)?.[0]}
                   >
                     {exp.period}
                   </time>

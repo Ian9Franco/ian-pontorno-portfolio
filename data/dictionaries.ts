@@ -50,6 +50,8 @@ export type Dictionary = {
     }
     selectedProjects: {
         title: string
+        description: string
+        moreTitle: string
     }
     activities: {
         title: string
@@ -66,11 +68,10 @@ export type Dictionary = {
 const en: Dictionary = {
     hero: {
         greeting: "Ian Pontorno",
-        role: "Growth Engineer",
+        role: "Full-Stack Developer & Growth Engineer",
         biography: [
-            "I’m a hybrid professional working across software development, Artificial Intelligence, data, and performance marketing, backed by a strong technical foundation and a results-driven mindset. I combine software and digital product development with data analysis and operational optimization to turn business needs into practical, scalable solutions.",
-            "I work with AI applied to software development and automation, integrating LLMs, intelligent agents, automated workflows, and AI-powered systems to improve processes, reduce manual work, and increase operational efficiency. My experience in performance marketing, particularly with Meta and Google Ads, also allows me to approach technology from a business perspective rather than purely a technical one.",
-            "I build web applications, internal tools, automations, and data- and AI-driven systems, connecting technology, operations, and business objectives to create solutions that are both useful and scalable."
+            "I build web and desktop applications, automation tools, and data workflows. My background spans software development, IT operations, and performance marketing, connecting how a product works with the people and business processes it serves.",
+            "At Fanger Design, I work in paid media and automation. Across my projects, I explore developer tools, creative experiences, local AI, and operational software."
         ],
         links: {
             linkedin: "LinkedIn",
@@ -84,7 +85,9 @@ const en: Dictionary = {
         title: "Work Experience"
     },
     selectedProjects: {
-        title: "Selected Projects"
+        title: "Selected Projects",
+        description: "A selection of products showing how I approach engineering, interaction design, automation, and practical problem solving.",
+        moreTitle: "More work"
     },
     activities: {
         title: "Activities & Achievements"
@@ -97,9 +100,9 @@ const en: Dictionary = {
         {
             id: "mim",
             name: "MIM — Minecraft Intelligent Manager",
-            subtitle: "Modular Systems Engineering Platform",
-            badge: "Flagship Systems Platform",
-            description: "A modular desktop and cloud platform engineered for complex Minecraft environments, combining deterministic crash diagnostics, content-addressed storage, offline-first synchronization, static JVM bytecode analysis, and transaction-safe NBT binary recovery.",
+            subtitle: "Desktop & Web Modding Platform",
+            badge: "Current flagship",
+            description: "A desktop and web ecosystem for managing Minecraft mods and modpacks. It combines file management, deterministic crash diagnostics, static bytecode inspection, NBT recovery, and cloud collaboration.",
             disciplineTags: [
                 "Systems Engineering",
                 "Applied AI",
@@ -124,15 +127,14 @@ const en: Dictionary = {
             id: "smart-scan",
             name: "Smart Scan",
             subtitle: "Local AI & Semantic File Intelligence",
-            description: "Intelligent local file explorer for designers and creatives. Features 100% local semantic AI search by content (Brain Mode), multimedia preview, and format conversion with Zero-Touch file integrity.",
+            badge: "Private project",
+            description: "A local file explorer and asset-management project for designers and creatives, focused on semantic search, multimedia previews, format conversion, and non-destructive indexing.",
             disciplineTags: [
                 "Applied AI",
                 "Local ML",
                 "Semantic Search",
                 "Computer Vision"
             ],
-            url: "https://github.com/Ian9Franco/.smart.scan",
-            readme: "https://github.com/Ian9Franco/.smart.scan#readme",
             technologies: ["Local AI", "Semantic Search", "TypeScript", "Node.js", "Media Processing"]
         },
         {
@@ -146,9 +148,11 @@ const en: Dictionary = {
         {
             id: "elseframe",
             name: "Elseframe Comics",
-            description: "An immersive, cinematic web comic reader and editor built for the 'Elseframe Comics' universe. Features step-by-step panel-by-panel navigation, dynamic dialogue bubble editors with elastic vector tails, automatic zoom layouts, and character database modules.",
-            url: "https://theboyz-comic.vercel.app/",
-            readme: "https://github.com/Ian9Franco/theboyz",
+            subtitle: "Interactive Reader & Creative Tools",
+            description: "A comic-reading and authoring platform connecting software with visual storytelling through guided panel navigation, dialogue editing, camera sequencing, and an interactive lore hub.",
+            disciplineTags: ["Creative Tooling", "Interaction Design", "Web Platform"],
+            url: "https://elseframe-comics.vercel.app/",
+            readme: "https://github.com/Ian9Franco/ElseframeComics",
             technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
         },
         {
@@ -220,9 +224,9 @@ const en: Dictionary = {
             link: "https://validator.centrodeelearning.com/validator/5ec3a92d-720f-49c5-af8f-1496682b0ba3",
         },
         {
-            title: "Bachelor’s Degree in Software Engineering",
+            title: "Software Engineering Studies",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
-            description: "Ongoing degree focused on software engineering principles, programming, databases, and modern web technologies.",
+            description: "Ongoing university studies focused on software engineering, programming, databases, and systems.",
             category: "career",
             date: "2023 – Present",
             tags: ["Software Engineering", "University", "Programming"],
@@ -313,11 +317,10 @@ const en: Dictionary = {
 const es: Dictionary = {
     hero: {
         greeting: "Ian Pontorno",
-        role: "Ingeniero de Growth",
+        role: "Full-Stack Developer & Growth Engineer",
         biography: [
-            "Soy un profesional híbrido entre desarrollo de software, Inteligencia Artificial, datos y performance marketing, con una sólida base técnica y un enfoque orientado a resultados. Combino el desarrollo de aplicaciones y sistemas digitales con el análisis de datos y la optimización de operaciones para transformar necesidades de negocio en soluciones concretas.",
-            "Trabajo con IA aplicada al desarrollo y la automatización, integrando LLMs, agentes, workflows inteligentes y sistemas automatizados para mejorar procesos, reducir tareas manuales y aumentar la eficiencia. Mi experiencia en marketing de performance, especialmente con Meta y Google Ads, también me permite entender las soluciones desde una perspectiva de negocio y no únicamente técnica.",
-            "Construyo aplicaciones web, herramientas internas, automatizaciones y sistemas impulsados por datos e IA, buscando siempre conectar tecnología, operaciones y objetivos comerciales en soluciones escalables y útiles."
+            "Desarrollo aplicaciones web y de escritorio, herramientas de automatización y flujos de datos. Mi trayectoria combina desarrollo de software, operaciones de TI y marketing de resultados, conectando el funcionamiento de un producto con las personas y los procesos de negocio a los que sirve.",
+            "En Fanger Design trabajo en paid media y automatización. En mis proyectos exploro herramientas para desarrolladores, experiencias creativas, IA local y software operativo."
         ],
         links: {
             linkedin: "LinkedIn",
@@ -331,7 +334,9 @@ const es: Dictionary = {
         title: "Experiencia Laboral"
     },
     selectedProjects: {
-        title: "Proyectos Seleccionados"
+        title: "Proyectos destacados",
+        description: "Una selección de productos que muestra cómo trabajo con ingeniería, diseño de interacción, automatización y problemas concretos.",
+        moreTitle: "Otros proyectos"
     },
     activities: {
         title: "Actividades y Logros"
@@ -344,9 +349,9 @@ const es: Dictionary = {
         {
             id: "mim",
             name: "MIM — Minecraft Intelligent Manager",
-            subtitle: "Plataforma Modular de Ingeniería de Sistemas",
-            badge: "Plataforma Flagship de Sistemas",
-            description: "Plataforma modular de escritorio y nube diseñada para entornos complejos de Minecraft, combinando diagnóstico determinista de crashes, almacenamiento direccionado por contenido, sincronización offline-first, análisis estático de bytecode JVM y recuperación binaria NBT transaccional.",
+            subtitle: "Plataforma de modding para escritorio y web",
+            badge: "Proyecto principal actual",
+            description: "Un ecosistema de escritorio y web para gestionar mods y modpacks de Minecraft. Combina manejo de archivos, diagnóstico determinista de errores, inspección estática de bytecode, recuperación NBT y colaboración en la nube.",
             disciplineTags: [
                 "Ingeniería de Sistemas",
                 "IA Aplicada",
@@ -371,15 +376,14 @@ const es: Dictionary = {
             id: "smart-scan",
             name: "Smart Scan",
             subtitle: "IA Local e Inteligencia Semántica de Archivos",
-            description: "Explorador de archivos inteligente para diseñadores y creativos. Búsqueda semántica por contenido con IA 100% local (Modo Cerebro), previsualización multimedia y conversor de formatos con política Zero-Touch.",
+            badge: "Proyecto privado",
+            description: "Un explorador de archivos y gestor de recursos local para diseñadores y creativos, centrado en búsqueda semántica, previsualización multimedia, conversión de formatos e indexación no destructiva.",
             disciplineTags: [
                 "IA Aplicada",
                 "ML Local",
                 "Búsqueda Semántica",
                 "Computer Vision"
             ],
-            url: "https://github.com/Ian9Franco/.smart.scan",
-            readme: "https://github.com/Ian9Franco/.smart.scan#readme",
             technologies: ["IA Local", "Búsqueda Semántica", "TypeScript", "Node.js", "Procesamiento Media"]
         },
         {
@@ -393,9 +397,11 @@ const es: Dictionary = {
         {
             id: "elseframe",
             name: "Elseframe Comics",
-            description: "Un lector y editor interactivo y cinemático de cómics web para el universo gráfico de 'Elseframe Comics'. Cuenta con navegación de paneles paso a paso, sistemas de globos de diálogo dinámicos con vectores elásticos, zoom de paneles y módulo de perfiles de personajes.",
-            url: "https://theboyz-comic.vercel.app/",
-            readme: "https://github.com/Ian9Franco/theboyz",
+            subtitle: "Lector interactivo y herramientas creativas",
+            description: "Una plataforma de lectura y creación de cómics que conecta software y narrativa visual mediante navegación guiada por viñetas, edición de diálogos, secuencias de cámara y un espacio interactivo de lore.",
+            disciplineTags: ["Herramientas creativas", "Diseño de interacción", "Plataforma web"],
+            url: "https://elseframe-comics.vercel.app/",
+            readme: "https://github.com/Ian9Franco/ElseframeComics",
             technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Sharp"],
         },
         {
@@ -467,9 +473,9 @@ const es: Dictionary = {
             link: "https://validator.centrodeelearning.com/validator/5ec3a92d-720f-49c5-af8f-1496682b0ba3",
         },
         {
-            title: "Licenciatura en Ingeniería de Software",
+            title: "Estudios universitarios en Informática / Ingeniería",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
-            description: "Carrera en curso enfocada en principios de ingeniería de software, programación, bases de datos y tecnologías web modernas.",
+            description: "Estudios universitarios en curso enfocados en ingeniería de software, programación, bases de datos y sistemas.",
             category: "career",
             date: "2023 – Presente",
             tags: ["Ingeniería de Software", "Universidad", "Programación"],
@@ -542,7 +548,7 @@ const es: Dictionary = {
             company: "Codere – Buenos Aires, Argentina",
             role: "Especialista en Operaciones IT y Automatización",
             period: "2019 – 2025",
-            description: "Diseñé y automaticé aplicaciones comerciales internas utilizando Python y tecnologías web modernas, asegurando la alineación con flujos de trabajo estilo SAP. Mi trabajo implicó integrar APIs REST y sistemas de bases de datos para permitir informes dinámicos, similares a los casos de uso de SAP Fiori. Di soporte a entornos de AWS y Docker para el despliegue de aplicaciones empresariales, y construí tableros analíticos con Power BI y Excel comparables a aplicaciones analíticas de SAP. Además, contribuí a la documentación del sistema, automatización de procesos y gestión de servicios de IT a través de herramientas como Jira y ServiceNow.",
+            description: "Diseñé y automaticé aplicaciones internas con Python y tecnologías web. Integré APIs REST y bases de datos para reportes dinámicos, di soporte a entornos de AWS y Docker, construí tableros con Power BI y Excel y contribuí a la documentación y automatización de procesos mediante Jira y ServiceNow.",
             logo: "/images/experience/codere.png",
             skills: ["Python", "Automatización", "REST APIs", "AWS", "Docker", "Power BI", "Excel", "Jira", "ServiceNow"]
         },
@@ -550,7 +556,7 @@ const es: Dictionary = {
             company: "Ilummi – Remoto",
             role: "Desarrollador Front-End",
             period: "2021 – 2025",
-            description: "Desarrollé aplicaciones web empresariales responsivas y escalables utilizando React y TypeScript, aplicando principios de UI transferibles a SAP UI5 y Fiori. Creé visualizaciones de datos avanzadas y tableros usando Recharts y D3.js, con un enfoque en interfaces de usuario interactivas y perspicaces. Mi trabajo incluyó integrar APIs y bases de datos como MySQL, Firebase y Supabase, reflejando prácticas de integración SAP OData. También implementé y mantuve pipelines de CI/CD a través de GitHub Actions y AWS, alineándome con estándares DevOps de SAP BTP. A lo largo de estos proyectos, colaboré en equipos Ágiles, enfatizando el rendimiento de la UI, la accesibilidad y la arquitectura modular.",
+            description: "Desarrollé aplicaciones web empresariales con React y TypeScript, visualizaciones de datos con Recharts y D3.js e integraciones con MySQL, Firebase y Supabase. También trabajé con flujos de CI/CD mediante GitHub Actions y AWS, priorizando rendimiento, accesibilidad y arquitectura modular.",
             logo: "/images/experience/illumi.png",
             skills: ["React", "TypeScript", "Recharts", "D3.js", "MySQL", "Firebase", "Supabase", "CI/CD", "GitHub Actions", "AWS"]
         },
@@ -558,8 +564,8 @@ const es: Dictionary = {
 }
 
 export const contactLinks = {
-    email: "ianpontorno@gmail.com",
-    linkedin: "https://www.linkedin.com/in/ian-pontorno/",
+    email: "ian9franco@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ian-franco-collada-pontorno/",
     github: "https://github.com/Ian9Franco",
     instagram: "https://www.instagram.com/ian.franco._/"
 }

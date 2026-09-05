@@ -14,11 +14,11 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="py-10 px-6"
+      className="py-14 px-6"
       onMouseEnter={() => { setIsHovered(true) }}
       onMouseLeave={() => { setIsHovered(false) }}
     >
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export function HeroSection() {
                 {t.greeting}
               </h1>
 
-              <p className="text-gray-400 text-sm font-medium text-shadow-sm">
+              <p className="text-gray-300 text-sm font-medium text-shadow-sm">
                 {t.role}
               </p>
 
@@ -148,38 +148,42 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {t.biography.map((paragraph, index) => (
-              <p key={index} className="text-gray-300 text-sm leading-relaxed text-shadow-sm">
+              <p key={index} className="text-gray-300 text-base leading-relaxed text-shadow-sm max-w-3xl">
                 {paragraph}
               </p>
             ))}
           </motion.div>
 
-          {/* Links */}
-          <motion.p
-            className="text-gray-400 text-sm text-center"
+          {/* Primary actions */}
+          <motion.div
+            className="flex flex-wrap items-center gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {t.findMe}{" "}
+            <a
+              href="#selected-projects"
+              className="text-sm font-medium px-4 py-2 rounded-lg bg-white text-black hover:bg-neutral-200 transition-colors"
+            >
+              {language === "es" ? "Ver proyectos" : "View projects"}
+            </a>
             <a
               href="https://www.linkedin.com/in/ian-franco-collada-pontorno/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[#0A66C2] transition-colors"
+              className="text-sm font-medium px-4 py-2 rounded-lg border border-white/10 text-white hover:border-white/25 transition-colors"
             >
               {t.links.linkedin}
-            </a>{" "}
-            {t.or}{" "}
+            </a>
             <a
               href="https://github.com/Ian9Franco"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-gray-400 transition-colors"
+              className="text-sm font-medium px-4 py-2 rounded-lg border border-white/10 text-white hover:border-white/25 transition-colors"
             >
               {t.links.github}
             </a>
-          </motion.p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
