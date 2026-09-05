@@ -1,0 +1,107 @@
+.page {
+  background-image: radial-gradient(ellipse at 90% 0%, rgb(79 70 229 / 12%), transparent 35rem);
+  overflow-wrap: anywhere;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 5px;
+}
+
+.page section[id] { scroll-margin-top: 2rem; }
+.page h2 { align-items: baseline; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.heroActions { grid-column: 1 / -1; }
+
+.mascotStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 19rem;
+  border: 1px solid rgb(129 140 248 / 20%);
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgb(79 70 229 / 12%), rgb(255 255 255 / 2%));
+}
+
+.mascotHalo {
+  position: absolute;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  border: 1px solid rgb(165 180 252 / 15%);
+  box-shadow: 0 0 0 1.5rem rgb(129 140 248 / 4%);
+  background: radial-gradient(circle, rgb(99 102 241 / 18%), transparent 70%);
+}
+
+/* Reused from Ian9Franco/MIM app/globals.css (.animate-slime). */
+@keyframes slime-squish {
+  0%, 100% { transform: scale(1, 1) translateY(0); }
+  15% { transform: scale(1.2, 0.8) translateY(2px); }
+  35% { transform: scale(0.9, 1.15) translateY(-8px); }
+  55% { transform: scale(1.1, 0.9) translateY(0); }
+  75% { transform: scale(1, 1.05) translateY(-2px); }
+}
+
+.mascot {
+  position: relative;
+  animation: slime-squish 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: bottom;
+}
+.mascot[data-paused="true"] { animation-play-state: paused; }
+
+.animationControl {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.75rem;
+  color: #c7d2fe;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.animationControl:hover { background: rgb(129 140 248 / 12%); }
+
+.sectionNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-block: 1rem;
+  border-block: 1px solid rgb(255 255 255 / 8%);
+}
+.sectionNav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #d4d4d4;
+}
+.sectionNav a:hover { background: rgb(129 140 248 / 10%); color: white; }
+.sectionNav span { color: #a5b4fc; font-family: monospace; }
+
+.engineHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+@media (max-width: 639px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .mascotStage { min-height: 16rem; }
+  .heroActions a { justify-content: center; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot { animation: none; }
+  .animationControl { display: none; }
+}

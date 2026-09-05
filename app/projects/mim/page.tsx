@@ -3,20 +3,21 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { useLanguage } from "@/components/language-context"
 import { fira } from "@/lib/utils"
+import styles from "./mim-case-study.module.css"
 
 export default function MimCaseStudyPage() {
   const { language } = useLanguage()
   const isEs = language === "es"
+  const [animationPaused, setAnimationPaused] = React.useState(false)
 
   return (
-    <main className="min-h-screen bg-black text-neutral-200 py-12 px-6 sm:px-8 selection:bg-indigo-500/30 selection:text-indigo-200">
-      <div className="max-w-3xl mx-auto space-y-16">
+    <main className={`${styles.page} min-h-screen bg-black text-neutral-200 py-12 px-6 sm:px-8 selection:bg-indigo-500/30 selection:text-indigo-200`}>
+      <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
         
         {/* Navigation / Back link */}
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
@@ -32,27 +33,13 @@ export default function MimCaseStudyPage() {
         </div>
 
         {/* Hero Header */}
-        <motion.section
-          className="space-y-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center p-2.5 shadow-xl shadow-indigo-500/10">
-              <Image
-                src="/images/projects/mim.png"
-                alt="MIM Logo"
-                width={48}
-                height={48}
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
+        <section className={styles.hero}>
+          <div className="space-y-6 min-w-0">
+          <div>
+            <p className={`${fira.className} text-xs uppercase tracking-[0.2em] text-indigo-300 mb-4`}>Minecraft Intelligent Manager</p>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                MIM — Minecraft Intelligent Manager
-              </h1>
-              <p className={`${fira.className} text-sm sm:text-base text-indigo-400 font-medium tracking-tight mt-1`}>
+              <h1 className="text-6xl sm:text-8xl font-bold text-white tracking-tight">MIM<span className="text-indigo-400">.</span></h1>
+              <p className={`${fira.className} text-sm sm:text-base text-indigo-300 font-medium tracking-tight mt-4`}>
                 {isEs ? "Plataforma de modding para escritorio y web" : "Desktop & Web Modding Platform"}
               </p>
             </div>
@@ -67,23 +54,31 @@ export default function MimCaseStudyPage() {
           {/* Discipline Badges */}
           <div className="flex flex-wrap gap-2 pt-1">
             {[
-              "Systems Engineering",
-              "Applied AI",
-              "Distributed Systems",
-              "Security",
-              "Binary Safe Recovery"
+              "Systems Engineering", "Applied AI", "Distributed Systems", "Security", "Binary Safe Recovery"
             ].map((tag) => (
-              <span
-                key={tag}
-                className={`${fira.className} text-xs font-medium px-3 py-1 rounded-md bg-white/[0.04] text-neutral-300 border border-white/[0.08]`}
-              >
-                {tag}
-              </span>
+              <span key={tag} className={`${fira.className} text-xs font-medium px-3 py-1 rounded-md bg-white/[0.04] text-neutral-300 border border-white/[0.08]`}>{tag}</span>
             ))}
+          </div>
+          </div>
+          <div className={styles.mascotStage}>
+            <div className={styles.mascotHalo} aria-hidden="true" />
+            <div className={styles.mascot} data-paused={animationPaused}>
+              <Image
+                src="/images/projects/mim.png"
+                alt="MIM Logo"
+                width={160}
+                height={160}
+                priority
+                className="object-contain rounded-3xl"
+              />
+            </div>
+            <button type="button" className={styles.animationControl} aria-pressed={animationPaused} onClick={() => setAnimationPaused(!animationPaused)}>
+              {animationPaused ? (isEs ? "Reanudar animación" : "Resume animation") : (isEs ? "Pausar animación" : "Pause animation")}
+            </button>
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className={`${styles.heroActions} flex flex-wrap items-center gap-3 pt-2`}>
             <a
               href="https://mim-hub.vercel.app/"
               target="_blank"
@@ -110,7 +105,18 @@ export default function MimCaseStudyPage() {
               <span>↗</span>
             </a>
           </div>
-        </motion.section>
+        </section>
+
+        <nav aria-label={isEs ? "Secciones del caso de estudio" : "Case study sections"} className={styles.sectionNav}>
+          {[
+            ["challenge", isEs ? "El desafío" : "Challenge"],
+            ["engines", isEs ? "Motores" : "Engines"],
+            ["architecture", isEs ? "Arquitectura" : "Architecture"],
+            ["benchmarks", "Benchmarks"],
+            ["product", isEs ? "Producto" : "Product"],
+            ["stack", "Stack"],
+          ].map(([id, label], index) => <a key={id} href={`#${id}`}><span>{String(index + 1).padStart(2, "0")}</span>{label}</a>)}
+        </nav>
 
         {/* Lead Summary Callout */}
         <section className="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/30 via-neutral-900/40 to-neutral-950 border border-indigo-500/20 shadow-inner">
@@ -151,7 +157,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 1: The Engineering Challenge */}
-        <section className="space-y-4 border-t border-white/[0.08] pt-12">
+        <section id="challenge" className="space-y-4 border-t border-white/[0.08] pt-12">
           <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
             <span className="text-indigo-400 font-mono">01.</span>
             <span>{isEs ? "El Desafío de Ingeniería" : "The Engineering Challenge"}</span>
@@ -171,7 +177,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 2: Decoupled Domain Engines as Capabilities */}
-        <section className="space-y-6 border-t border-white/[0.08] pt-12">
+        <section id="engines" className="space-y-6 border-t border-white/[0.08] pt-12">
           <div className="space-y-1">
             <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
               <span className="text-indigo-400 font-mono">02.</span>
@@ -187,7 +193,7 @@ export default function MimCaseStudyPage() {
           <div className="grid gap-4">
             {/* Engine 1 */}
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
+              <div className={styles.engineHeading}>
                 <h3 className="text-base font-semibold text-white flex items-center gap-2">
                   <span className="text-indigo-400 text-sm font-mono">✦</span>
                   <span>SAGE — Crash Intelligence</span>
@@ -205,7 +211,7 @@ export default function MimCaseStudyPage() {
 
             {/* Engine 2 */}
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
+              <div className={styles.engineHeading}>
                 <h3 className="text-base font-semibold text-white flex items-center gap-2">
                   <span className="text-indigo-400 text-sm font-mono">✦</span>
                   <span>Aduana — Content-Addressed Storage</span>
@@ -223,7 +229,7 @@ export default function MimCaseStudyPage() {
 
             {/* Engine 3 */}
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
+              <div className={styles.engineHeading}>
                 <h3 className="text-base font-semibold text-white flex items-center gap-2">
                   <span className="text-indigo-400 text-sm font-mono">✦</span>
                   <span>FOMO Cloud — Distributed Synchronization</span>
@@ -241,7 +247,7 @@ export default function MimCaseStudyPage() {
 
             {/* Engine 4 */}
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
+              <div className={styles.engineHeading}>
                 <h3 className="text-base font-semibold text-white flex items-center gap-2">
                   <span className="text-indigo-400 text-sm font-mono">✦</span>
                   <span>Security Engine — Static JVM Analysis</span>
@@ -259,7 +265,7 @@ export default function MimCaseStudyPage() {
 
             {/* Engine 5 */}
             <div className="p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] hover:border-indigo-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
+              <div className={styles.engineHeading}>
                 <h3 className="text-base font-semibold text-white flex items-center gap-2">
                   <span className="text-indigo-400 text-sm font-mono">✦</span>
                   <span>NBT Rescue — Binary Data Recovery</span>
@@ -278,7 +284,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 3: Architecture & Event-Driven Topology */}
-        <section className="space-y-6 border-t border-white/[0.08] pt-12">
+        <section id="architecture" className="space-y-6 border-t border-white/[0.08] pt-12">
           <div className="space-y-1">
             <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
               <span className="text-indigo-400 font-mono">03.</span>
@@ -317,7 +323,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 4: Empirical Measured Benchmarks */}
-        <section className="space-y-6 border-t border-white/[0.08] pt-12">
+        <section id="benchmarks" className="space-y-6 border-t border-white/[0.08] pt-12">
           <div className="space-y-1">
             <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
               <span className="text-indigo-400 font-mono">04.</span>
@@ -394,7 +400,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 5: Product Features (Secondary) */}
-        <section className="space-y-4 border-t border-white/[0.08] pt-12">
+        <section id="product" className="space-y-4 border-t border-white/[0.08] pt-12">
           <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
             <span className="text-indigo-400 font-mono">05.</span>
             <span>{isEs ? "Capacidades de Producto" : "Product Features & User Experience"}</span>
@@ -436,7 +442,7 @@ export default function MimCaseStudyPage() {
         </section>
 
         {/* Section 6: Full Tech Stack */}
-        <section className="space-y-4 border-t border-white/[0.08] pt-12">
+        <section id="stack" className="space-y-4 border-t border-white/[0.08] pt-12">
           <h2 className="text-xl font-semibold text-white tracking-tight flex items-center gap-2.5">
             <span className="text-indigo-400 font-mono">06.</span>
             <span>{isEs ? "Stack Tecnológico Completo" : "Full Technology Stack"}</span>
