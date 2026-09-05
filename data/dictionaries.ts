@@ -473,9 +473,9 @@ const es: Dictionary = {
             link: "https://validator.centrodeelearning.com/validator/5ec3a92d-720f-49c5-af8f-1496682b0ba3",
         },
         {
-            title: "Estudios universitarios en Informática / Ingeniería",
+            title: "Licenciatura en Ingeniería de Software",
             subtitle: "Universidad Nacional de La Matanza – Buenos Aires, Argentina",
-            description: "Estudios universitarios en curso enfocados en ingeniería de software, programación, bases de datos y sistemas.",
+            description: "Carrera en curso enfocada en principios de ingeniería de software, programación, bases de datos y tecnologías web modernas.",
             category: "career",
             date: "2023 – Presente",
             tags: ["Ingeniería de Software", "Universidad", "Programación"],
