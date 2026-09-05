@@ -27,9 +27,9 @@ const jsonLd = {
   name: "Ian Franco Collada Pontorno",
   alternateName: "Ian Pontorno",
   url: "https://ian-pontorno-portfolio.vercel.app",
-  jobTitle: "Growth Engineer & Marketing Technologist",
+  jobTitle: "Full-Stack Developer & Growth Engineer",
   description:
-    "Growth Engineer and Software Developer building data-driven marketing systems. Combines paid media, automation, analytics, and custom web tools to scale acquisition and optimize performance.",
+    "Full-stack developer and growth engineer building web and desktop applications, automation tools, and data workflows.",
   knowsAbout: [
     "Growth Engineering",
     "Marketing Automation",
@@ -71,14 +71,13 @@ const jsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
+  title: "Ian Pontorno | Full-Stack Developer & Growth Engineer",
   description:
-    "Growth Engineer combining paid media, automation, analytics, and custom software to scale business growth. Based in Buenos Aires, Argentina.",
+    "Full-stack developer and growth engineer building web and desktop products, automation tools, and data workflows. Based in Buenos Aires, Argentina.",
   keywords: [
     // Core positioning
     "Growth Engineer",
     "Marketing Engineer",
-    "Marketing Technologist",
     "Performance Marketing",
     "Marketing Automation",
     "Growth Systems",
@@ -128,9 +127,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Ian Pontorno | Growth Engineer & Marketing Technologist",
+    title: "Ian Pontorno | Full-Stack Developer & Growth Engineer",
     description:
-      "I build systems that grow businesses. Paid media, automation, analytics, and custom software to scale marketing with engineering.",
+      "Web and desktop products, automation tools, data workflows, and growth systems built by Ian Pontorno.",
     url: "https://ian-pontorno-portfolio.vercel.app/",
     siteName: "Ian Pontorno Portfolio",
     images: [
@@ -138,7 +137,7 @@ export const metadata: Metadata = {
         url: "/images/profile/hoverRect.png",
         width: 1200,
         height: 630,
-        alt: "Growth Engineer & Marketing Technologist Portfolio",
+        alt: "Ian Pontorno — Full-Stack Developer & Growth Engineer",
       },
     ],
     locale: "en_US",
@@ -147,9 +146,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Growth Engineer & Marketing Technologist",
+    title: "Ian Pontorno | Full-Stack Developer & Growth Engineer",
     description:
-      "Software + Marketing + Automation. I turn growth into systems and code.",
+      "Web and desktop products, automation tools, data workflows, and growth systems.",
     images: ["/images/profile/hoverRect.png"],
   },
 
